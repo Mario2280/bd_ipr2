@@ -1,0 +1,180 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+generator client {
+  provider        = "prisma-client-js"
+}
+generator nestgraphql  {
+  provider                              = "node node_modules/prisma-nestjs-graphql"
+  output                                = "../src/dtos"
+  fields_Validator_from                 = "class-validator"
+  fields_Validator_input                = true
+  requireSingleFieldsInWhereUniqueInput = true
+  emitSingle                            = true
+  emitCompiled                          = false
+  purgeOutput                           = true
+  noTypeId                              = true
+}
+model User {
+  id           Int                  @id @default(autoincrement())
+  /// @Validator.MaxLength(15)
+  firstName    String               @db.VarChar(15)
+  /// @Validator.MaxLength(15)
+  lastName     String               @db.VarChar(15)
+  gender       Gender
+  /// @Validator.IsDate()
+  birthDate    DateTime
+  /// @Validator.IsEmail()
+  email        String               @unique @db.VarChar(50)
+  /// @Validator.IsStrongPassword()
+  password     String               @db.VarChar(30)
+  /// @Validator.MaxLength(70)
+  salt         String?              @db.VarChar(70)
+  bio          String?
+  /// @Validator.MaxLength(30)
+  city         String?              @db.VarChar(30)
+  /// @Validator.MaxLength(20)
+  country      String?              @db.VarChar(20)
+  location     Unsupported("Point")?
+  /// @Validator.IsNumber()
+  rating       Int?                  @default(0)
+  /// @Validator.MaxLength(50)
+  mainPhoto    String?              @db.VarChar(50)
+  isVerified   Boolean?
+  createdAt    DateTime?             @default(now())
+  lastLogin    DateTime?             @updatedAt
+  messages     Message[]            @relation("Sender")
+  messages1    Message[]            @relation("Receiver")
+  matches      Match[]              @relation("User1")
+  matches1     Match[]              @relation("User2")
+  blocks       Block[]              @relation("Blocker")
+  blocks1      Block[]              @relation("Blocked")
+  reports      Report[]             @relation("Reporter")
+  reports1     Report[]             @relation("Reported")
+  visits       Visit[]              @relation("Visitor")
+  visits1      Visit[]              @relation("Visited")
+  likes        Like[]               @relation("Liker")
+  likes1       Like[]               @relation("Liked")
+  settings     Setting[]
+  media        Media[]
+  subscription Subscription?
+  notification Notification[]
+  interest     Interest?
+}
+model Message {
+  id         Int      @id @default(autoincrement())
+  senderId   Int
+  receiverId Int
+  content    String
+  sentAt     DateTime @default(now())
+  isRead     Boolean  @default(false)
+  sender     User     @relation(name: "Sender", fields: [senderId], references: [id], onDelete: NoAction)
+  receiver   User     @relation(name: "Receiver", fields: [receiverId], references: [id], onDelete: NoAction)
+}
+model Match {
+  id        Int      @id @default(autoincrement())
+  user1Id   Int
+  user2Id   Int
+  matchedAt DateTime @default(now())
+  user1     User     @relation(name: "User1", fields: [user1Id], references: [id], onDelete: NoAction)
+  user2     User     @relation(name: "User2", fields: [user2Id], references: [id], onDelete: NoAction)
+}
+model Block {
+  id        Int  @id @default(autoincrement())
+  blockerId Int
+  blockedId Int
+  blocker   User @relation(name: "Blocker", fields: [blockerId], references: [id], onDelete: NoAction)
+  blocked   User @relation(name: "Blocked", fields: [blockedId], references: [id], onDelete: NoAction)
+}
+
+model Subscription {
+  userId    Int              @id
+  type      SubscriptionType @default(FREE)
+  startDate DateTime
+  endDate   DateTime
+  user      User             @relation(fields: [userId], references: [id])
+}
+
+model Report {
+  id         Int    @id @default(autoincrement())
+  reporterId Int
+  reportedId Int
+  reason     String
+  reporter   User   @relation(name: "Reporter", fields: [reporterId], references: [id], onDelete: NoAction)
+  reported   User   @relation(name: "Reported", fields: [reportedId], references: [id], onDelete: NoAction)
+}
+
+model Visit {
+  id        Int      @id @default(autoincrement())
+  visitorId Int
+  visitedId Int
+  visitedAt DateTime @default(now())
+  visitor   User     @relation(name: "Visitor", fields: [visitorId], references: [id], onDelete: NoAction)
+  visited   User     @relation(name: "Visited", fields: [visitedId], references: [id], onDelete: NoAction)
+}
+
+model Like {
+  id      Int  @id @default(autoincrement())
+  likerId Int
+  likedId Int
+  liker   User @relation(name: "Liker", fields: [likerId], references: [id], onDelete: NoAction)
+  liked   User @relation(name: "Liked", fields: [likedId], references: [id], onDelete: NoAction)
+}
+
+model Notification {
+  id         Int              @id @default(autoincrement())
+  userId     Int
+  type       NotificationType
+  content    String
+  notifiedAt DateTime         @default(now())
+  user       User             @relation(fields: [userId], references: [id], onDelete: NoAction)
+}
+
+model Setting {
+  id                     Int            @id @default(autoincrement())
+  userId                 Int
+  privacy                PrivacySetting
+  isNotificationsEnabled Boolean
+  language               String @db.VarChar(30)
+  ghostMode              Boolean
+  user                   User           @relation(fields: [userId], references: [id])
+}
+
+model Media {
+  id         Int       @id @default(autoincrement())
+  userId     Int
+  type       MediaType
+  url        String
+  uploadedAt DateTime  @default(now())
+  user       User      @relation(fields: [userId], references: [id])
+}
+enum MediaType {
+  IMAGE
+  VIDEO
+  GIF
+}
+model Interest {
+  userId   Int    @unique
+  interest String
+  user     User   @relation(fields: [userId], references: [id])
+}
+enum Gender {
+  MALE
+  FEMALE
+}
+enum PrivacySetting {
+  PUBLIC
+  PRIVATE
+}
+enum NotificationType {
+  MESSAGE
+  MATCH
+  LIKE
+  VISIT
+}
+enum SubscriptionType {
+  FREE
+  PREMIUM
+  VIP
+}

@@ -1,0 +1,1852 @@
+{
+  "models": {
+    "Block": {
+      "id": "mydb.Block",
+      "schemaName": "mydb",
+      "tableName": "Block",
+      "fields": [
+        {
+          "id": "mydb.Block.blockedId",
+          "name": "blockedId",
+          "columnName": "blockedId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Block.blockerId",
+          "name": "blockerId",
+          "columnName": "blockerId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Block.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": {
+            "identifier": "mydb.Block.id",
+            "increment": 1,
+            "start": 1
+          },
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "name": "User_Block_blockedIdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Block_blockedIdToUser",
+          "relationFromFields": [
+            "blockedId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "User_Block_blockerIdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Block_blockerIdToUser",
+          "relationFromFields": [
+            "blockerId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Block.id",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "Interest": {
+      "id": "mydb.Interest",
+      "schemaName": "mydb",
+      "tableName": "Interest",
+      "fields": [
+        {
+          "id": "mydb.Interest.interest",
+          "name": "interest",
+          "columnName": "interest",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 191
+        },
+        {
+          "id": "mydb.Interest.userId",
+          "name": "userId",
+          "columnName": "userId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "InterestToUser",
+          "relationFromFields": [
+            "userId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Interest.userId",
+          "fields": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    "Like": {
+      "id": "mydb.Like",
+      "schemaName": "mydb",
+      "tableName": "Like",
+      "fields": [
+        {
+          "id": "mydb.Like.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": {
+            "identifier": "mydb.Like.id",
+            "increment": 1,
+            "start": 1
+          },
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Like.likedId",
+          "name": "likedId",
+          "columnName": "likedId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Like.likerId",
+          "name": "likerId",
+          "columnName": "likerId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User_Like_likedIdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Like_likedIdToUser",
+          "relationFromFields": [
+            "likedId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "User_Like_likerIdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Like_likerIdToUser",
+          "relationFromFields": [
+            "likerId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Like.id",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "Match": {
+      "id": "mydb.Match",
+      "schemaName": "mydb",
+      "tableName": "Match",
+      "fields": [
+        {
+          "id": "mydb.Match.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": {
+            "identifier": "mydb.Match.id",
+            "increment": 1,
+            "start": 1
+          },
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Match.matchedAt",
+          "name": "matchedAt",
+          "columnName": "matchedAt",
+          "type": "datetime",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Match.user1Id",
+          "name": "user1Id",
+          "columnName": "user1Id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Match.user2Id",
+          "name": "user2Id",
+          "columnName": "user2Id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User_Match_user1IdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Match_user1IdToUser",
+          "relationFromFields": [
+            "user1Id"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "User_Match_user2IdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Match_user2IdToUser",
+          "relationFromFields": [
+            "user2Id"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Match.id",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "Media": {
+      "id": "mydb.Media",
+      "schemaName": "mydb",
+      "tableName": "Media",
+      "fields": [
+        {
+          "id": "mydb.Media.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": {
+            "identifier": "mydb.Media.id",
+            "increment": 1,
+            "start": 1
+          },
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Media.type",
+          "name": "type",
+          "columnName": "type",
+          "type": "enum_mydb_media_type",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 5
+        },
+        {
+          "id": "mydb.Media.uploadedAt",
+          "name": "uploadedAt",
+          "columnName": "uploadedAt",
+          "type": "datetime",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Media.url",
+          "name": "url",
+          "columnName": "url",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 191
+        },
+        {
+          "id": "mydb.Media.userId",
+          "name": "userId",
+          "columnName": "userId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "MediaToUser",
+          "relationFromFields": [
+            "userId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Media.id",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "Message": {
+      "id": "mydb.Message",
+      "schemaName": "mydb",
+      "tableName": "Message",
+      "fields": [
+        {
+          "id": "mydb.Message.content",
+          "name": "content",
+          "columnName": "content",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 191
+        },
+        {
+          "id": "mydb.Message.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": {
+            "identifier": "mydb.Message.id",
+            "increment": 1,
+            "start": 1
+          },
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Message.isRead",
+          "name": "isRead",
+          "columnName": "isRead",
+          "type": "tinyint",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Message.receiverId",
+          "name": "receiverId",
+          "columnName": "receiverId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Message.senderId",
+          "name": "senderId",
+          "columnName": "senderId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Message.sentAt",
+          "name": "sentAt",
+          "columnName": "sentAt",
+          "type": "datetime",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User_Message_receiverIdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Message_receiverIdToUser",
+          "relationFromFields": [
+            "receiverId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "User_Message_senderIdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Message_senderIdToUser",
+          "relationFromFields": [
+            "senderId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Message.id",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "Notification": {
+      "id": "mydb.Notification",
+      "schemaName": "mydb",
+      "tableName": "Notification",
+      "fields": [
+        {
+          "id": "mydb.Notification.content",
+          "name": "content",
+          "columnName": "content",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 191
+        },
+        {
+          "id": "mydb.Notification.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": {
+            "identifier": "mydb.Notification.id",
+            "increment": 1,
+            "start": 1
+          },
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Notification.notifiedAt",
+          "name": "notifiedAt",
+          "columnName": "notifiedAt",
+          "type": "datetime",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Notification.type",
+          "name": "type",
+          "columnName": "type",
+          "type": "enum_mydb_notification_type",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 7
+        },
+        {
+          "id": "mydb.Notification.userId",
+          "name": "userId",
+          "columnName": "userId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "NotificationToUser",
+          "relationFromFields": [
+            "userId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Notification.id",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "Report": {
+      "id": "mydb.Report",
+      "schemaName": "mydb",
+      "tableName": "Report",
+      "fields": [
+        {
+          "id": "mydb.Report.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": {
+            "identifier": "mydb.Report.id",
+            "increment": 1,
+            "start": 1
+          },
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Report.reason",
+          "name": "reason",
+          "columnName": "reason",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 191
+        },
+        {
+          "id": "mydb.Report.reportedId",
+          "name": "reportedId",
+          "columnName": "reportedId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Report.reporterId",
+          "name": "reporterId",
+          "columnName": "reporterId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User_Report_reportedIdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Report_reportedIdToUser",
+          "relationFromFields": [
+            "reportedId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "User_Report_reporterIdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Report_reporterIdToUser",
+          "relationFromFields": [
+            "reporterId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Report.id",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "Setting": {
+      "id": "mydb.Setting",
+      "schemaName": "mydb",
+      "tableName": "Setting",
+      "fields": [
+        {
+          "id": "mydb.Setting.ghostMode",
+          "name": "ghostMode",
+          "columnName": "ghostMode",
+          "type": "tinyint",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Setting.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": {
+            "identifier": "mydb.Setting.id",
+            "increment": 1,
+            "start": 1
+          },
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Setting.isNotificationsEnabled",
+          "name": "isNotificationsEnabled",
+          "columnName": "isNotificationsEnabled",
+          "type": "tinyint",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Setting.language",
+          "name": "language",
+          "columnName": "language",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 30
+        },
+        {
+          "id": "mydb.Setting.privacy",
+          "name": "privacy",
+          "columnName": "privacy",
+          "type": "enum_mydb_setting_privacy",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 7
+        },
+        {
+          "id": "mydb.Setting.userId",
+          "name": "userId",
+          "columnName": "userId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "SettingToUser",
+          "relationFromFields": [
+            "userId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Setting.id",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "Subscription": {
+      "id": "mydb.Subscription",
+      "schemaName": "mydb",
+      "tableName": "Subscription",
+      "fields": [
+        {
+          "id": "mydb.Subscription.endDate",
+          "name": "endDate",
+          "columnName": "endDate",
+          "type": "datetime",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Subscription.startDate",
+          "name": "startDate",
+          "columnName": "startDate",
+          "type": "datetime",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Subscription.type",
+          "name": "type",
+          "columnName": "type",
+          "type": "enum_mydb_subscription_type",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": 7
+        },
+        {
+          "id": "mydb.Subscription.userId",
+          "name": "userId",
+          "columnName": "userId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "name": "User",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "SubscriptionToUser",
+          "relationFromFields": [
+            "userId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Subscription.userId",
+          "fields": [
+            "userId"
+          ]
+        }
+      ]
+    },
+    "User": {
+      "id": "mydb.User",
+      "schemaName": "mydb",
+      "tableName": "User",
+      "fields": [
+        {
+          "id": "mydb.User.bio",
+          "name": "bio",
+          "columnName": "bio",
+          "type": "varchar",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 191
+        },
+        {
+          "id": "mydb.User.birthDate",
+          "name": "birthDate",
+          "columnName": "birthDate",
+          "type": "datetime",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.User.city",
+          "name": "city",
+          "columnName": "city",
+          "type": "varchar",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 30
+        },
+        {
+          "id": "mydb.User.country",
+          "name": "country",
+          "columnName": "country",
+          "type": "varchar",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 20
+        },
+        {
+          "id": "mydb.User.createdAt",
+          "name": "createdAt",
+          "columnName": "createdAt",
+          "type": "datetime",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.User.email",
+          "name": "email",
+          "columnName": "email",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 50
+        },
+        {
+          "id": "mydb.User.firstName",
+          "name": "firstName",
+          "columnName": "firstName",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 15
+        },
+        {
+          "id": "mydb.User.gender",
+          "name": "gender",
+          "columnName": "gender",
+          "type": "enum_mydb_user_gender",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 6
+        },
+        {
+          "id": "mydb.User.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": {
+            "identifier": "mydb.User.id",
+            "increment": 1,
+            "start": 1
+          },
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.User.isVerified",
+          "name": "isVerified",
+          "columnName": "isVerified",
+          "type": "tinyint",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.User.lastLogin",
+          "name": "lastLogin",
+          "columnName": "lastLogin",
+          "type": "datetime",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.User.lastName",
+          "name": "lastName",
+          "columnName": "lastName",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 15
+        },
+        {
+          "id": "mydb.User.location",
+          "name": "location",
+          "columnName": "location",
+          "type": "point",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.User.mainPhoto",
+          "name": "mainPhoto",
+          "columnName": "mainPhoto",
+          "type": "varchar",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 50
+        },
+        {
+          "id": "mydb.User.password",
+          "name": "password",
+          "columnName": "password",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 30
+        },
+        {
+          "id": "mydb.User.rating",
+          "name": "rating",
+          "columnName": "rating",
+          "type": "int",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.User.salt",
+          "name": "salt",
+          "columnName": "salt",
+          "type": "varchar",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 70
+        },
+        {
+          "name": "Block_Block_blockedIdToUser",
+          "type": "Block",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Block_blockedIdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Block_Block_blockerIdToUser",
+          "type": "Block",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Block_blockerIdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Interest",
+          "type": "Interest",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "InterestToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Like_Like_likedIdToUser",
+          "type": "Like",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Like_likedIdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Like_Like_likerIdToUser",
+          "type": "Like",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Like_likerIdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Match_Match_user1IdToUser",
+          "type": "Match",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Match_user1IdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Match_Match_user2IdToUser",
+          "type": "Match",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Match_user2IdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Media",
+          "type": "Media",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "MediaToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Message_Message_receiverIdToUser",
+          "type": "Message",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Message_receiverIdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Message_Message_senderIdToUser",
+          "type": "Message",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Message_senderIdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Notification",
+          "type": "Notification",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "NotificationToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Report_Report_reportedIdToUser",
+          "type": "Report",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Report_reportedIdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Report_Report_reporterIdToUser",
+          "type": "Report",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Report_reporterIdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Setting",
+          "type": "Setting",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "SettingToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Subscription",
+          "type": "Subscription",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "SubscriptionToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Visit_Visit_visitedIdToUser",
+          "type": "Visit",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Visit_visitedIdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "Visit_Visit_visitorIdToUser",
+          "type": "Visit",
+          "isRequired": false,
+          "kind": "object",
+          "relationName": "Visit_visitorIdToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isList": true,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.User.id",
+          "fields": [
+            "id"
+          ]
+        },
+        {
+          "name": "mydb.User.email",
+          "fields": [
+            "email"
+          ]
+        }
+      ]
+    },
+    "Visit": {
+      "id": "mydb.Visit",
+      "schemaName": "mydb",
+      "tableName": "Visit",
+      "fields": [
+        {
+          "id": "mydb.Visit.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": {
+            "identifier": "mydb.Visit.id",
+            "increment": 1,
+            "start": 1
+          },
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Visit.visitedAt",
+          "name": "visitedAt",
+          "columnName": "visitedAt",
+          "type": "datetime",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Visit.visitedId",
+          "name": "visitedId",
+          "columnName": "visitedId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb.Visit.visitorId",
+          "name": "visitorId",
+          "columnName": "visitorId",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "name": "User_Visit_visitedIdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Visit_visitedIdToUser",
+          "relationFromFields": [
+            "visitedId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        },
+        {
+          "name": "User_Visit_visitorIdToUser",
+          "type": "User",
+          "isRequired": true,
+          "kind": "object",
+          "relationName": "Visit_visitorIdToUser",
+          "relationFromFields": [
+            "visitorId"
+          ],
+          "relationToFields": [
+            "id"
+          ],
+          "isList": false,
+          "isId": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb.Visit.id",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    },
+    "_prisma_migrations": {
+      "id": "mydb._prisma_migrations",
+      "schemaName": "mydb",
+      "tableName": "_prisma_migrations",
+      "fields": [
+        {
+          "id": "mydb._prisma_migrations.applied_steps_count",
+          "name": "applied_steps_count",
+          "columnName": "applied_steps_count",
+          "type": "int",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb._prisma_migrations.checksum",
+          "name": "checksum",
+          "columnName": "checksum",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 64
+        },
+        {
+          "id": "mydb._prisma_migrations.finished_at",
+          "name": "finished_at",
+          "columnName": "finished_at",
+          "type": "datetime",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb._prisma_migrations.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true,
+          "maxLength": 36
+        },
+        {
+          "id": "mydb._prisma_migrations.logs",
+          "name": "logs",
+          "columnName": "logs",
+          "type": "text",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 65535
+        },
+        {
+          "id": "mydb._prisma_migrations.migration_name",
+          "name": "migration_name",
+          "columnName": "migration_name",
+          "type": "varchar",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": 255
+        },
+        {
+          "id": "mydb._prisma_migrations.rolled_back_at",
+          "name": "rolled_back_at",
+          "columnName": "rolled_back_at",
+          "type": "datetime",
+          "isRequired": false,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false,
+          "maxLength": null
+        },
+        {
+          "id": "mydb._prisma_migrations.started_at",
+          "name": "started_at",
+          "columnName": "started_at",
+          "type": "datetime",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": true,
+          "isId": false,
+          "maxLength": null
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "mydb._prisma_migrations.id",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    }
+  },
+  "enums": {
+    "enum_mydb_user_gender": {
+      "schemaName": "mydb",
+      "values": [
+        {
+          "name": "MALE"
+        },
+        {
+          "name": "FEMALE"
+        }
+      ]
+    },
+    "enum_mydb_setting_privacy": {
+      "schemaName": "mydb",
+      "values": [
+        {
+          "name": "PUBLIC"
+        },
+        {
+          "name": "PRIVATE"
+        }
+      ]
+    },
+    "enum_mydb_media_type": {
+      "schemaName": "mydb",
+      "values": [
+        {
+          "name": "IMAGE"
+        },
+        {
+          "name": "VIDEO"
+        },
+        {
+          "name": "GIF"
+        }
+      ]
+    },
+    "enum_mydb_notification_type": {
+      "schemaName": "mydb",
+      "values": [
+        {
+          "name": "MESSAGE"
+        },
+        {
+          "name": "MATCH"
+        },
+        {
+          "name": "LIKE"
+        },
+        {
+          "name": "VISIT"
+        }
+      ]
+    },
+    "enum_mydb_subscription_type": {
+      "schemaName": "mydb",
+      "values": [
+        {
+          "name": "FREE"
+        },
+        {
+          "name": "PREMIUM"
+        },
+        {
+          "name": "VIP"
+        }
+      ]
+    }
+  }
+}

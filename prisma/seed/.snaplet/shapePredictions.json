@@ -1,0 +1,164 @@
+[
+  {
+    "schemaName": "mydb",
+    "tableName": "Interest",
+    "predictions": [
+      {
+        "input": "mydb interest interest",
+        "column": "interest",
+        "shape": "POST_TITLE",
+        "confidence": 0.1869475841522217,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "mydb",
+    "tableName": "Media",
+    "predictions": [
+      {
+        "input": "mydb media url",
+        "column": "url",
+        "shape": "MEDIA_LINK",
+        "confidence": 0.7808746099472046,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "mydb",
+    "tableName": "Message",
+    "predictions": [
+      {
+        "input": "mydb message content",
+        "column": "content",
+        "shape": "POST_BODY",
+        "confidence": 0.7541999220848083,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "mydb",
+    "tableName": "Notification",
+    "predictions": [
+      {
+        "input": "mydb notification content",
+        "column": "content",
+        "shape": "NOTIFICATIONS",
+        "confidence": 0.9803857803344727,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "mydb",
+    "tableName": "Report",
+    "predictions": [
+      {
+        "input": "mydb report reason",
+        "column": "reason",
+        "shape": "FINANCE_TRANSACTION_DESCRIPTION",
+        "confidence": 0.9817264676094055,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "mydb",
+    "tableName": "Setting",
+    "predictions": [
+      {
+        "input": "mydb setting language",
+        "column": "language",
+        "shape": "SYSTEM_FILE_TYPE",
+        "confidence": 0.5847648978233337,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  },
+  {
+    "schemaName": "mydb",
+    "tableName": "User",
+    "predictions": [
+      {
+        "input": "mydb user bio",
+        "column": "bio",
+        "shape": "PERSON_BIO",
+        "confidence": 0.9531440138816833,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "mydb user city",
+        "column": "city",
+        "shape": "CITY",
+        "confidence": 0.9882730841636658,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "mydb user country",
+        "column": "country",
+        "shape": "COUNTRY",
+        "confidence": 0.9890626072883606,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "mydb user email",
+        "column": "email",
+        "shape": "EMAIL",
+        "confidence": 0.992536187171936,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "mydb user first_name",
+        "column": "firstName",
+        "shape": "PERSON_FIRST_NAME",
+        "confidence": 0.991860568523407,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "mydb user last_name",
+        "column": "lastName",
+        "shape": "PERSON_LAST_NAME",
+        "confidence": 0.9768906831741333,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "mydb user main_photo",
+        "column": "mainPhoto",
+        "shape": "INTERNET_AVATAR",
+        "confidence": 0.7723875045776367,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "mydb user password",
+        "column": "password",
+        "shape": "PASSWORD",
+        "confidence": 0.9955572485923767,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "mydb user salt",
+        "column": "salt",
+        "shape": "HASH",
+        "confidence": 0.2080196589231491,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  }
+]

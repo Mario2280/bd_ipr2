@@ -1,0 +1,6349 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AggregateBlock {
+  _count: BlockCountAggregate
+  _avg: BlockAvgAggregate
+  _sum: BlockSumAggregate
+  _min: BlockMinAggregate
+  _max: BlockMaxAggregate
+}
+
+type BlockAvgAggregate {
+  id: Float
+  blockerId: Float
+  blockedId: Float
+}
+
+type BlockCountAggregate {
+  id: Int!
+  blockerId: Int!
+  blockedId: Int!
+  _all: Int!
+}
+
+type BlockGroupBy {
+  id: Int!
+  blockerId: Int!
+  blockedId: Int!
+  _count: BlockCountAggregate
+  _avg: BlockAvgAggregate
+  _sum: BlockSumAggregate
+  _min: BlockMinAggregate
+  _max: BlockMaxAggregate
+}
+
+type BlockMaxAggregate {
+  id: Int
+  blockerId: Int
+  blockedId: Int
+}
+
+type BlockMinAggregate {
+  id: Int
+  blockerId: Int
+  blockedId: Int
+}
+
+type BlockSumAggregate {
+  id: Int
+  blockerId: Int
+  blockedId: Int
+}
+
+type Block {
+  id: Int!
+  blockerId: Int!
+  blockedId: Int!
+  blocker: User!
+  blocked: User!
+}
+
+type InterestAvgAggregate {
+  userId: Float
+}
+
+type InterestCountAggregate {
+  userId: Int!
+  interest: Int!
+  _all: Int!
+}
+
+type InterestMaxAggregate {
+  userId: Int
+  interest: String
+}
+
+type InterestMinAggregate {
+  userId: Int
+  interest: String
+}
+
+type InterestSumAggregate {
+  userId: Int
+}
+
+type Interest {
+  userId: Int!
+  interest: String!
+  user: User!
+}
+
+type AggregateLike {
+  _count: LikeCountAggregate
+  _avg: LikeAvgAggregate
+  _sum: LikeSumAggregate
+  _min: LikeMinAggregate
+  _max: LikeMaxAggregate
+}
+
+type LikeAvgAggregate {
+  id: Float
+  likerId: Float
+  likedId: Float
+}
+
+type LikeCountAggregate {
+  id: Int!
+  likerId: Int!
+  likedId: Int!
+  _all: Int!
+}
+
+type LikeGroupBy {
+  id: Int!
+  likerId: Int!
+  likedId: Int!
+  _count: LikeCountAggregate
+  _avg: LikeAvgAggregate
+  _sum: LikeSumAggregate
+  _min: LikeMinAggregate
+  _max: LikeMaxAggregate
+}
+
+type LikeMaxAggregate {
+  id: Int
+  likerId: Int
+  likedId: Int
+}
+
+type LikeMinAggregate {
+  id: Int
+  likerId: Int
+  likedId: Int
+}
+
+type LikeSumAggregate {
+  id: Int
+  likerId: Int
+  likedId: Int
+}
+
+type Like {
+  id: Int!
+  likerId: Int!
+  likedId: Int!
+  liker: User!
+  liked: User!
+}
+
+type AggregateMatch {
+  _count: MatchCountAggregate
+  _avg: MatchAvgAggregate
+  _sum: MatchSumAggregate
+  _min: MatchMinAggregate
+  _max: MatchMaxAggregate
+}
+
+type MatchAvgAggregate {
+  id: Float
+  user1Id: Float
+  user2Id: Float
+}
+
+type MatchCountAggregate {
+  id: Int!
+  user1Id: Int!
+  user2Id: Int!
+  matchedAt: Int!
+  _all: Int!
+}
+
+type MatchGroupBy {
+  id: Int!
+  user1Id: Int!
+  user2Id: Int!
+  matchedAt: DateTime!
+  _count: MatchCountAggregate
+  _avg: MatchAvgAggregate
+  _sum: MatchSumAggregate
+  _min: MatchMinAggregate
+  _max: MatchMaxAggregate
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type MatchMaxAggregate {
+  id: Int
+  user1Id: Int
+  user2Id: Int
+  matchedAt: DateTime
+}
+
+type MatchMinAggregate {
+  id: Int
+  user1Id: Int
+  user2Id: Int
+  matchedAt: DateTime
+}
+
+type MatchSumAggregate {
+  id: Int
+  user1Id: Int
+  user2Id: Int
+}
+
+type Match {
+  id: Int!
+  user1Id: Int!
+  user2Id: Int!
+  matchedAt: DateTime!
+  user1: User!
+  user2: User!
+}
+
+type AggregateMedia {
+  _count: MediaCountAggregate
+  _avg: MediaAvgAggregate
+  _sum: MediaSumAggregate
+  _min: MediaMinAggregate
+  _max: MediaMaxAggregate
+}
+
+type MediaAvgAggregate {
+  id: Float
+  userId: Float
+}
+
+type MediaCountAggregate {
+  id: Int!
+  userId: Int!
+  type: Int!
+  url: Int!
+  uploadedAt: Int!
+  _all: Int!
+}
+
+type MediaGroupBy {
+  id: Int!
+  userId: Int!
+  type: MediaType!
+  url: String!
+  uploadedAt: DateTime!
+  _count: MediaCountAggregate
+  _avg: MediaAvgAggregate
+  _sum: MediaSumAggregate
+  _min: MediaMinAggregate
+  _max: MediaMaxAggregate
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+  GIF
+}
+
+type MediaMaxAggregate {
+  id: Int
+  userId: Int
+  type: MediaType
+  url: String
+  uploadedAt: DateTime
+}
+
+type MediaMinAggregate {
+  id: Int
+  userId: Int
+  type: MediaType
+  url: String
+  uploadedAt: DateTime
+}
+
+type MediaSumAggregate {
+  id: Int
+  userId: Int
+}
+
+type Media {
+  id: Int!
+  userId: Int!
+  type: MediaType!
+  url: String!
+  uploadedAt: DateTime!
+  user: User!
+}
+
+type AggregateMessage {
+  _count: MessageCountAggregate
+  _avg: MessageAvgAggregate
+  _sum: MessageSumAggregate
+  _min: MessageMinAggregate
+  _max: MessageMaxAggregate
+}
+
+type MessageAvgAggregate {
+  id: Float
+  senderId: Float
+  receiverId: Float
+}
+
+type MessageCountAggregate {
+  id: Int!
+  senderId: Int!
+  receiverId: Int!
+  content: Int!
+  sentAt: Int!
+  isRead: Int!
+  _all: Int!
+}
+
+type MessageGroupBy {
+  id: Int!
+  senderId: Int!
+  receiverId: Int!
+  content: String!
+  sentAt: DateTime!
+  isRead: Boolean!
+  _count: MessageCountAggregate
+  _avg: MessageAvgAggregate
+  _sum: MessageSumAggregate
+  _min: MessageMinAggregate
+  _max: MessageMaxAggregate
+}
+
+type MessageMaxAggregate {
+  id: Int
+  senderId: Int
+  receiverId: Int
+  content: String
+  sentAt: DateTime
+  isRead: Boolean
+}
+
+type MessageMinAggregate {
+  id: Int
+  senderId: Int
+  receiverId: Int
+  content: String
+  sentAt: DateTime
+  isRead: Boolean
+}
+
+type MessageSumAggregate {
+  id: Int
+  senderId: Int
+  receiverId: Int
+}
+
+type Message {
+  id: Int!
+  senderId: Int!
+  receiverId: Int!
+  content: String!
+  sentAt: DateTime!
+  isRead: Boolean!
+  sender: User!
+  receiver: User!
+}
+
+type AggregateNotification {
+  _count: NotificationCountAggregate
+  _avg: NotificationAvgAggregate
+  _sum: NotificationSumAggregate
+  _min: NotificationMinAggregate
+  _max: NotificationMaxAggregate
+}
+
+type NotificationAvgAggregate {
+  id: Float
+  userId: Float
+}
+
+type NotificationCountAggregate {
+  id: Int!
+  userId: Int!
+  type: Int!
+  content: Int!
+  notifiedAt: Int!
+  _all: Int!
+}
+
+type NotificationGroupBy {
+  id: Int!
+  userId: Int!
+  type: NotificationType!
+  content: String!
+  notifiedAt: DateTime!
+  _count: NotificationCountAggregate
+  _avg: NotificationAvgAggregate
+  _sum: NotificationSumAggregate
+  _min: NotificationMinAggregate
+  _max: NotificationMaxAggregate
+}
+
+enum NotificationType {
+  MESSAGE
+  MATCH
+  LIKE
+  VISIT
+}
+
+type NotificationMaxAggregate {
+  id: Int
+  userId: Int
+  type: NotificationType
+  content: String
+  notifiedAt: DateTime
+}
+
+type NotificationMinAggregate {
+  id: Int
+  userId: Int
+  type: NotificationType
+  content: String
+  notifiedAt: DateTime
+}
+
+type NotificationSumAggregate {
+  id: Int
+  userId: Int
+}
+
+type Notification {
+  id: Int!
+  userId: Int!
+  type: NotificationType!
+  content: String!
+  notifiedAt: DateTime!
+  user: User!
+}
+
+type AffectedRows {
+  count: Int!
+}
+
+type AggregateReport {
+  _count: ReportCountAggregate
+  _avg: ReportAvgAggregate
+  _sum: ReportSumAggregate
+  _min: ReportMinAggregate
+  _max: ReportMaxAggregate
+}
+
+type ReportAvgAggregate {
+  id: Float
+  reporterId: Float
+  reportedId: Float
+}
+
+type ReportCountAggregate {
+  id: Int!
+  reporterId: Int!
+  reportedId: Int!
+  reason: Int!
+  _all: Int!
+}
+
+type ReportGroupBy {
+  id: Int!
+  reporterId: Int!
+  reportedId: Int!
+  reason: String!
+  _count: ReportCountAggregate
+  _avg: ReportAvgAggregate
+  _sum: ReportSumAggregate
+  _min: ReportMinAggregate
+  _max: ReportMaxAggregate
+}
+
+type ReportMaxAggregate {
+  id: Int
+  reporterId: Int
+  reportedId: Int
+  reason: String
+}
+
+type ReportMinAggregate {
+  id: Int
+  reporterId: Int
+  reportedId: Int
+  reason: String
+}
+
+type ReportSumAggregate {
+  id: Int
+  reporterId: Int
+  reportedId: Int
+}
+
+type Report {
+  id: Int!
+  reporterId: Int!
+  reportedId: Int!
+  reason: String!
+  reporter: User!
+  reported: User!
+}
+
+type AggregateSetting {
+  _count: SettingCountAggregate
+  _avg: SettingAvgAggregate
+  _sum: SettingSumAggregate
+  _min: SettingMinAggregate
+  _max: SettingMaxAggregate
+}
+
+type SettingAvgAggregate {
+  id: Float
+  userId: Float
+}
+
+type SettingCountAggregate {
+  id: Int!
+  userId: Int!
+  privacy: Int!
+  isNotificationsEnabled: Int!
+  language: Int!
+  ghostMode: Int!
+  _all: Int!
+}
+
+type SettingGroupBy {
+  id: Int!
+  userId: Int!
+  privacy: PrivacySetting!
+  isNotificationsEnabled: Boolean!
+  language: String!
+  ghostMode: Boolean!
+  _count: SettingCountAggregate
+  _avg: SettingAvgAggregate
+  _sum: SettingSumAggregate
+  _min: SettingMinAggregate
+  _max: SettingMaxAggregate
+}
+
+enum PrivacySetting {
+  PUBLIC
+  PRIVATE
+}
+
+type SettingMaxAggregate {
+  id: Int
+  userId: Int
+  privacy: PrivacySetting
+  isNotificationsEnabled: Boolean
+  language: String
+  ghostMode: Boolean
+}
+
+type SettingMinAggregate {
+  id: Int
+  userId: Int
+  privacy: PrivacySetting
+  isNotificationsEnabled: Boolean
+  language: String
+  ghostMode: Boolean
+}
+
+type SettingSumAggregate {
+  id: Int
+  userId: Int
+}
+
+type Setting {
+  id: Int!
+  userId: Int!
+  privacy: PrivacySetting!
+  isNotificationsEnabled: Boolean!
+  language: String!
+  ghostMode: Boolean!
+  user: User!
+}
+
+type AggregateSubscription {
+  _count: SubscriptionCountAggregate
+  _avg: SubscriptionAvgAggregate
+  _sum: SubscriptionSumAggregate
+  _min: SubscriptionMinAggregate
+  _max: SubscriptionMaxAggregate
+}
+
+type SubscriptionAvgAggregate {
+  userId: Float
+}
+
+type SubscriptionCountAggregate {
+  userId: Int!
+  type: Int!
+  startDate: Int!
+  endDate: Int!
+  _all: Int!
+}
+
+type SubscriptionGroupBy {
+  userId: Int!
+  type: SubscriptionType!
+  startDate: DateTime!
+  endDate: DateTime!
+  _count: SubscriptionCountAggregate
+  _avg: SubscriptionAvgAggregate
+  _sum: SubscriptionSumAggregate
+  _min: SubscriptionMinAggregate
+  _max: SubscriptionMaxAggregate
+}
+
+enum SubscriptionType {
+  FREE
+  PREMIUM
+  VIP
+}
+
+type SubscriptionMaxAggregate {
+  userId: Int
+  type: SubscriptionType
+  startDate: DateTime
+  endDate: DateTime
+}
+
+type SubscriptionMinAggregate {
+  userId: Int
+  type: SubscriptionType
+  startDate: DateTime
+  endDate: DateTime
+}
+
+type SubscriptionSumAggregate {
+  userId: Int
+}
+
+type Subscription {
+  userId: Int!
+  type: SubscriptionType!
+  startDate: DateTime!
+  endDate: DateTime!
+  user: User!
+}
+
+type AggregateUser {
+  _count: UserCountAggregate
+  _avg: UserAvgAggregate
+  _sum: UserSumAggregate
+  _min: UserMinAggregate
+  _max: UserMaxAggregate
+}
+
+type UserAvgAggregate {
+  id: Float
+  rating: Float
+}
+
+type UserCountAggregate {
+  id: Int!
+  firstName: Int!
+  lastName: Int!
+  gender: Int!
+  birthDate: Int!
+  email: Int!
+  password: Int!
+  salt: Int!
+  bio: Int!
+  city: Int!
+  country: Int!
+  rating: Int!
+  mainPhoto: Int!
+  isVerified: Int!
+  createdAt: Int!
+  lastLogin: Int!
+  _all: Int!
+}
+
+type UserCount {
+  messages: Int!
+  messages1: Int!
+  matches: Int!
+  matches1: Int!
+  blocks: Int!
+  blocks1: Int!
+  reports: Int!
+  reports1: Int!
+  visits: Int!
+  visits1: Int!
+  likes: Int!
+  likes1: Int!
+  settings: Int!
+  media: Int!
+  notification: Int!
+}
+
+type UserGroupBy {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  _count: UserCountAggregate
+  _avg: UserAvgAggregate
+  _sum: UserSumAggregate
+  _min: UserMinAggregate
+  _max: UserMaxAggregate
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+type UserMaxAggregate {
+  id: Int
+  firstName: String
+  lastName: String
+  gender: Gender
+  birthDate: DateTime
+  email: String
+  password: String
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+}
+
+type UserMinAggregate {
+  id: Int
+  firstName: String
+  lastName: String
+  gender: Gender
+  birthDate: DateTime
+  email: String
+  password: String
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+}
+
+type UserSumAggregate {
+  id: Int
+  rating: Int
+}
+
+type User {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: [Message!]
+  messages1: [Message!]
+  matches: [Match!]
+  matches1: [Match!]
+  blocks: [Block!]
+  blocks1: [Block!]
+  reports: [Report!]
+  reports1: [Report!]
+  visits: [Visit!]
+  visits1: [Visit!]
+  likes: [Like!]
+  likes1: [Like!]
+  settings: [Setting!]
+  media: [Media!]
+  subscription: Subscription
+  notification: [Notification!]
+  interest: Interest
+  _count: UserCount!
+}
+
+type AggregateVisit {
+  _count: VisitCountAggregate
+  _avg: VisitAvgAggregate
+  _sum: VisitSumAggregate
+  _min: VisitMinAggregate
+  _max: VisitMaxAggregate
+}
+
+type VisitAvgAggregate {
+  id: Float
+  visitorId: Float
+  visitedId: Float
+}
+
+type VisitCountAggregate {
+  id: Int!
+  visitorId: Int!
+  visitedId: Int!
+  visitedAt: Int!
+  _all: Int!
+}
+
+type VisitGroupBy {
+  id: Int!
+  visitorId: Int!
+  visitedId: Int!
+  visitedAt: DateTime!
+  _count: VisitCountAggregate
+  _avg: VisitAvgAggregate
+  _sum: VisitSumAggregate
+  _min: VisitMinAggregate
+  _max: VisitMaxAggregate
+}
+
+type VisitMaxAggregate {
+  id: Int
+  visitorId: Int
+  visitedId: Int
+  visitedAt: DateTime
+}
+
+type VisitMinAggregate {
+  id: Int
+  visitorId: Int
+  visitedId: Int
+  visitedAt: DateTime
+}
+
+type VisitSumAggregate {
+  id: Int
+  visitorId: Int
+  visitedId: Int
+}
+
+type Visit {
+  id: Int!
+  visitorId: Int!
+  visitedId: Int!
+  visitedAt: DateTime!
+  visitor: User!
+  visited: User!
+}
+
+type Query {
+  findFirstBlock(where: BlockWhereInput, orderBy: [BlockOrderByWithRelationInput!], cursor: BlockWhereUniqueInput, take: Int, skip: Int, distinct: [BlockScalarFieldEnum!]): Block!
+  findUniqueBlock(where: BlockWhereUniqueInput!): Block!
+  listsBlock(where: BlockWhereInput, orderBy: [BlockOrderByWithRelationInput!], cursor: BlockWhereUniqueInput, take: Int, skip: Int, distinct: [BlockScalarFieldEnum!]): [Block!]!
+  groupByBlock(where: BlockWhereInput, orderBy: [BlockOrderByWithAggregationInput!], by: [BlockScalarFieldEnum!]!, having: BlockScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: BlockCountAggregateInput, _avg: BlockAvgAggregateInput, _sum: BlockSumAggregateInput, _min: BlockMinAggregateInput, _max: BlockMaxAggregateInput): [BlockGroupBy!]!
+  aggregateBlock(where: BlockWhereInput, orderBy: [BlockOrderByWithRelationInput!], cursor: BlockWhereUniqueInput, take: Int, skip: Int, _count: BlockCountAggregateInput, _avg: BlockAvgAggregateInput, _sum: BlockSumAggregateInput, _min: BlockMinAggregateInput, _max: BlockMaxAggregateInput): AggregateBlock!
+  findFirstLike(where: LikeWhereInput, orderBy: [LikeOrderByWithRelationInput!], cursor: LikeWhereUniqueInput, take: Int, skip: Int, distinct: [LikeScalarFieldEnum!]): Like!
+  findUniqueLike(where: LikeWhereUniqueInput!): Like!
+  listsLike(where: LikeWhereInput, orderBy: [LikeOrderByWithRelationInput!], cursor: LikeWhereUniqueInput, take: Int, skip: Int, distinct: [LikeScalarFieldEnum!]): [Like!]!
+  groupByLike(where: LikeWhereInput, orderBy: [LikeOrderByWithAggregationInput!], by: [LikeScalarFieldEnum!]!, having: LikeScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: LikeCountAggregateInput, _avg: LikeAvgAggregateInput, _sum: LikeSumAggregateInput, _min: LikeMinAggregateInput, _max: LikeMaxAggregateInput): [LikeGroupBy!]!
+  aggregateLike(where: LikeWhereInput, orderBy: [LikeOrderByWithRelationInput!], cursor: LikeWhereUniqueInput, take: Int, skip: Int, _count: LikeCountAggregateInput, _avg: LikeAvgAggregateInput, _sum: LikeSumAggregateInput, _min: LikeMinAggregateInput, _max: LikeMaxAggregateInput): AggregateLike!
+  findFirstMatch(where: MatchWhereInput, orderBy: [MatchOrderByWithRelationInput!], cursor: MatchWhereUniqueInput, take: Int, skip: Int, distinct: [MatchScalarFieldEnum!]): Match!
+  findUniqueMatch(where: MatchWhereUniqueInput!): Match!
+  listsMatch(where: MatchWhereInput, orderBy: [MatchOrderByWithRelationInput!], cursor: MatchWhereUniqueInput, take: Int, skip: Int, distinct: [MatchScalarFieldEnum!]): [Match!]!
+  groupByMatch(where: MatchWhereInput, orderBy: [MatchOrderByWithAggregationInput!], by: [MatchScalarFieldEnum!]!, having: MatchScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: MatchCountAggregateInput, _avg: MatchAvgAggregateInput, _sum: MatchSumAggregateInput, _min: MatchMinAggregateInput, _max: MatchMaxAggregateInput): [MatchGroupBy!]!
+  aggregateMatch(where: MatchWhereInput, orderBy: [MatchOrderByWithRelationInput!], cursor: MatchWhereUniqueInput, take: Int, skip: Int, _count: MatchCountAggregateInput, _avg: MatchAvgAggregateInput, _sum: MatchSumAggregateInput, _min: MatchMinAggregateInput, _max: MatchMaxAggregateInput): AggregateMatch!
+  findFirstMedia(where: MediaWhereInput, orderBy: [MediaOrderByWithRelationInput!], cursor: MediaWhereUniqueInput, take: Int, skip: Int, distinct: [MediaScalarFieldEnum!]): Media!
+  findUniqueMedia(where: MediaWhereUniqueInput!): Media!
+  listsMedia(where: MediaWhereInput, orderBy: [MediaOrderByWithRelationInput!], cursor: MediaWhereUniqueInput, take: Int, skip: Int, distinct: [MediaScalarFieldEnum!]): [Media!]!
+  groupByMedia(where: MediaWhereInput, orderBy: [MediaOrderByWithAggregationInput!], by: [MediaScalarFieldEnum!]!, having: MediaScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: MediaCountAggregateInput, _avg: MediaAvgAggregateInput, _sum: MediaSumAggregateInput, _min: MediaMinAggregateInput, _max: MediaMaxAggregateInput): [MediaGroupBy!]!
+  aggregateMedia(where: MediaWhereInput, orderBy: [MediaOrderByWithRelationInput!], cursor: MediaWhereUniqueInput, take: Int, skip: Int, _count: MediaCountAggregateInput, _avg: MediaAvgAggregateInput, _sum: MediaSumAggregateInput, _min: MediaMinAggregateInput, _max: MediaMaxAggregateInput): AggregateMedia!
+  findFirstMessage(where: MessageWhereInput, orderBy: [MessageOrderByWithRelationInput!], cursor: MessageWhereUniqueInput, take: Int, skip: Int, distinct: [MessageScalarFieldEnum!]): Message!
+  findUniqueMessage(where: MessageWhereUniqueInput!): Message!
+  listsMessage(where: MessageWhereInput, orderBy: [MessageOrderByWithRelationInput!], cursor: MessageWhereUniqueInput, take: Int, skip: Int, distinct: [MessageScalarFieldEnum!]): [Message!]!
+  groupByMessage(where: MessageWhereInput, orderBy: [MessageOrderByWithAggregationInput!], by: [MessageScalarFieldEnum!]!, having: MessageScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: MessageCountAggregateInput, _avg: MessageAvgAggregateInput, _sum: MessageSumAggregateInput, _min: MessageMinAggregateInput, _max: MessageMaxAggregateInput): [MessageGroupBy!]!
+  aggregateMessage(where: MessageWhereInput, orderBy: [MessageOrderByWithRelationInput!], cursor: MessageWhereUniqueInput, take: Int, skip: Int, _count: MessageCountAggregateInput, _avg: MessageAvgAggregateInput, _sum: MessageSumAggregateInput, _min: MessageMinAggregateInput, _max: MessageMaxAggregateInput): AggregateMessage!
+  findFirstNotification(where: NotificationWhereInput, orderBy: [NotificationOrderByWithRelationInput!], cursor: NotificationWhereUniqueInput, take: Int, skip: Int, distinct: [NotificationScalarFieldEnum!]): Notification!
+  findUniqueNotification(where: NotificationWhereUniqueInput!): Notification!
+  listsNotification(where: NotificationWhereInput, orderBy: [NotificationOrderByWithRelationInput!], cursor: NotificationWhereUniqueInput, take: Int, skip: Int, distinct: [NotificationScalarFieldEnum!]): [Notification!]!
+  groupByNotification(where: NotificationWhereInput, orderBy: [NotificationOrderByWithAggregationInput!], by: [NotificationScalarFieldEnum!]!, having: NotificationScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: NotificationCountAggregateInput, _avg: NotificationAvgAggregateInput, _sum: NotificationSumAggregateInput, _min: NotificationMinAggregateInput, _max: NotificationMaxAggregateInput): [NotificationGroupBy!]!
+  aggregateNotification(where: NotificationWhereInput, orderBy: [NotificationOrderByWithRelationInput!], cursor: NotificationWhereUniqueInput, take: Int, skip: Int, _count: NotificationCountAggregateInput, _avg: NotificationAvgAggregateInput, _sum: NotificationSumAggregateInput, _min: NotificationMinAggregateInput, _max: NotificationMaxAggregateInput): AggregateNotification!
+  findFirstReport(where: ReportWhereInput, orderBy: [ReportOrderByWithRelationInput!], cursor: ReportWhereUniqueInput, take: Int, skip: Int, distinct: [ReportScalarFieldEnum!]): Report!
+  findUniqueReport(where: ReportWhereUniqueInput!): Report!
+  listsReport(where: ReportWhereInput, orderBy: [ReportOrderByWithRelationInput!], cursor: ReportWhereUniqueInput, take: Int, skip: Int, distinct: [ReportScalarFieldEnum!]): [Report!]!
+  groupByReport(where: ReportWhereInput, orderBy: [ReportOrderByWithAggregationInput!], by: [ReportScalarFieldEnum!]!, having: ReportScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: ReportCountAggregateInput, _avg: ReportAvgAggregateInput, _sum: ReportSumAggregateInput, _min: ReportMinAggregateInput, _max: ReportMaxAggregateInput): [ReportGroupBy!]!
+  aggregateReport(where: ReportWhereInput, orderBy: [ReportOrderByWithRelationInput!], cursor: ReportWhereUniqueInput, take: Int, skip: Int, _count: ReportCountAggregateInput, _avg: ReportAvgAggregateInput, _sum: ReportSumAggregateInput, _min: ReportMinAggregateInput, _max: ReportMaxAggregateInput): AggregateReport!
+  findFirstSetting(where: SettingWhereInput, orderBy: [SettingOrderByWithRelationInput!], cursor: SettingWhereUniqueInput, take: Int, skip: Int, distinct: [SettingScalarFieldEnum!]): Setting!
+  findUniqueSetting(where: SettingWhereUniqueInput!): Setting!
+  listsSetting(where: SettingWhereInput, orderBy: [SettingOrderByWithRelationInput!], cursor: SettingWhereUniqueInput, take: Int, skip: Int, distinct: [SettingScalarFieldEnum!]): [Setting!]!
+  groupBySetting(where: SettingWhereInput, orderBy: [SettingOrderByWithAggregationInput!], by: [SettingScalarFieldEnum!]!, having: SettingScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: SettingCountAggregateInput, _avg: SettingAvgAggregateInput, _sum: SettingSumAggregateInput, _min: SettingMinAggregateInput, _max: SettingMaxAggregateInput): [SettingGroupBy!]!
+  aggregateSetting(where: SettingWhereInput, orderBy: [SettingOrderByWithRelationInput!], cursor: SettingWhereUniqueInput, take: Int, skip: Int, _count: SettingCountAggregateInput, _avg: SettingAvgAggregateInput, _sum: SettingSumAggregateInput, _min: SettingMinAggregateInput, _max: SettingMaxAggregateInput): AggregateSetting!
+  findFirstSubscription(where: SubscriptionWhereInput, orderBy: [SubscriptionOrderByWithRelationInput!], cursor: SubscriptionWhereUniqueInput, take: Int, skip: Int, distinct: [SubscriptionScalarFieldEnum!]): Subscription!
+  findUniqueSubscription(where: SubscriptionWhereUniqueInput!): Subscription!
+  listsSubscription(where: SubscriptionWhereInput, orderBy: [SubscriptionOrderByWithRelationInput!], cursor: SubscriptionWhereUniqueInput, take: Int, skip: Int, distinct: [SubscriptionScalarFieldEnum!]): [Subscription!]!
+  groupBySubscription(where: SubscriptionWhereInput, orderBy: [SubscriptionOrderByWithAggregationInput!], by: [SubscriptionScalarFieldEnum!]!, having: SubscriptionScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: SubscriptionCountAggregateInput, _avg: SubscriptionAvgAggregateInput, _sum: SubscriptionSumAggregateInput, _min: SubscriptionMinAggregateInput, _max: SubscriptionMaxAggregateInput): [SubscriptionGroupBy!]!
+  aggregateSubscription(where: SubscriptionWhereInput, orderBy: [SubscriptionOrderByWithRelationInput!], cursor: SubscriptionWhereUniqueInput, take: Int, skip: Int, _count: SubscriptionCountAggregateInput, _avg: SubscriptionAvgAggregateInput, _sum: SubscriptionSumAggregateInput, _min: SubscriptionMinAggregateInput, _max: SubscriptionMaxAggregateInput): AggregateSubscription!
+  findFirstUser(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int, distinct: [UserScalarFieldEnum!]): User!
+  findUniqueUser(where: UserWhereUniqueInput!): User!
+  listsUser(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int, distinct: [UserScalarFieldEnum!]): [User!]!
+  groupByUser(where: UserWhereInput, orderBy: [UserOrderByWithAggregationInput!], by: [UserScalarFieldEnum!]!, having: UserScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: UserCountAggregateInput, _avg: UserAvgAggregateInput, _sum: UserSumAggregateInput, _min: UserMinAggregateInput, _max: UserMaxAggregateInput): [UserGroupBy!]!
+  aggregateUser(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int, _count: UserCountAggregateInput, _avg: UserAvgAggregateInput, _sum: UserSumAggregateInput, _min: UserMinAggregateInput, _max: UserMaxAggregateInput): AggregateUser!
+  findFirstVisit(where: VisitWhereInput, orderBy: [VisitOrderByWithRelationInput!], cursor: VisitWhereUniqueInput, take: Int, skip: Int, distinct: [VisitScalarFieldEnum!]): Visit!
+  findUniqueVisit(where: VisitWhereUniqueInput!): Visit!
+  listsVisit(where: VisitWhereInput, orderBy: [VisitOrderByWithRelationInput!], cursor: VisitWhereUniqueInput, take: Int, skip: Int, distinct: [VisitScalarFieldEnum!]): [Visit!]!
+  groupByVisit(where: VisitWhereInput, orderBy: [VisitOrderByWithAggregationInput!], by: [VisitScalarFieldEnum!]!, having: VisitScalarWhereWithAggregatesInput, take: Int, skip: Int, _count: VisitCountAggregateInput, _avg: VisitAvgAggregateInput, _sum: VisitSumAggregateInput, _min: VisitMinAggregateInput, _max: VisitMaxAggregateInput): [VisitGroupBy!]!
+  aggregateVisit(where: VisitWhereInput, orderBy: [VisitOrderByWithRelationInput!], cursor: VisitWhereUniqueInput, take: Int, skip: Int, _count: VisitCountAggregateInput, _avg: VisitAvgAggregateInput, _sum: VisitSumAggregateInput, _min: VisitMinAggregateInput, _max: VisitMaxAggregateInput): AggregateVisit!
+}
+
+input BlockWhereInput {
+  AND: [BlockWhereInput!]
+  OR: [BlockWhereInput!]
+  NOT: [BlockWhereInput!]
+  id: IntFilter
+  blockerId: IntFilter
+  blockedId: IntFilter
+  blocker: UserRelationFilter
+  blocked: UserRelationFilter
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input NestedIntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input UserRelationFilter {
+  is: UserWhereInput
+  isNot: UserWhereInput
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  NOT: [UserWhereInput!]
+  id: IntFilter
+  firstName: StringFilter
+  lastName: StringFilter
+  gender: EnumGenderFilter
+  birthDate: DateTimeFilter
+  email: StringFilter
+  password: StringFilter
+  salt: StringNullableFilter
+  bio: StringNullableFilter
+  city: StringNullableFilter
+  country: StringNullableFilter
+  rating: IntNullableFilter
+  mainPhoto: StringNullableFilter
+  isVerified: BoolNullableFilter
+  createdAt: DateTimeNullableFilter
+  lastLogin: DateTimeNullableFilter
+  messages: MessageListRelationFilter
+  messages1: MessageListRelationFilter
+  matches: MatchListRelationFilter
+  matches1: MatchListRelationFilter
+  blocks: BlockListRelationFilter
+  blocks1: BlockListRelationFilter
+  reports: ReportListRelationFilter
+  reports1: ReportListRelationFilter
+  visits: VisitListRelationFilter
+  visits1: VisitListRelationFilter
+  likes: LikeListRelationFilter
+  likes1: LikeListRelationFilter
+  settings: SettingListRelationFilter
+  media: MediaListRelationFilter
+  subscription: SubscriptionNullableRelationFilter
+  notification: NotificationListRelationFilter
+  interest: InterestNullableRelationFilter
+}
+
+input StringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input NestedStringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input EnumGenderFilter {
+  equals: Gender
+  in: [Gender!]
+  notIn: [Gender!]
+  not: NestedEnumGenderFilter
+}
+
+input NestedEnumGenderFilter {
+  equals: Gender
+  in: [Gender!]
+  notIn: [Gender!]
+  not: NestedEnumGenderFilter
+}
+
+input DateTimeFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeFilter
+}
+
+input NestedDateTimeFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeFilter
+}
+
+input StringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input NestedStringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input IntNullableFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableFilter
+}
+
+input NestedIntNullableFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableFilter
+}
+
+input BoolNullableFilter {
+  equals: Boolean
+  not: NestedBoolNullableFilter
+}
+
+input NestedBoolNullableFilter {
+  equals: Boolean
+  not: NestedBoolNullableFilter
+}
+
+input DateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableFilter
+}
+
+input NestedDateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableFilter
+}
+
+input MessageListRelationFilter {
+  every: MessageWhereInput
+  some: MessageWhereInput
+  none: MessageWhereInput
+}
+
+input MessageWhereInput {
+  AND: [MessageWhereInput!]
+  OR: [MessageWhereInput!]
+  NOT: [MessageWhereInput!]
+  id: IntFilter
+  senderId: IntFilter
+  receiverId: IntFilter
+  content: StringFilter
+  sentAt: DateTimeFilter
+  isRead: BoolFilter
+  sender: UserRelationFilter
+  receiver: UserRelationFilter
+}
+
+input BoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input NestedBoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input MatchListRelationFilter {
+  every: MatchWhereInput
+  some: MatchWhereInput
+  none: MatchWhereInput
+}
+
+input MatchWhereInput {
+  AND: [MatchWhereInput!]
+  OR: [MatchWhereInput!]
+  NOT: [MatchWhereInput!]
+  id: IntFilter
+  user1Id: IntFilter
+  user2Id: IntFilter
+  matchedAt: DateTimeFilter
+  user1: UserRelationFilter
+  user2: UserRelationFilter
+}
+
+input BlockListRelationFilter {
+  every: BlockWhereInput
+  some: BlockWhereInput
+  none: BlockWhereInput
+}
+
+input ReportListRelationFilter {
+  every: ReportWhereInput
+  some: ReportWhereInput
+  none: ReportWhereInput
+}
+
+input ReportWhereInput {
+  AND: [ReportWhereInput!]
+  OR: [ReportWhereInput!]
+  NOT: [ReportWhereInput!]
+  id: IntFilter
+  reporterId: IntFilter
+  reportedId: IntFilter
+  reason: StringFilter
+  reporter: UserRelationFilter
+  reported: UserRelationFilter
+}
+
+input VisitListRelationFilter {
+  every: VisitWhereInput
+  some: VisitWhereInput
+  none: VisitWhereInput
+}
+
+input VisitWhereInput {
+  AND: [VisitWhereInput!]
+  OR: [VisitWhereInput!]
+  NOT: [VisitWhereInput!]
+  id: IntFilter
+  visitorId: IntFilter
+  visitedId: IntFilter
+  visitedAt: DateTimeFilter
+  visitor: UserRelationFilter
+  visited: UserRelationFilter
+}
+
+input LikeListRelationFilter {
+  every: LikeWhereInput
+  some: LikeWhereInput
+  none: LikeWhereInput
+}
+
+input LikeWhereInput {
+  AND: [LikeWhereInput!]
+  OR: [LikeWhereInput!]
+  NOT: [LikeWhereInput!]
+  id: IntFilter
+  likerId: IntFilter
+  likedId: IntFilter
+  liker: UserRelationFilter
+  liked: UserRelationFilter
+}
+
+input SettingListRelationFilter {
+  every: SettingWhereInput
+  some: SettingWhereInput
+  none: SettingWhereInput
+}
+
+input SettingWhereInput {
+  AND: [SettingWhereInput!]
+  OR: [SettingWhereInput!]
+  NOT: [SettingWhereInput!]
+  id: IntFilter
+  userId: IntFilter
+  privacy: EnumPrivacySettingFilter
+  isNotificationsEnabled: BoolFilter
+  language: StringFilter
+  ghostMode: BoolFilter
+  user: UserRelationFilter
+}
+
+input EnumPrivacySettingFilter {
+  equals: PrivacySetting
+  in: [PrivacySetting!]
+  notIn: [PrivacySetting!]
+  not: NestedEnumPrivacySettingFilter
+}
+
+input NestedEnumPrivacySettingFilter {
+  equals: PrivacySetting
+  in: [PrivacySetting!]
+  notIn: [PrivacySetting!]
+  not: NestedEnumPrivacySettingFilter
+}
+
+input MediaListRelationFilter {
+  every: MediaWhereInput
+  some: MediaWhereInput
+  none: MediaWhereInput
+}
+
+input MediaWhereInput {
+  AND: [MediaWhereInput!]
+  OR: [MediaWhereInput!]
+  NOT: [MediaWhereInput!]
+  id: IntFilter
+  userId: IntFilter
+  type: EnumMediaTypeFilter
+  url: StringFilter
+  uploadedAt: DateTimeFilter
+  user: UserRelationFilter
+}
+
+input EnumMediaTypeFilter {
+  equals: MediaType
+  in: [MediaType!]
+  notIn: [MediaType!]
+  not: NestedEnumMediaTypeFilter
+}
+
+input NestedEnumMediaTypeFilter {
+  equals: MediaType
+  in: [MediaType!]
+  notIn: [MediaType!]
+  not: NestedEnumMediaTypeFilter
+}
+
+input SubscriptionNullableRelationFilter {
+  is: SubscriptionWhereInput
+  isNot: SubscriptionWhereInput
+}
+
+input SubscriptionWhereInput {
+  AND: [SubscriptionWhereInput!]
+  OR: [SubscriptionWhereInput!]
+  NOT: [SubscriptionWhereInput!]
+  userId: IntFilter
+  type: EnumSubscriptionTypeFilter
+  startDate: DateTimeFilter
+  endDate: DateTimeFilter
+  user: UserRelationFilter
+}
+
+input EnumSubscriptionTypeFilter {
+  equals: SubscriptionType
+  in: [SubscriptionType!]
+  notIn: [SubscriptionType!]
+  not: NestedEnumSubscriptionTypeFilter
+}
+
+input NestedEnumSubscriptionTypeFilter {
+  equals: SubscriptionType
+  in: [SubscriptionType!]
+  notIn: [SubscriptionType!]
+  not: NestedEnumSubscriptionTypeFilter
+}
+
+input NotificationListRelationFilter {
+  every: NotificationWhereInput
+  some: NotificationWhereInput
+  none: NotificationWhereInput
+}
+
+input NotificationWhereInput {
+  AND: [NotificationWhereInput!]
+  OR: [NotificationWhereInput!]
+  NOT: [NotificationWhereInput!]
+  id: IntFilter
+  userId: IntFilter
+  type: EnumNotificationTypeFilter
+  content: StringFilter
+  notifiedAt: DateTimeFilter
+  user: UserRelationFilter
+}
+
+input EnumNotificationTypeFilter {
+  equals: NotificationType
+  in: [NotificationType!]
+  notIn: [NotificationType!]
+  not: NestedEnumNotificationTypeFilter
+}
+
+input NestedEnumNotificationTypeFilter {
+  equals: NotificationType
+  in: [NotificationType!]
+  notIn: [NotificationType!]
+  not: NestedEnumNotificationTypeFilter
+}
+
+input InterestNullableRelationFilter {
+  is: InterestWhereInput
+  isNot: InterestWhereInput
+}
+
+input InterestWhereInput {
+  AND: [InterestWhereInput!]
+  OR: [InterestWhereInput!]
+  NOT: [InterestWhereInput!]
+  userId: IntFilter
+  interest: StringFilter
+  user: UserRelationFilter
+}
+
+input BlockOrderByWithRelationInput {
+  id: SortOrder
+  blockerId: SortOrder
+  blockedId: SortOrder
+  blocker: UserOrderByWithRelationInput
+  blocked: UserOrderByWithRelationInput
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input UserOrderByWithRelationInput {
+  id: SortOrder
+  firstName: SortOrder
+  lastName: SortOrder
+  gender: SortOrder
+  birthDate: SortOrder
+  email: SortOrder
+  password: SortOrder
+  salt: SortOrderInput
+  bio: SortOrderInput
+  city: SortOrderInput
+  country: SortOrderInput
+  rating: SortOrderInput
+  mainPhoto: SortOrderInput
+  isVerified: SortOrderInput
+  createdAt: SortOrderInput
+  lastLogin: SortOrderInput
+  messages: MessageOrderByRelationAggregateInput
+  messages1: MessageOrderByRelationAggregateInput
+  matches: MatchOrderByRelationAggregateInput
+  matches1: MatchOrderByRelationAggregateInput
+  blocks: BlockOrderByRelationAggregateInput
+  blocks1: BlockOrderByRelationAggregateInput
+  reports: ReportOrderByRelationAggregateInput
+  reports1: ReportOrderByRelationAggregateInput
+  visits: VisitOrderByRelationAggregateInput
+  visits1: VisitOrderByRelationAggregateInput
+  likes: LikeOrderByRelationAggregateInput
+  likes1: LikeOrderByRelationAggregateInput
+  settings: SettingOrderByRelationAggregateInput
+  media: MediaOrderByRelationAggregateInput
+  subscription: SubscriptionOrderByWithRelationInput
+  notification: NotificationOrderByRelationAggregateInput
+  interest: InterestOrderByWithRelationInput
+}
+
+input SortOrderInput {
+  sort: SortOrder!
+  nulls: NullsOrder
+}
+
+enum NullsOrder {
+  first
+  last
+}
+
+input MessageOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input MatchOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input BlockOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ReportOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input VisitOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input LikeOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input SettingOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input MediaOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input SubscriptionOrderByWithRelationInput {
+  userId: SortOrder
+  type: SortOrder
+  startDate: SortOrder
+  endDate: SortOrder
+  user: UserOrderByWithRelationInput
+}
+
+input NotificationOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input InterestOrderByWithRelationInput {
+  userId: SortOrder
+  interest: SortOrder
+  user: UserOrderByWithRelationInput
+}
+
+input BlockWhereUniqueInput {
+  id: Int
+  AND: [BlockWhereInput!]
+  OR: [BlockWhereInput!]
+  NOT: [BlockWhereInput!]
+  blockerId: IntFilter
+  blockedId: IntFilter
+  blocker: UserRelationFilter
+  blocked: UserRelationFilter
+}
+
+enum BlockScalarFieldEnum {
+  id
+  blockerId
+  blockedId
+}
+
+input BlockOrderByWithAggregationInput {
+  id: SortOrder
+  blockerId: SortOrder
+  blockedId: SortOrder
+  _count: BlockCountOrderByAggregateInput
+  _avg: BlockAvgOrderByAggregateInput
+  _max: BlockMaxOrderByAggregateInput
+  _min: BlockMinOrderByAggregateInput
+  _sum: BlockSumOrderByAggregateInput
+}
+
+input BlockCountOrderByAggregateInput {
+  id: SortOrder
+  blockerId: SortOrder
+  blockedId: SortOrder
+}
+
+input BlockAvgOrderByAggregateInput {
+  id: SortOrder
+  blockerId: SortOrder
+  blockedId: SortOrder
+}
+
+input BlockMaxOrderByAggregateInput {
+  id: SortOrder
+  blockerId: SortOrder
+  blockedId: SortOrder
+}
+
+input BlockMinOrderByAggregateInput {
+  id: SortOrder
+  blockerId: SortOrder
+  blockedId: SortOrder
+}
+
+input BlockSumOrderByAggregateInput {
+  id: SortOrder
+  blockerId: SortOrder
+  blockedId: SortOrder
+}
+
+input BlockScalarWhereWithAggregatesInput {
+  AND: [BlockScalarWhereWithAggregatesInput!]
+  OR: [BlockScalarWhereWithAggregatesInput!]
+  NOT: [BlockScalarWhereWithAggregatesInput!]
+  id: IntWithAggregatesFilter
+  blockerId: IntWithAggregatesFilter
+  blockedId: IntWithAggregatesFilter
+}
+
+input IntWithAggregatesFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntWithAggregatesFilter
+  _count: NestedIntFilter
+  _avg: NestedFloatFilter
+  _sum: NestedIntFilter
+  _min: NestedIntFilter
+  _max: NestedIntFilter
+}
+
+input NestedIntWithAggregatesFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntWithAggregatesFilter
+  _count: NestedIntFilter
+  _avg: NestedFloatFilter
+  _sum: NestedIntFilter
+  _min: NestedIntFilter
+  _max: NestedIntFilter
+}
+
+input NestedFloatFilter {
+  equals: Float
+  in: [Float!]
+  notIn: [Float!]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatFilter
+}
+
+input BlockCountAggregateInput {
+  id: Boolean
+  blockerId: Boolean
+  blockedId: Boolean
+  _all: Boolean
+}
+
+input BlockAvgAggregateInput {
+  id: Boolean
+  blockerId: Boolean
+  blockedId: Boolean
+}
+
+input BlockSumAggregateInput {
+  id: Boolean
+  blockerId: Boolean
+  blockedId: Boolean
+}
+
+input BlockMinAggregateInput {
+  id: Boolean
+  blockerId: Boolean
+  blockedId: Boolean
+}
+
+input BlockMaxAggregateInput {
+  id: Boolean
+  blockerId: Boolean
+  blockedId: Boolean
+}
+
+input LikeOrderByWithRelationInput {
+  id: SortOrder
+  likerId: SortOrder
+  likedId: SortOrder
+  liker: UserOrderByWithRelationInput
+  liked: UserOrderByWithRelationInput
+}
+
+input LikeWhereUniqueInput {
+  id: Int
+  AND: [LikeWhereInput!]
+  OR: [LikeWhereInput!]
+  NOT: [LikeWhereInput!]
+  likerId: IntFilter
+  likedId: IntFilter
+  liker: UserRelationFilter
+  liked: UserRelationFilter
+}
+
+enum LikeScalarFieldEnum {
+  id
+  likerId
+  likedId
+}
+
+input LikeOrderByWithAggregationInput {
+  id: SortOrder
+  likerId: SortOrder
+  likedId: SortOrder
+  _count: LikeCountOrderByAggregateInput
+  _avg: LikeAvgOrderByAggregateInput
+  _max: LikeMaxOrderByAggregateInput
+  _min: LikeMinOrderByAggregateInput
+  _sum: LikeSumOrderByAggregateInput
+}
+
+input LikeCountOrderByAggregateInput {
+  id: SortOrder
+  likerId: SortOrder
+  likedId: SortOrder
+}
+
+input LikeAvgOrderByAggregateInput {
+  id: SortOrder
+  likerId: SortOrder
+  likedId: SortOrder
+}
+
+input LikeMaxOrderByAggregateInput {
+  id: SortOrder
+  likerId: SortOrder
+  likedId: SortOrder
+}
+
+input LikeMinOrderByAggregateInput {
+  id: SortOrder
+  likerId: SortOrder
+  likedId: SortOrder
+}
+
+input LikeSumOrderByAggregateInput {
+  id: SortOrder
+  likerId: SortOrder
+  likedId: SortOrder
+}
+
+input LikeScalarWhereWithAggregatesInput {
+  AND: [LikeScalarWhereWithAggregatesInput!]
+  OR: [LikeScalarWhereWithAggregatesInput!]
+  NOT: [LikeScalarWhereWithAggregatesInput!]
+  id: IntWithAggregatesFilter
+  likerId: IntWithAggregatesFilter
+  likedId: IntWithAggregatesFilter
+}
+
+input LikeCountAggregateInput {
+  id: Boolean
+  likerId: Boolean
+  likedId: Boolean
+  _all: Boolean
+}
+
+input LikeAvgAggregateInput {
+  id: Boolean
+  likerId: Boolean
+  likedId: Boolean
+}
+
+input LikeSumAggregateInput {
+  id: Boolean
+  likerId: Boolean
+  likedId: Boolean
+}
+
+input LikeMinAggregateInput {
+  id: Boolean
+  likerId: Boolean
+  likedId: Boolean
+}
+
+input LikeMaxAggregateInput {
+  id: Boolean
+  likerId: Boolean
+  likedId: Boolean
+}
+
+input MatchOrderByWithRelationInput {
+  id: SortOrder
+  user1Id: SortOrder
+  user2Id: SortOrder
+  matchedAt: SortOrder
+  user1: UserOrderByWithRelationInput
+  user2: UserOrderByWithRelationInput
+}
+
+input MatchWhereUniqueInput {
+  id: Int
+  AND: [MatchWhereInput!]
+  OR: [MatchWhereInput!]
+  NOT: [MatchWhereInput!]
+  user1Id: IntFilter
+  user2Id: IntFilter
+  matchedAt: DateTimeFilter
+  user1: UserRelationFilter
+  user2: UserRelationFilter
+}
+
+enum MatchScalarFieldEnum {
+  id
+  user1Id
+  user2Id
+  matchedAt
+}
+
+input MatchOrderByWithAggregationInput {
+  id: SortOrder
+  user1Id: SortOrder
+  user2Id: SortOrder
+  matchedAt: SortOrder
+  _count: MatchCountOrderByAggregateInput
+  _avg: MatchAvgOrderByAggregateInput
+  _max: MatchMaxOrderByAggregateInput
+  _min: MatchMinOrderByAggregateInput
+  _sum: MatchSumOrderByAggregateInput
+}
+
+input MatchCountOrderByAggregateInput {
+  id: SortOrder
+  user1Id: SortOrder
+  user2Id: SortOrder
+  matchedAt: SortOrder
+}
+
+input MatchAvgOrderByAggregateInput {
+  id: SortOrder
+  user1Id: SortOrder
+  user2Id: SortOrder
+}
+
+input MatchMaxOrderByAggregateInput {
+  id: SortOrder
+  user1Id: SortOrder
+  user2Id: SortOrder
+  matchedAt: SortOrder
+}
+
+input MatchMinOrderByAggregateInput {
+  id: SortOrder
+  user1Id: SortOrder
+  user2Id: SortOrder
+  matchedAt: SortOrder
+}
+
+input MatchSumOrderByAggregateInput {
+  id: SortOrder
+  user1Id: SortOrder
+  user2Id: SortOrder
+}
+
+input MatchScalarWhereWithAggregatesInput {
+  AND: [MatchScalarWhereWithAggregatesInput!]
+  OR: [MatchScalarWhereWithAggregatesInput!]
+  NOT: [MatchScalarWhereWithAggregatesInput!]
+  id: IntWithAggregatesFilter
+  user1Id: IntWithAggregatesFilter
+  user2Id: IntWithAggregatesFilter
+  matchedAt: DateTimeWithAggregatesFilter
+}
+
+input DateTimeWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedDateTimeFilter
+  _max: NestedDateTimeFilter
+}
+
+input NestedDateTimeWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedDateTimeFilter
+  _max: NestedDateTimeFilter
+}
+
+input MatchCountAggregateInput {
+  id: Boolean
+  user1Id: Boolean
+  user2Id: Boolean
+  matchedAt: Boolean
+  _all: Boolean
+}
+
+input MatchAvgAggregateInput {
+  id: Boolean
+  user1Id: Boolean
+  user2Id: Boolean
+}
+
+input MatchSumAggregateInput {
+  id: Boolean
+  user1Id: Boolean
+  user2Id: Boolean
+}
+
+input MatchMinAggregateInput {
+  id: Boolean
+  user1Id: Boolean
+  user2Id: Boolean
+  matchedAt: Boolean
+}
+
+input MatchMaxAggregateInput {
+  id: Boolean
+  user1Id: Boolean
+  user2Id: Boolean
+  matchedAt: Boolean
+}
+
+input MediaOrderByWithRelationInput {
+  id: SortOrder
+  userId: SortOrder
+  type: SortOrder
+  url: SortOrder
+  uploadedAt: SortOrder
+  user: UserOrderByWithRelationInput
+}
+
+input MediaWhereUniqueInput {
+  id: Int
+  AND: [MediaWhereInput!]
+  OR: [MediaWhereInput!]
+  NOT: [MediaWhereInput!]
+  userId: IntFilter
+  type: EnumMediaTypeFilter
+  url: StringFilter
+  uploadedAt: DateTimeFilter
+  user: UserRelationFilter
+}
+
+enum MediaScalarFieldEnum {
+  id
+  userId
+  type
+  url
+  uploadedAt
+}
+
+input MediaOrderByWithAggregationInput {
+  id: SortOrder
+  userId: SortOrder
+  type: SortOrder
+  url: SortOrder
+  uploadedAt: SortOrder
+  _count: MediaCountOrderByAggregateInput
+  _avg: MediaAvgOrderByAggregateInput
+  _max: MediaMaxOrderByAggregateInput
+  _min: MediaMinOrderByAggregateInput
+  _sum: MediaSumOrderByAggregateInput
+}
+
+input MediaCountOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  type: SortOrder
+  url: SortOrder
+  uploadedAt: SortOrder
+}
+
+input MediaAvgOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+}
+
+input MediaMaxOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  type: SortOrder
+  url: SortOrder
+  uploadedAt: SortOrder
+}
+
+input MediaMinOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  type: SortOrder
+  url: SortOrder
+  uploadedAt: SortOrder
+}
+
+input MediaSumOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+}
+
+input MediaScalarWhereWithAggregatesInput {
+  AND: [MediaScalarWhereWithAggregatesInput!]
+  OR: [MediaScalarWhereWithAggregatesInput!]
+  NOT: [MediaScalarWhereWithAggregatesInput!]
+  id: IntWithAggregatesFilter
+  userId: IntWithAggregatesFilter
+  type: EnumMediaTypeWithAggregatesFilter
+  url: StringWithAggregatesFilter
+  uploadedAt: DateTimeWithAggregatesFilter
+}
+
+input EnumMediaTypeWithAggregatesFilter {
+  equals: MediaType
+  in: [MediaType!]
+  notIn: [MediaType!]
+  not: NestedEnumMediaTypeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumMediaTypeFilter
+  _max: NestedEnumMediaTypeFilter
+}
+
+input NestedEnumMediaTypeWithAggregatesFilter {
+  equals: MediaType
+  in: [MediaType!]
+  notIn: [MediaType!]
+  not: NestedEnumMediaTypeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumMediaTypeFilter
+  _max: NestedEnumMediaTypeFilter
+}
+
+input StringWithAggregatesFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedStringFilter
+  _max: NestedStringFilter
+}
+
+input NestedStringWithAggregatesFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedStringFilter
+  _max: NestedStringFilter
+}
+
+input MediaCountAggregateInput {
+  id: Boolean
+  userId: Boolean
+  type: Boolean
+  url: Boolean
+  uploadedAt: Boolean
+  _all: Boolean
+}
+
+input MediaAvgAggregateInput {
+  id: Boolean
+  userId: Boolean
+}
+
+input MediaSumAggregateInput {
+  id: Boolean
+  userId: Boolean
+}
+
+input MediaMinAggregateInput {
+  id: Boolean
+  userId: Boolean
+  type: Boolean
+  url: Boolean
+  uploadedAt: Boolean
+}
+
+input MediaMaxAggregateInput {
+  id: Boolean
+  userId: Boolean
+  type: Boolean
+  url: Boolean
+  uploadedAt: Boolean
+}
+
+input MessageOrderByWithRelationInput {
+  id: SortOrder
+  senderId: SortOrder
+  receiverId: SortOrder
+  content: SortOrder
+  sentAt: SortOrder
+  isRead: SortOrder
+  sender: UserOrderByWithRelationInput
+  receiver: UserOrderByWithRelationInput
+}
+
+input MessageWhereUniqueInput {
+  id: Int
+  AND: [MessageWhereInput!]
+  OR: [MessageWhereInput!]
+  NOT: [MessageWhereInput!]
+  senderId: IntFilter
+  receiverId: IntFilter
+  content: StringFilter
+  sentAt: DateTimeFilter
+  isRead: BoolFilter
+  sender: UserRelationFilter
+  receiver: UserRelationFilter
+}
+
+enum MessageScalarFieldEnum {
+  id
+  senderId
+  receiverId
+  content
+  sentAt
+  isRead
+}
+
+input MessageOrderByWithAggregationInput {
+  id: SortOrder
+  senderId: SortOrder
+  receiverId: SortOrder
+  content: SortOrder
+  sentAt: SortOrder
+  isRead: SortOrder
+  _count: MessageCountOrderByAggregateInput
+  _avg: MessageAvgOrderByAggregateInput
+  _max: MessageMaxOrderByAggregateInput
+  _min: MessageMinOrderByAggregateInput
+  _sum: MessageSumOrderByAggregateInput
+}
+
+input MessageCountOrderByAggregateInput {
+  id: SortOrder
+  senderId: SortOrder
+  receiverId: SortOrder
+  content: SortOrder
+  sentAt: SortOrder
+  isRead: SortOrder
+}
+
+input MessageAvgOrderByAggregateInput {
+  id: SortOrder
+  senderId: SortOrder
+  receiverId: SortOrder
+}
+
+input MessageMaxOrderByAggregateInput {
+  id: SortOrder
+  senderId: SortOrder
+  receiverId: SortOrder
+  content: SortOrder
+  sentAt: SortOrder
+  isRead: SortOrder
+}
+
+input MessageMinOrderByAggregateInput {
+  id: SortOrder
+  senderId: SortOrder
+  receiverId: SortOrder
+  content: SortOrder
+  sentAt: SortOrder
+  isRead: SortOrder
+}
+
+input MessageSumOrderByAggregateInput {
+  id: SortOrder
+  senderId: SortOrder
+  receiverId: SortOrder
+}
+
+input MessageScalarWhereWithAggregatesInput {
+  AND: [MessageScalarWhereWithAggregatesInput!]
+  OR: [MessageScalarWhereWithAggregatesInput!]
+  NOT: [MessageScalarWhereWithAggregatesInput!]
+  id: IntWithAggregatesFilter
+  senderId: IntWithAggregatesFilter
+  receiverId: IntWithAggregatesFilter
+  content: StringWithAggregatesFilter
+  sentAt: DateTimeWithAggregatesFilter
+  isRead: BoolWithAggregatesFilter
+}
+
+input BoolWithAggregatesFilter {
+  equals: Boolean
+  not: NestedBoolWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedBoolFilter
+  _max: NestedBoolFilter
+}
+
+input NestedBoolWithAggregatesFilter {
+  equals: Boolean
+  not: NestedBoolWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedBoolFilter
+  _max: NestedBoolFilter
+}
+
+input MessageCountAggregateInput {
+  id: Boolean
+  senderId: Boolean
+  receiverId: Boolean
+  content: Boolean
+  sentAt: Boolean
+  isRead: Boolean
+  _all: Boolean
+}
+
+input MessageAvgAggregateInput {
+  id: Boolean
+  senderId: Boolean
+  receiverId: Boolean
+}
+
+input MessageSumAggregateInput {
+  id: Boolean
+  senderId: Boolean
+  receiverId: Boolean
+}
+
+input MessageMinAggregateInput {
+  id: Boolean
+  senderId: Boolean
+  receiverId: Boolean
+  content: Boolean
+  sentAt: Boolean
+  isRead: Boolean
+}
+
+input MessageMaxAggregateInput {
+  id: Boolean
+  senderId: Boolean
+  receiverId: Boolean
+  content: Boolean
+  sentAt: Boolean
+  isRead: Boolean
+}
+
+input NotificationOrderByWithRelationInput {
+  id: SortOrder
+  userId: SortOrder
+  type: SortOrder
+  content: SortOrder
+  notifiedAt: SortOrder
+  user: UserOrderByWithRelationInput
+}
+
+input NotificationWhereUniqueInput {
+  id: Int
+  AND: [NotificationWhereInput!]
+  OR: [NotificationWhereInput!]
+  NOT: [NotificationWhereInput!]
+  userId: IntFilter
+  type: EnumNotificationTypeFilter
+  content: StringFilter
+  notifiedAt: DateTimeFilter
+  user: UserRelationFilter
+}
+
+enum NotificationScalarFieldEnum {
+  id
+  userId
+  type
+  content
+  notifiedAt
+}
+
+input NotificationOrderByWithAggregationInput {
+  id: SortOrder
+  userId: SortOrder
+  type: SortOrder
+  content: SortOrder
+  notifiedAt: SortOrder
+  _count: NotificationCountOrderByAggregateInput
+  _avg: NotificationAvgOrderByAggregateInput
+  _max: NotificationMaxOrderByAggregateInput
+  _min: NotificationMinOrderByAggregateInput
+  _sum: NotificationSumOrderByAggregateInput
+}
+
+input NotificationCountOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  type: SortOrder
+  content: SortOrder
+  notifiedAt: SortOrder
+}
+
+input NotificationAvgOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+}
+
+input NotificationMaxOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  type: SortOrder
+  content: SortOrder
+  notifiedAt: SortOrder
+}
+
+input NotificationMinOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  type: SortOrder
+  content: SortOrder
+  notifiedAt: SortOrder
+}
+
+input NotificationSumOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+}
+
+input NotificationScalarWhereWithAggregatesInput {
+  AND: [NotificationScalarWhereWithAggregatesInput!]
+  OR: [NotificationScalarWhereWithAggregatesInput!]
+  NOT: [NotificationScalarWhereWithAggregatesInput!]
+  id: IntWithAggregatesFilter
+  userId: IntWithAggregatesFilter
+  type: EnumNotificationTypeWithAggregatesFilter
+  content: StringWithAggregatesFilter
+  notifiedAt: DateTimeWithAggregatesFilter
+}
+
+input EnumNotificationTypeWithAggregatesFilter {
+  equals: NotificationType
+  in: [NotificationType!]
+  notIn: [NotificationType!]
+  not: NestedEnumNotificationTypeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumNotificationTypeFilter
+  _max: NestedEnumNotificationTypeFilter
+}
+
+input NestedEnumNotificationTypeWithAggregatesFilter {
+  equals: NotificationType
+  in: [NotificationType!]
+  notIn: [NotificationType!]
+  not: NestedEnumNotificationTypeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumNotificationTypeFilter
+  _max: NestedEnumNotificationTypeFilter
+}
+
+input NotificationCountAggregateInput {
+  id: Boolean
+  userId: Boolean
+  type: Boolean
+  content: Boolean
+  notifiedAt: Boolean
+  _all: Boolean
+}
+
+input NotificationAvgAggregateInput {
+  id: Boolean
+  userId: Boolean
+}
+
+input NotificationSumAggregateInput {
+  id: Boolean
+  userId: Boolean
+}
+
+input NotificationMinAggregateInput {
+  id: Boolean
+  userId: Boolean
+  type: Boolean
+  content: Boolean
+  notifiedAt: Boolean
+}
+
+input NotificationMaxAggregateInput {
+  id: Boolean
+  userId: Boolean
+  type: Boolean
+  content: Boolean
+  notifiedAt: Boolean
+}
+
+input ReportOrderByWithRelationInput {
+  id: SortOrder
+  reporterId: SortOrder
+  reportedId: SortOrder
+  reason: SortOrder
+  reporter: UserOrderByWithRelationInput
+  reported: UserOrderByWithRelationInput
+}
+
+input ReportWhereUniqueInput {
+  id: Int
+  AND: [ReportWhereInput!]
+  OR: [ReportWhereInput!]
+  NOT: [ReportWhereInput!]
+  reporterId: IntFilter
+  reportedId: IntFilter
+  reason: StringFilter
+  reporter: UserRelationFilter
+  reported: UserRelationFilter
+}
+
+enum ReportScalarFieldEnum {
+  id
+  reporterId
+  reportedId
+  reason
+}
+
+input ReportOrderByWithAggregationInput {
+  id: SortOrder
+  reporterId: SortOrder
+  reportedId: SortOrder
+  reason: SortOrder
+  _count: ReportCountOrderByAggregateInput
+  _avg: ReportAvgOrderByAggregateInput
+  _max: ReportMaxOrderByAggregateInput
+  _min: ReportMinOrderByAggregateInput
+  _sum: ReportSumOrderByAggregateInput
+}
+
+input ReportCountOrderByAggregateInput {
+  id: SortOrder
+  reporterId: SortOrder
+  reportedId: SortOrder
+  reason: SortOrder
+}
+
+input ReportAvgOrderByAggregateInput {
+  id: SortOrder
+  reporterId: SortOrder
+  reportedId: SortOrder
+}
+
+input ReportMaxOrderByAggregateInput {
+  id: SortOrder
+  reporterId: SortOrder
+  reportedId: SortOrder
+  reason: SortOrder
+}
+
+input ReportMinOrderByAggregateInput {
+  id: SortOrder
+  reporterId: SortOrder
+  reportedId: SortOrder
+  reason: SortOrder
+}
+
+input ReportSumOrderByAggregateInput {
+  id: SortOrder
+  reporterId: SortOrder
+  reportedId: SortOrder
+}
+
+input ReportScalarWhereWithAggregatesInput {
+  AND: [ReportScalarWhereWithAggregatesInput!]
+  OR: [ReportScalarWhereWithAggregatesInput!]
+  NOT: [ReportScalarWhereWithAggregatesInput!]
+  id: IntWithAggregatesFilter
+  reporterId: IntWithAggregatesFilter
+  reportedId: IntWithAggregatesFilter
+  reason: StringWithAggregatesFilter
+}
+
+input ReportCountAggregateInput {
+  id: Boolean
+  reporterId: Boolean
+  reportedId: Boolean
+  reason: Boolean
+  _all: Boolean
+}
+
+input ReportAvgAggregateInput {
+  id: Boolean
+  reporterId: Boolean
+  reportedId: Boolean
+}
+
+input ReportSumAggregateInput {
+  id: Boolean
+  reporterId: Boolean
+  reportedId: Boolean
+}
+
+input ReportMinAggregateInput {
+  id: Boolean
+  reporterId: Boolean
+  reportedId: Boolean
+  reason: Boolean
+}
+
+input ReportMaxAggregateInput {
+  id: Boolean
+  reporterId: Boolean
+  reportedId: Boolean
+  reason: Boolean
+}
+
+input SettingOrderByWithRelationInput {
+  id: SortOrder
+  userId: SortOrder
+  privacy: SortOrder
+  isNotificationsEnabled: SortOrder
+  language: SortOrder
+  ghostMode: SortOrder
+  user: UserOrderByWithRelationInput
+}
+
+input SettingWhereUniqueInput {
+  id: Int
+  AND: [SettingWhereInput!]
+  OR: [SettingWhereInput!]
+  NOT: [SettingWhereInput!]
+  userId: IntFilter
+  privacy: EnumPrivacySettingFilter
+  isNotificationsEnabled: BoolFilter
+  language: StringFilter
+  ghostMode: BoolFilter
+  user: UserRelationFilter
+}
+
+enum SettingScalarFieldEnum {
+  id
+  userId
+  privacy
+  isNotificationsEnabled
+  language
+  ghostMode
+}
+
+input SettingOrderByWithAggregationInput {
+  id: SortOrder
+  userId: SortOrder
+  privacy: SortOrder
+  isNotificationsEnabled: SortOrder
+  language: SortOrder
+  ghostMode: SortOrder
+  _count: SettingCountOrderByAggregateInput
+  _avg: SettingAvgOrderByAggregateInput
+  _max: SettingMaxOrderByAggregateInput
+  _min: SettingMinOrderByAggregateInput
+  _sum: SettingSumOrderByAggregateInput
+}
+
+input SettingCountOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  privacy: SortOrder
+  isNotificationsEnabled: SortOrder
+  language: SortOrder
+  ghostMode: SortOrder
+}
+
+input SettingAvgOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+}
+
+input SettingMaxOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  privacy: SortOrder
+  isNotificationsEnabled: SortOrder
+  language: SortOrder
+  ghostMode: SortOrder
+}
+
+input SettingMinOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  privacy: SortOrder
+  isNotificationsEnabled: SortOrder
+  language: SortOrder
+  ghostMode: SortOrder
+}
+
+input SettingSumOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+}
+
+input SettingScalarWhereWithAggregatesInput {
+  AND: [SettingScalarWhereWithAggregatesInput!]
+  OR: [SettingScalarWhereWithAggregatesInput!]
+  NOT: [SettingScalarWhereWithAggregatesInput!]
+  id: IntWithAggregatesFilter
+  userId: IntWithAggregatesFilter
+  privacy: EnumPrivacySettingWithAggregatesFilter
+  isNotificationsEnabled: BoolWithAggregatesFilter
+  language: StringWithAggregatesFilter
+  ghostMode: BoolWithAggregatesFilter
+}
+
+input EnumPrivacySettingWithAggregatesFilter {
+  equals: PrivacySetting
+  in: [PrivacySetting!]
+  notIn: [PrivacySetting!]
+  not: NestedEnumPrivacySettingWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumPrivacySettingFilter
+  _max: NestedEnumPrivacySettingFilter
+}
+
+input NestedEnumPrivacySettingWithAggregatesFilter {
+  equals: PrivacySetting
+  in: [PrivacySetting!]
+  notIn: [PrivacySetting!]
+  not: NestedEnumPrivacySettingWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumPrivacySettingFilter
+  _max: NestedEnumPrivacySettingFilter
+}
+
+input SettingCountAggregateInput {
+  id: Boolean
+  userId: Boolean
+  privacy: Boolean
+  isNotificationsEnabled: Boolean
+  language: Boolean
+  ghostMode: Boolean
+  _all: Boolean
+}
+
+input SettingAvgAggregateInput {
+  id: Boolean
+  userId: Boolean
+}
+
+input SettingSumAggregateInput {
+  id: Boolean
+  userId: Boolean
+}
+
+input SettingMinAggregateInput {
+  id: Boolean
+  userId: Boolean
+  privacy: Boolean
+  isNotificationsEnabled: Boolean
+  language: Boolean
+  ghostMode: Boolean
+}
+
+input SettingMaxAggregateInput {
+  id: Boolean
+  userId: Boolean
+  privacy: Boolean
+  isNotificationsEnabled: Boolean
+  language: Boolean
+  ghostMode: Boolean
+}
+
+input SubscriptionWhereUniqueInput {
+  userId: Int
+  AND: [SubscriptionWhereInput!]
+  OR: [SubscriptionWhereInput!]
+  NOT: [SubscriptionWhereInput!]
+  type: EnumSubscriptionTypeFilter
+  startDate: DateTimeFilter
+  endDate: DateTimeFilter
+  user: UserRelationFilter
+}
+
+enum SubscriptionScalarFieldEnum {
+  userId
+  type
+  startDate
+  endDate
+}
+
+input SubscriptionOrderByWithAggregationInput {
+  userId: SortOrder
+  type: SortOrder
+  startDate: SortOrder
+  endDate: SortOrder
+  _count: SubscriptionCountOrderByAggregateInput
+  _avg: SubscriptionAvgOrderByAggregateInput
+  _max: SubscriptionMaxOrderByAggregateInput
+  _min: SubscriptionMinOrderByAggregateInput
+  _sum: SubscriptionSumOrderByAggregateInput
+}
+
+input SubscriptionCountOrderByAggregateInput {
+  userId: SortOrder
+  type: SortOrder
+  startDate: SortOrder
+  endDate: SortOrder
+}
+
+input SubscriptionAvgOrderByAggregateInput {
+  userId: SortOrder
+}
+
+input SubscriptionMaxOrderByAggregateInput {
+  userId: SortOrder
+  type: SortOrder
+  startDate: SortOrder
+  endDate: SortOrder
+}
+
+input SubscriptionMinOrderByAggregateInput {
+  userId: SortOrder
+  type: SortOrder
+  startDate: SortOrder
+  endDate: SortOrder
+}
+
+input SubscriptionSumOrderByAggregateInput {
+  userId: SortOrder
+}
+
+input SubscriptionScalarWhereWithAggregatesInput {
+  AND: [SubscriptionScalarWhereWithAggregatesInput!]
+  OR: [SubscriptionScalarWhereWithAggregatesInput!]
+  NOT: [SubscriptionScalarWhereWithAggregatesInput!]
+  userId: IntWithAggregatesFilter
+  type: EnumSubscriptionTypeWithAggregatesFilter
+  startDate: DateTimeWithAggregatesFilter
+  endDate: DateTimeWithAggregatesFilter
+}
+
+input EnumSubscriptionTypeWithAggregatesFilter {
+  equals: SubscriptionType
+  in: [SubscriptionType!]
+  notIn: [SubscriptionType!]
+  not: NestedEnumSubscriptionTypeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumSubscriptionTypeFilter
+  _max: NestedEnumSubscriptionTypeFilter
+}
+
+input NestedEnumSubscriptionTypeWithAggregatesFilter {
+  equals: SubscriptionType
+  in: [SubscriptionType!]
+  notIn: [SubscriptionType!]
+  not: NestedEnumSubscriptionTypeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumSubscriptionTypeFilter
+  _max: NestedEnumSubscriptionTypeFilter
+}
+
+input SubscriptionCountAggregateInput {
+  userId: Boolean
+  type: Boolean
+  startDate: Boolean
+  endDate: Boolean
+  _all: Boolean
+}
+
+input SubscriptionAvgAggregateInput {
+  userId: Boolean
+}
+
+input SubscriptionSumAggregateInput {
+  userId: Boolean
+}
+
+input SubscriptionMinAggregateInput {
+  userId: Boolean
+  type: Boolean
+  startDate: Boolean
+  endDate: Boolean
+}
+
+input SubscriptionMaxAggregateInput {
+  userId: Boolean
+  type: Boolean
+  startDate: Boolean
+  endDate: Boolean
+}
+
+input UserWhereUniqueInput {
+  id: Int
+  email: String
+  AND: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  NOT: [UserWhereInput!]
+  firstName: StringFilter
+  lastName: StringFilter
+  gender: EnumGenderFilter
+  birthDate: DateTimeFilter
+  password: StringFilter
+  salt: StringNullableFilter
+  bio: StringNullableFilter
+  city: StringNullableFilter
+  country: StringNullableFilter
+  rating: IntNullableFilter
+  mainPhoto: StringNullableFilter
+  isVerified: BoolNullableFilter
+  createdAt: DateTimeNullableFilter
+  lastLogin: DateTimeNullableFilter
+  messages: MessageListRelationFilter
+  messages1: MessageListRelationFilter
+  matches: MatchListRelationFilter
+  matches1: MatchListRelationFilter
+  blocks: BlockListRelationFilter
+  blocks1: BlockListRelationFilter
+  reports: ReportListRelationFilter
+  reports1: ReportListRelationFilter
+  visits: VisitListRelationFilter
+  visits1: VisitListRelationFilter
+  likes: LikeListRelationFilter
+  likes1: LikeListRelationFilter
+  settings: SettingListRelationFilter
+  media: MediaListRelationFilter
+  subscription: SubscriptionNullableRelationFilter
+  notification: NotificationListRelationFilter
+  interest: InterestNullableRelationFilter
+}
+
+enum UserScalarFieldEnum {
+  id
+  firstName
+  lastName
+  gender
+  birthDate
+  email
+  password
+  salt
+  bio
+  city
+  country
+  rating
+  mainPhoto
+  isVerified
+  createdAt
+  lastLogin
+}
+
+input UserOrderByWithAggregationInput {
+  id: SortOrder
+  firstName: SortOrder
+  lastName: SortOrder
+  gender: SortOrder
+  birthDate: SortOrder
+  email: SortOrder
+  password: SortOrder
+  salt: SortOrderInput
+  bio: SortOrderInput
+  city: SortOrderInput
+  country: SortOrderInput
+  rating: SortOrderInput
+  mainPhoto: SortOrderInput
+  isVerified: SortOrderInput
+  createdAt: SortOrderInput
+  lastLogin: SortOrderInput
+  _count: UserCountOrderByAggregateInput
+  _avg: UserAvgOrderByAggregateInput
+  _max: UserMaxOrderByAggregateInput
+  _min: UserMinOrderByAggregateInput
+  _sum: UserSumOrderByAggregateInput
+}
+
+input UserCountOrderByAggregateInput {
+  id: SortOrder
+  firstName: SortOrder
+  lastName: SortOrder
+  gender: SortOrder
+  birthDate: SortOrder
+  email: SortOrder
+  password: SortOrder
+  salt: SortOrder
+  bio: SortOrder
+  city: SortOrder
+  country: SortOrder
+  rating: SortOrder
+  mainPhoto: SortOrder
+  isVerified: SortOrder
+  createdAt: SortOrder
+  lastLogin: SortOrder
+}
+
+input UserAvgOrderByAggregateInput {
+  id: SortOrder
+  rating: SortOrder
+}
+
+input UserMaxOrderByAggregateInput {
+  id: SortOrder
+  firstName: SortOrder
+  lastName: SortOrder
+  gender: SortOrder
+  birthDate: SortOrder
+  email: SortOrder
+  password: SortOrder
+  salt: SortOrder
+  bio: SortOrder
+  city: SortOrder
+  country: SortOrder
+  rating: SortOrder
+  mainPhoto: SortOrder
+  isVerified: SortOrder
+  createdAt: SortOrder
+  lastLogin: SortOrder
+}
+
+input UserMinOrderByAggregateInput {
+  id: SortOrder
+  firstName: SortOrder
+  lastName: SortOrder
+  gender: SortOrder
+  birthDate: SortOrder
+  email: SortOrder
+  password: SortOrder
+  salt: SortOrder
+  bio: SortOrder
+  city: SortOrder
+  country: SortOrder
+  rating: SortOrder
+  mainPhoto: SortOrder
+  isVerified: SortOrder
+  createdAt: SortOrder
+  lastLogin: SortOrder
+}
+
+input UserSumOrderByAggregateInput {
+  id: SortOrder
+  rating: SortOrder
+}
+
+input UserScalarWhereWithAggregatesInput {
+  AND: [UserScalarWhereWithAggregatesInput!]
+  OR: [UserScalarWhereWithAggregatesInput!]
+  NOT: [UserScalarWhereWithAggregatesInput!]
+  id: IntWithAggregatesFilter
+  firstName: StringWithAggregatesFilter
+  lastName: StringWithAggregatesFilter
+  gender: EnumGenderWithAggregatesFilter
+  birthDate: DateTimeWithAggregatesFilter
+  email: StringWithAggregatesFilter
+  password: StringWithAggregatesFilter
+  salt: StringNullableWithAggregatesFilter
+  bio: StringNullableWithAggregatesFilter
+  city: StringNullableWithAggregatesFilter
+  country: StringNullableWithAggregatesFilter
+  rating: IntNullableWithAggregatesFilter
+  mainPhoto: StringNullableWithAggregatesFilter
+  isVerified: BoolNullableWithAggregatesFilter
+  createdAt: DateTimeNullableWithAggregatesFilter
+  lastLogin: DateTimeNullableWithAggregatesFilter
+}
+
+input EnumGenderWithAggregatesFilter {
+  equals: Gender
+  in: [Gender!]
+  notIn: [Gender!]
+  not: NestedEnumGenderWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumGenderFilter
+  _max: NestedEnumGenderFilter
+}
+
+input NestedEnumGenderWithAggregatesFilter {
+  equals: Gender
+  in: [Gender!]
+  notIn: [Gender!]
+  not: NestedEnumGenderWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumGenderFilter
+  _max: NestedEnumGenderFilter
+}
+
+input StringNullableWithAggregatesFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedStringNullableFilter
+  _max: NestedStringNullableFilter
+}
+
+input NestedStringNullableWithAggregatesFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedStringNullableFilter
+  _max: NestedStringNullableFilter
+}
+
+input IntNullableWithAggregatesFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _avg: NestedFloatNullableFilter
+  _sum: NestedIntNullableFilter
+  _min: NestedIntNullableFilter
+  _max: NestedIntNullableFilter
+}
+
+input NestedIntNullableWithAggregatesFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _avg: NestedFloatNullableFilter
+  _sum: NestedIntNullableFilter
+  _min: NestedIntNullableFilter
+  _max: NestedIntNullableFilter
+}
+
+input NestedFloatNullableFilter {
+  equals: Float
+  in: [Float!]
+  notIn: [Float!]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatNullableFilter
+}
+
+input BoolNullableWithAggregatesFilter {
+  equals: Boolean
+  not: NestedBoolNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedBoolNullableFilter
+  _max: NestedBoolNullableFilter
+}
+
+input NestedBoolNullableWithAggregatesFilter {
+  equals: Boolean
+  not: NestedBoolNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedBoolNullableFilter
+  _max: NestedBoolNullableFilter
+}
+
+input DateTimeNullableWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedDateTimeNullableFilter
+  _max: NestedDateTimeNullableFilter
+}
+
+input NestedDateTimeNullableWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedDateTimeNullableFilter
+  _max: NestedDateTimeNullableFilter
+}
+
+input UserCountAggregateInput {
+  id: Boolean
+  firstName: Boolean
+  lastName: Boolean
+  gender: Boolean
+  birthDate: Boolean
+  email: Boolean
+  password: Boolean
+  salt: Boolean
+  bio: Boolean
+  city: Boolean
+  country: Boolean
+  rating: Boolean
+  mainPhoto: Boolean
+  isVerified: Boolean
+  createdAt: Boolean
+  lastLogin: Boolean
+  _all: Boolean
+}
+
+input UserAvgAggregateInput {
+  id: Boolean
+  rating: Boolean
+}
+
+input UserSumAggregateInput {
+  id: Boolean
+  rating: Boolean
+}
+
+input UserMinAggregateInput {
+  id: Boolean
+  firstName: Boolean
+  lastName: Boolean
+  gender: Boolean
+  birthDate: Boolean
+  email: Boolean
+  password: Boolean
+  salt: Boolean
+  bio: Boolean
+  city: Boolean
+  country: Boolean
+  rating: Boolean
+  mainPhoto: Boolean
+  isVerified: Boolean
+  createdAt: Boolean
+  lastLogin: Boolean
+}
+
+input UserMaxAggregateInput {
+  id: Boolean
+  firstName: Boolean
+  lastName: Boolean
+  gender: Boolean
+  birthDate: Boolean
+  email: Boolean
+  password: Boolean
+  salt: Boolean
+  bio: Boolean
+  city: Boolean
+  country: Boolean
+  rating: Boolean
+  mainPhoto: Boolean
+  isVerified: Boolean
+  createdAt: Boolean
+  lastLogin: Boolean
+}
+
+input VisitOrderByWithRelationInput {
+  id: SortOrder
+  visitorId: SortOrder
+  visitedId: SortOrder
+  visitedAt: SortOrder
+  visitor: UserOrderByWithRelationInput
+  visited: UserOrderByWithRelationInput
+}
+
+input VisitWhereUniqueInput {
+  id: Int
+  AND: [VisitWhereInput!]
+  OR: [VisitWhereInput!]
+  NOT: [VisitWhereInput!]
+  visitorId: IntFilter
+  visitedId: IntFilter
+  visitedAt: DateTimeFilter
+  visitor: UserRelationFilter
+  visited: UserRelationFilter
+}
+
+enum VisitScalarFieldEnum {
+  id
+  visitorId
+  visitedId
+  visitedAt
+}
+
+input VisitOrderByWithAggregationInput {
+  id: SortOrder
+  visitorId: SortOrder
+  visitedId: SortOrder
+  visitedAt: SortOrder
+  _count: VisitCountOrderByAggregateInput
+  _avg: VisitAvgOrderByAggregateInput
+  _max: VisitMaxOrderByAggregateInput
+  _min: VisitMinOrderByAggregateInput
+  _sum: VisitSumOrderByAggregateInput
+}
+
+input VisitCountOrderByAggregateInput {
+  id: SortOrder
+  visitorId: SortOrder
+  visitedId: SortOrder
+  visitedAt: SortOrder
+}
+
+input VisitAvgOrderByAggregateInput {
+  id: SortOrder
+  visitorId: SortOrder
+  visitedId: SortOrder
+}
+
+input VisitMaxOrderByAggregateInput {
+  id: SortOrder
+  visitorId: SortOrder
+  visitedId: SortOrder
+  visitedAt: SortOrder
+}
+
+input VisitMinOrderByAggregateInput {
+  id: SortOrder
+  visitorId: SortOrder
+  visitedId: SortOrder
+  visitedAt: SortOrder
+}
+
+input VisitSumOrderByAggregateInput {
+  id: SortOrder
+  visitorId: SortOrder
+  visitedId: SortOrder
+}
+
+input VisitScalarWhereWithAggregatesInput {
+  AND: [VisitScalarWhereWithAggregatesInput!]
+  OR: [VisitScalarWhereWithAggregatesInput!]
+  NOT: [VisitScalarWhereWithAggregatesInput!]
+  id: IntWithAggregatesFilter
+  visitorId: IntWithAggregatesFilter
+  visitedId: IntWithAggregatesFilter
+  visitedAt: DateTimeWithAggregatesFilter
+}
+
+input VisitCountAggregateInput {
+  id: Boolean
+  visitorId: Boolean
+  visitedId: Boolean
+  visitedAt: Boolean
+  _all: Boolean
+}
+
+input VisitAvgAggregateInput {
+  id: Boolean
+  visitorId: Boolean
+  visitedId: Boolean
+}
+
+input VisitSumAggregateInput {
+  id: Boolean
+  visitorId: Boolean
+  visitedId: Boolean
+}
+
+input VisitMinAggregateInput {
+  id: Boolean
+  visitorId: Boolean
+  visitedId: Boolean
+  visitedAt: Boolean
+}
+
+input VisitMaxAggregateInput {
+  id: Boolean
+  visitorId: Boolean
+  visitedId: Boolean
+  visitedAt: Boolean
+}
+
+type Mutation {
+  createBlock(data: BlockCreateInput!): Block
+  createManyBlock: AffectedRows
+  updateBlock(data: BlockUpdateInput!, where: BlockWhereUniqueInput!): Block
+  updateManyBlock: AffectedRows
+  deleteBlock(where: BlockWhereUniqueInput!): Block
+  deleteManyBlock(where: BlockWhereInput): AffectedRows
+  createLike(data: LikeCreateInput!): Like
+  createManyLike: AffectedRows
+  updateLike(data: LikeUpdateInput!, where: LikeWhereUniqueInput!): Like
+  updateManyLike: AffectedRows
+  deleteLike(where: LikeWhereUniqueInput!): Like
+  deleteManyLike(where: LikeWhereInput): AffectedRows
+  createMatch(data: MatchCreateInput!): Match
+  createManyMatch: AffectedRows
+  updateMatch(data: MatchUpdateInput!, where: MatchWhereUniqueInput!): Match
+  updateManyMatch: AffectedRows
+  deleteMatch(where: MatchWhereUniqueInput!): Match
+  deleteManyMatch(where: MatchWhereInput): AffectedRows
+  createMedia(data: MediaCreateInput!): Media
+  createManyMedia: AffectedRows
+  updateMedia(data: MediaUpdateInput!, where: MediaWhereUniqueInput!): Media
+  updateManyMedia: AffectedRows
+  deleteMedia(where: MediaWhereUniqueInput!): Media
+  deleteManyMedia(where: MediaWhereInput): AffectedRows
+  createMessage(data: MessageCreateInput!): Message
+  createManyMessage: AffectedRows
+  updateMessage(data: MessageUpdateInput!, where: MessageWhereUniqueInput!): Message
+  updateManyMessage: AffectedRows
+  deleteMessage(where: MessageWhereUniqueInput!): Message
+  deleteManyMessage(where: MessageWhereInput): AffectedRows
+  createNotification(data: NotificationCreateInput!): Notification
+  createManyNotification: AffectedRows
+  updateNotification(data: NotificationUpdateInput!, where: NotificationWhereUniqueInput!): Notification
+  updateManyNotification: AffectedRows
+  deleteNotification(where: NotificationWhereUniqueInput!): Notification
+  deleteManyNotification(where: NotificationWhereInput): AffectedRows
+  createReport(data: ReportCreateInput!): Report
+  createManyReport: AffectedRows
+  updateReport(data: ReportUpdateInput!, where: ReportWhereUniqueInput!): Report
+  updateManyReport: AffectedRows
+  deleteReport(where: ReportWhereUniqueInput!): Report
+  deleteManyReport(where: ReportWhereInput): AffectedRows
+  createSetting(data: SettingCreateInput!): Setting
+  createManySetting: AffectedRows
+  updateSetting(data: SettingUpdateInput!, where: SettingWhereUniqueInput!): Setting
+  updateManySetting: AffectedRows
+  deleteSetting(where: SettingWhereUniqueInput!): Setting
+  deleteManySetting(where: SettingWhereInput): AffectedRows
+  createSubscription(data: SubscriptionCreateInput!): Subscription
+  createManySubscription: AffectedRows
+  updateSubscription(data: SubscriptionUpdateInput!, where: SubscriptionWhereUniqueInput!): Subscription
+  updateManySubscription: AffectedRows
+  deleteSubscription(where: SubscriptionWhereUniqueInput!): Subscription
+  deleteManySubscription(where: SubscriptionWhereInput): AffectedRows
+  createUser(data: UserCreateInput!): User
+  createManyUser: AffectedRows
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  updateManyUser: AffectedRows
+  deleteUser(where: UserWhereUniqueInput!): User
+  deleteManyUser(where: UserWhereInput): AffectedRows
+  createVisit(data: VisitCreateInput!): Visit
+  createManyVisit: AffectedRows
+  updateVisit(data: VisitUpdateInput!, where: VisitWhereUniqueInput!): Visit
+  updateManyVisit: AffectedRows
+  deleteVisit(where: VisitWhereUniqueInput!): Visit
+  deleteManyVisit(where: VisitWhereInput): AffectedRows
+}
+
+input BlockCreateInput {
+  blocker: UserCreateNestedOneWithoutBlocksInput!
+  blocked: UserCreateNestedOneWithoutBlocks1Input!
+}
+
+input UserCreateNestedOneWithoutBlocksInput {
+  create: UserCreateWithoutBlocksInput
+  connectOrCreate: UserCreateOrConnectWithoutBlocksInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutBlocksInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input MessageCreateNestedManyWithoutSenderInput {
+  create: [MessageCreateWithoutSenderInput!]
+  connectOrCreate: [MessageCreateOrConnectWithoutSenderInput!]
+  createMany: MessageCreateManySenderInputEnvelope
+  connect: [MessageWhereUniqueInput!]
+}
+
+input MessageCreateWithoutSenderInput {
+  content: String!
+  sentAt: DateTime
+  isRead: Boolean
+  receiver: UserCreateNestedOneWithoutMessages1Input!
+}
+
+input UserCreateNestedOneWithoutMessages1Input {
+  create: UserCreateWithoutMessages1Input
+  connectOrCreate: UserCreateOrConnectWithoutMessages1Input
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutMessages1Input {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input MatchCreateNestedManyWithoutUser1Input {
+  create: [MatchCreateWithoutUser1Input!]
+  connectOrCreate: [MatchCreateOrConnectWithoutUser1Input!]
+  createMany: MatchCreateManyUser1InputEnvelope
+  connect: [MatchWhereUniqueInput!]
+}
+
+input MatchCreateWithoutUser1Input {
+  matchedAt: DateTime
+  user2: UserCreateNestedOneWithoutMatches1Input!
+}
+
+input UserCreateNestedOneWithoutMatches1Input {
+  create: UserCreateWithoutMatches1Input
+  connectOrCreate: UserCreateOrConnectWithoutMatches1Input
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutMatches1Input {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input MessageCreateNestedManyWithoutReceiverInput {
+  create: [MessageCreateWithoutReceiverInput!]
+  connectOrCreate: [MessageCreateOrConnectWithoutReceiverInput!]
+  createMany: MessageCreateManyReceiverInputEnvelope
+  connect: [MessageWhereUniqueInput!]
+}
+
+input MessageCreateWithoutReceiverInput {
+  content: String!
+  sentAt: DateTime
+  isRead: Boolean
+  sender: UserCreateNestedOneWithoutMessagesInput!
+}
+
+input UserCreateNestedOneWithoutMessagesInput {
+  create: UserCreateWithoutMessagesInput
+  connectOrCreate: UserCreateOrConnectWithoutMessagesInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutMessagesInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input MatchCreateNestedManyWithoutUser2Input {
+  create: [MatchCreateWithoutUser2Input!]
+  connectOrCreate: [MatchCreateOrConnectWithoutUser2Input!]
+  createMany: MatchCreateManyUser2InputEnvelope
+  connect: [MatchWhereUniqueInput!]
+}
+
+input MatchCreateWithoutUser2Input {
+  matchedAt: DateTime
+  user1: UserCreateNestedOneWithoutMatchesInput!
+}
+
+input UserCreateNestedOneWithoutMatchesInput {
+  create: UserCreateWithoutMatchesInput
+  connectOrCreate: UserCreateOrConnectWithoutMatchesInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutMatchesInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input BlockCreateNestedManyWithoutBlockerInput {
+  create: [BlockCreateWithoutBlockerInput!]
+  connectOrCreate: [BlockCreateOrConnectWithoutBlockerInput!]
+  createMany: BlockCreateManyBlockerInputEnvelope
+  connect: [BlockWhereUniqueInput!]
+}
+
+input BlockCreateWithoutBlockerInput {
+  blocked: UserCreateNestedOneWithoutBlocks1Input!
+}
+
+input UserCreateNestedOneWithoutBlocks1Input {
+  create: UserCreateWithoutBlocks1Input
+  connectOrCreate: UserCreateOrConnectWithoutBlocks1Input
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutBlocks1Input {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input ReportCreateNestedManyWithoutReporterInput {
+  create: [ReportCreateWithoutReporterInput!]
+  connectOrCreate: [ReportCreateOrConnectWithoutReporterInput!]
+  createMany: ReportCreateManyReporterInputEnvelope
+  connect: [ReportWhereUniqueInput!]
+}
+
+input ReportCreateWithoutReporterInput {
+  reason: String!
+  reported: UserCreateNestedOneWithoutReports1Input!
+}
+
+input UserCreateNestedOneWithoutReports1Input {
+  create: UserCreateWithoutReports1Input
+  connectOrCreate: UserCreateOrConnectWithoutReports1Input
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutReports1Input {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input BlockCreateNestedManyWithoutBlockedInput {
+  create: [BlockCreateWithoutBlockedInput!]
+  connectOrCreate: [BlockCreateOrConnectWithoutBlockedInput!]
+  createMany: BlockCreateManyBlockedInputEnvelope
+  connect: [BlockWhereUniqueInput!]
+}
+
+input BlockCreateWithoutBlockedInput {
+  blocker: UserCreateNestedOneWithoutBlocksInput!
+}
+
+input BlockCreateOrConnectWithoutBlockedInput {
+  where: BlockWhereUniqueInput!
+  create: BlockCreateWithoutBlockedInput!
+}
+
+input BlockCreateManyBlockedInputEnvelope {
+  data: [BlockCreateManyBlockedInput!]!
+  skipDuplicates: Boolean
+}
+
+input BlockCreateManyBlockedInput {
+  id: Int
+  blockerId: Int!
+}
+
+input VisitCreateNestedManyWithoutVisitorInput {
+  create: [VisitCreateWithoutVisitorInput!]
+  connectOrCreate: [VisitCreateOrConnectWithoutVisitorInput!]
+  createMany: VisitCreateManyVisitorInputEnvelope
+  connect: [VisitWhereUniqueInput!]
+}
+
+input VisitCreateWithoutVisitorInput {
+  visitedAt: DateTime
+  visited: UserCreateNestedOneWithoutVisits1Input!
+}
+
+input UserCreateNestedOneWithoutVisits1Input {
+  create: UserCreateWithoutVisits1Input
+  connectOrCreate: UserCreateOrConnectWithoutVisits1Input
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutVisits1Input {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input ReportCreateNestedManyWithoutReportedInput {
+  create: [ReportCreateWithoutReportedInput!]
+  connectOrCreate: [ReportCreateOrConnectWithoutReportedInput!]
+  createMany: ReportCreateManyReportedInputEnvelope
+  connect: [ReportWhereUniqueInput!]
+}
+
+input ReportCreateWithoutReportedInput {
+  reason: String!
+  reporter: UserCreateNestedOneWithoutReportsInput!
+}
+
+input UserCreateNestedOneWithoutReportsInput {
+  create: UserCreateWithoutReportsInput
+  connectOrCreate: UserCreateOrConnectWithoutReportsInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutReportsInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input VisitCreateNestedManyWithoutVisitedInput {
+  create: [VisitCreateWithoutVisitedInput!]
+  connectOrCreate: [VisitCreateOrConnectWithoutVisitedInput!]
+  createMany: VisitCreateManyVisitedInputEnvelope
+  connect: [VisitWhereUniqueInput!]
+}
+
+input VisitCreateWithoutVisitedInput {
+  visitedAt: DateTime
+  visitor: UserCreateNestedOneWithoutVisitsInput!
+}
+
+input UserCreateNestedOneWithoutVisitsInput {
+  create: UserCreateWithoutVisitsInput
+  connectOrCreate: UserCreateOrConnectWithoutVisitsInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutVisitsInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input LikeCreateNestedManyWithoutLikerInput {
+  create: [LikeCreateWithoutLikerInput!]
+  connectOrCreate: [LikeCreateOrConnectWithoutLikerInput!]
+  createMany: LikeCreateManyLikerInputEnvelope
+  connect: [LikeWhereUniqueInput!]
+}
+
+input LikeCreateWithoutLikerInput {
+  liked: UserCreateNestedOneWithoutLikes1Input!
+}
+
+input UserCreateNestedOneWithoutLikes1Input {
+  create: UserCreateWithoutLikes1Input
+  connectOrCreate: UserCreateOrConnectWithoutLikes1Input
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutLikes1Input {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input SettingCreateNestedManyWithoutUserInput {
+  create: [SettingCreateWithoutUserInput!]
+  connectOrCreate: [SettingCreateOrConnectWithoutUserInput!]
+  createMany: SettingCreateManyUserInputEnvelope
+  connect: [SettingWhereUniqueInput!]
+}
+
+input SettingCreateWithoutUserInput {
+  privacy: PrivacySetting!
+  isNotificationsEnabled: Boolean!
+  language: String!
+  ghostMode: Boolean!
+}
+
+input SettingCreateOrConnectWithoutUserInput {
+  where: SettingWhereUniqueInput!
+  create: SettingCreateWithoutUserInput!
+}
+
+input SettingCreateManyUserInputEnvelope {
+  data: [SettingCreateManyUserInput!]!
+  skipDuplicates: Boolean
+}
+
+input SettingCreateManyUserInput {
+  id: Int
+  privacy: PrivacySetting!
+  isNotificationsEnabled: Boolean!
+  language: String!
+  ghostMode: Boolean!
+}
+
+input MediaCreateNestedManyWithoutUserInput {
+  create: [MediaCreateWithoutUserInput!]
+  connectOrCreate: [MediaCreateOrConnectWithoutUserInput!]
+  createMany: MediaCreateManyUserInputEnvelope
+  connect: [MediaWhereUniqueInput!]
+}
+
+input MediaCreateWithoutUserInput {
+  type: MediaType!
+  url: String!
+  uploadedAt: DateTime
+}
+
+input MediaCreateOrConnectWithoutUserInput {
+  where: MediaWhereUniqueInput!
+  create: MediaCreateWithoutUserInput!
+}
+
+input MediaCreateManyUserInputEnvelope {
+  data: [MediaCreateManyUserInput!]!
+  skipDuplicates: Boolean
+}
+
+input MediaCreateManyUserInput {
+  id: Int
+  type: MediaType!
+  url: String!
+  uploadedAt: DateTime
+}
+
+input SubscriptionCreateNestedOneWithoutUserInput {
+  create: SubscriptionCreateWithoutUserInput
+  connectOrCreate: SubscriptionCreateOrConnectWithoutUserInput
+  connect: SubscriptionWhereUniqueInput
+}
+
+input SubscriptionCreateWithoutUserInput {
+  type: SubscriptionType
+  startDate: DateTime!
+  endDate: DateTime!
+}
+
+input SubscriptionCreateOrConnectWithoutUserInput {
+  where: SubscriptionWhereUniqueInput!
+  create: SubscriptionCreateWithoutUserInput!
+}
+
+input NotificationCreateNestedManyWithoutUserInput {
+  create: [NotificationCreateWithoutUserInput!]
+  connectOrCreate: [NotificationCreateOrConnectWithoutUserInput!]
+  createMany: NotificationCreateManyUserInputEnvelope
+  connect: [NotificationWhereUniqueInput!]
+}
+
+input NotificationCreateWithoutUserInput {
+  type: NotificationType!
+  content: String!
+  notifiedAt: DateTime
+}
+
+input NotificationCreateOrConnectWithoutUserInput {
+  where: NotificationWhereUniqueInput!
+  create: NotificationCreateWithoutUserInput!
+}
+
+input NotificationCreateManyUserInputEnvelope {
+  data: [NotificationCreateManyUserInput!]!
+  skipDuplicates: Boolean
+}
+
+input NotificationCreateManyUserInput {
+  id: Int
+  type: NotificationType!
+  content: String!
+  notifiedAt: DateTime
+}
+
+input InterestCreateNestedOneWithoutUserInput {
+  create: InterestCreateWithoutUserInput
+  connectOrCreate: InterestCreateOrConnectWithoutUserInput
+  connect: InterestWhereUniqueInput
+}
+
+input InterestCreateWithoutUserInput {
+  interest: String!
+}
+
+input InterestCreateOrConnectWithoutUserInput {
+  where: InterestWhereUniqueInput!
+  create: InterestCreateWithoutUserInput!
+}
+
+input InterestWhereUniqueInput {
+  userId: Int
+  AND: [InterestWhereInput!]
+  OR: [InterestWhereInput!]
+  NOT: [InterestWhereInput!]
+  interest: StringFilter
+  user: UserRelationFilter
+}
+
+input UserCreateOrConnectWithoutLikes1Input {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutLikes1Input!
+}
+
+input LikeCreateOrConnectWithoutLikerInput {
+  where: LikeWhereUniqueInput!
+  create: LikeCreateWithoutLikerInput!
+}
+
+input LikeCreateManyLikerInputEnvelope {
+  data: [LikeCreateManyLikerInput!]!
+  skipDuplicates: Boolean
+}
+
+input LikeCreateManyLikerInput {
+  id: Int
+  likedId: Int!
+}
+
+input LikeCreateNestedManyWithoutLikedInput {
+  create: [LikeCreateWithoutLikedInput!]
+  connectOrCreate: [LikeCreateOrConnectWithoutLikedInput!]
+  createMany: LikeCreateManyLikedInputEnvelope
+  connect: [LikeWhereUniqueInput!]
+}
+
+input LikeCreateWithoutLikedInput {
+  liker: UserCreateNestedOneWithoutLikesInput!
+}
+
+input UserCreateNestedOneWithoutLikesInput {
+  create: UserCreateWithoutLikesInput
+  connectOrCreate: UserCreateOrConnectWithoutLikesInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutLikesInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input UserCreateOrConnectWithoutLikesInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutLikesInput!
+}
+
+input LikeCreateOrConnectWithoutLikedInput {
+  where: LikeWhereUniqueInput!
+  create: LikeCreateWithoutLikedInput!
+}
+
+input LikeCreateManyLikedInputEnvelope {
+  data: [LikeCreateManyLikedInput!]!
+  skipDuplicates: Boolean
+}
+
+input LikeCreateManyLikedInput {
+  id: Int
+  likerId: Int!
+}
+
+input UserCreateOrConnectWithoutVisitsInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutVisitsInput!
+}
+
+input VisitCreateOrConnectWithoutVisitedInput {
+  where: VisitWhereUniqueInput!
+  create: VisitCreateWithoutVisitedInput!
+}
+
+input VisitCreateManyVisitedInputEnvelope {
+  data: [VisitCreateManyVisitedInput!]!
+  skipDuplicates: Boolean
+}
+
+input VisitCreateManyVisitedInput {
+  id: Int
+  visitorId: Int!
+  visitedAt: DateTime
+}
+
+input UserCreateOrConnectWithoutReportsInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutReportsInput!
+}
+
+input ReportCreateOrConnectWithoutReportedInput {
+  where: ReportWhereUniqueInput!
+  create: ReportCreateWithoutReportedInput!
+}
+
+input ReportCreateManyReportedInputEnvelope {
+  data: [ReportCreateManyReportedInput!]!
+  skipDuplicates: Boolean
+}
+
+input ReportCreateManyReportedInput {
+  id: Int
+  reporterId: Int!
+  reason: String!
+}
+
+input UserCreateOrConnectWithoutVisits1Input {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutVisits1Input!
+}
+
+input VisitCreateOrConnectWithoutVisitorInput {
+  where: VisitWhereUniqueInput!
+  create: VisitCreateWithoutVisitorInput!
+}
+
+input VisitCreateManyVisitorInputEnvelope {
+  data: [VisitCreateManyVisitorInput!]!
+  skipDuplicates: Boolean
+}
+
+input VisitCreateManyVisitorInput {
+  id: Int
+  visitedId: Int!
+  visitedAt: DateTime
+}
+
+input UserCreateOrConnectWithoutReports1Input {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutReports1Input!
+}
+
+input ReportCreateOrConnectWithoutReporterInput {
+  where: ReportWhereUniqueInput!
+  create: ReportCreateWithoutReporterInput!
+}
+
+input ReportCreateManyReporterInputEnvelope {
+  data: [ReportCreateManyReporterInput!]!
+  skipDuplicates: Boolean
+}
+
+input ReportCreateManyReporterInput {
+  id: Int
+  reportedId: Int!
+  reason: String!
+}
+
+input UserCreateOrConnectWithoutBlocks1Input {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutBlocks1Input!
+}
+
+input BlockCreateOrConnectWithoutBlockerInput {
+  where: BlockWhereUniqueInput!
+  create: BlockCreateWithoutBlockerInput!
+}
+
+input BlockCreateManyBlockerInputEnvelope {
+  data: [BlockCreateManyBlockerInput!]!
+  skipDuplicates: Boolean
+}
+
+input BlockCreateManyBlockerInput {
+  id: Int
+  blockedId: Int!
+}
+
+input UserCreateOrConnectWithoutMatchesInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutMatchesInput!
+}
+
+input MatchCreateOrConnectWithoutUser2Input {
+  where: MatchWhereUniqueInput!
+  create: MatchCreateWithoutUser2Input!
+}
+
+input MatchCreateManyUser2InputEnvelope {
+  data: [MatchCreateManyUser2Input!]!
+  skipDuplicates: Boolean
+}
+
+input MatchCreateManyUser2Input {
+  id: Int
+  user1Id: Int!
+  matchedAt: DateTime
+}
+
+input UserCreateOrConnectWithoutMessagesInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutMessagesInput!
+}
+
+input MessageCreateOrConnectWithoutReceiverInput {
+  where: MessageWhereUniqueInput!
+  create: MessageCreateWithoutReceiverInput!
+}
+
+input MessageCreateManyReceiverInputEnvelope {
+  data: [MessageCreateManyReceiverInput!]!
+  skipDuplicates: Boolean
+}
+
+input MessageCreateManyReceiverInput {
+  id: Int
+  senderId: Int!
+  content: String!
+  sentAt: DateTime
+  isRead: Boolean
+}
+
+input UserCreateOrConnectWithoutMatches1Input {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutMatches1Input!
+}
+
+input MatchCreateOrConnectWithoutUser1Input {
+  where: MatchWhereUniqueInput!
+  create: MatchCreateWithoutUser1Input!
+}
+
+input MatchCreateManyUser1InputEnvelope {
+  data: [MatchCreateManyUser1Input!]!
+  skipDuplicates: Boolean
+}
+
+input MatchCreateManyUser1Input {
+  id: Int
+  user2Id: Int!
+  matchedAt: DateTime
+}
+
+input UserCreateOrConnectWithoutMessages1Input {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutMessages1Input!
+}
+
+input MessageCreateOrConnectWithoutSenderInput {
+  where: MessageWhereUniqueInput!
+  create: MessageCreateWithoutSenderInput!
+}
+
+input MessageCreateManySenderInputEnvelope {
+  data: [MessageCreateManySenderInput!]!
+  skipDuplicates: Boolean
+}
+
+input MessageCreateManySenderInput {
+  id: Int
+  receiverId: Int!
+  content: String!
+  sentAt: DateTime
+  isRead: Boolean
+}
+
+input UserCreateOrConnectWithoutBlocksInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutBlocksInput!
+}
+
+input BlockUpdateInput {
+  blocker: UserUpdateOneRequiredWithoutBlocksNestedInput
+  blocked: UserUpdateOneRequiredWithoutBlocks1NestedInput
+}
+
+input UserUpdateOneRequiredWithoutBlocksNestedInput {
+  create: UserCreateWithoutBlocksInput
+  connectOrCreate: UserCreateOrConnectWithoutBlocksInput
+  upsert: UserUpsertWithoutBlocksInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutBlocksInput
+}
+
+input UserUpsertWithoutBlocksInput {
+  update: UserUpdateWithoutBlocksInput!
+  create: UserCreateWithoutBlocksInput!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutBlocksInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input StringFieldUpdateOperationsInput {
+  set: String
+}
+
+input EnumGenderFieldUpdateOperationsInput {
+  set: Gender
+}
+
+input DateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
+input NullableStringFieldUpdateOperationsInput {
+  set: String
+}
+
+input NullableIntFieldUpdateOperationsInput {
+  set: Int
+  increment: Int
+  decrement: Int
+  multiply: Int
+  divide: Int
+}
+
+input NullableBoolFieldUpdateOperationsInput {
+  set: Boolean
+}
+
+input NullableDateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
+input MessageUpdateManyWithoutSenderNestedInput {
+  create: [MessageCreateWithoutSenderInput!]
+  connectOrCreate: [MessageCreateOrConnectWithoutSenderInput!]
+  upsert: [MessageUpsertWithWhereUniqueWithoutSenderInput!]
+  createMany: MessageCreateManySenderInputEnvelope
+  set: [MessageWhereUniqueInput!]
+  disconnect: [MessageWhereUniqueInput!]
+  delete: [MessageWhereUniqueInput!]
+  connect: [MessageWhereUniqueInput!]
+  update: [MessageUpdateWithWhereUniqueWithoutSenderInput!]
+  updateMany: [MessageUpdateManyWithWhereWithoutSenderInput!]
+  deleteMany: [MessageScalarWhereInput!]
+}
+
+input MessageUpsertWithWhereUniqueWithoutSenderInput {
+  where: MessageWhereUniqueInput!
+  update: MessageUpdateWithoutSenderInput!
+  create: MessageCreateWithoutSenderInput!
+}
+
+input MessageUpdateWithoutSenderInput {
+  content: StringFieldUpdateOperationsInput
+  sentAt: DateTimeFieldUpdateOperationsInput
+  isRead: BoolFieldUpdateOperationsInput
+  receiver: UserUpdateOneRequiredWithoutMessages1NestedInput
+}
+
+input BoolFieldUpdateOperationsInput {
+  set: Boolean
+}
+
+input UserUpdateOneRequiredWithoutMessages1NestedInput {
+  create: UserCreateWithoutMessages1Input
+  connectOrCreate: UserCreateOrConnectWithoutMessages1Input
+  upsert: UserUpsertWithoutMessages1Input
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutMessages1Input
+}
+
+input UserUpsertWithoutMessages1Input {
+  update: UserUpdateWithoutMessages1Input!
+  create: UserCreateWithoutMessages1Input!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutMessages1Input {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input MatchUpdateManyWithoutUser1NestedInput {
+  create: [MatchCreateWithoutUser1Input!]
+  connectOrCreate: [MatchCreateOrConnectWithoutUser1Input!]
+  upsert: [MatchUpsertWithWhereUniqueWithoutUser1Input!]
+  createMany: MatchCreateManyUser1InputEnvelope
+  set: [MatchWhereUniqueInput!]
+  disconnect: [MatchWhereUniqueInput!]
+  delete: [MatchWhereUniqueInput!]
+  connect: [MatchWhereUniqueInput!]
+  update: [MatchUpdateWithWhereUniqueWithoutUser1Input!]
+  updateMany: [MatchUpdateManyWithWhereWithoutUser1Input!]
+  deleteMany: [MatchScalarWhereInput!]
+}
+
+input MatchUpsertWithWhereUniqueWithoutUser1Input {
+  where: MatchWhereUniqueInput!
+  update: MatchUpdateWithoutUser1Input!
+  create: MatchCreateWithoutUser1Input!
+}
+
+input MatchUpdateWithoutUser1Input {
+  matchedAt: DateTimeFieldUpdateOperationsInput
+  user2: UserUpdateOneRequiredWithoutMatches1NestedInput
+}
+
+input UserUpdateOneRequiredWithoutMatches1NestedInput {
+  create: UserCreateWithoutMatches1Input
+  connectOrCreate: UserCreateOrConnectWithoutMatches1Input
+  upsert: UserUpsertWithoutMatches1Input
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutMatches1Input
+}
+
+input UserUpsertWithoutMatches1Input {
+  update: UserUpdateWithoutMatches1Input!
+  create: UserCreateWithoutMatches1Input!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutMatches1Input {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input MessageUpdateManyWithoutReceiverNestedInput {
+  create: [MessageCreateWithoutReceiverInput!]
+  connectOrCreate: [MessageCreateOrConnectWithoutReceiverInput!]
+  upsert: [MessageUpsertWithWhereUniqueWithoutReceiverInput!]
+  createMany: MessageCreateManyReceiverInputEnvelope
+  set: [MessageWhereUniqueInput!]
+  disconnect: [MessageWhereUniqueInput!]
+  delete: [MessageWhereUniqueInput!]
+  connect: [MessageWhereUniqueInput!]
+  update: [MessageUpdateWithWhereUniqueWithoutReceiverInput!]
+  updateMany: [MessageUpdateManyWithWhereWithoutReceiverInput!]
+  deleteMany: [MessageScalarWhereInput!]
+}
+
+input MessageUpsertWithWhereUniqueWithoutReceiverInput {
+  where: MessageWhereUniqueInput!
+  update: MessageUpdateWithoutReceiverInput!
+  create: MessageCreateWithoutReceiverInput!
+}
+
+input MessageUpdateWithoutReceiverInput {
+  content: StringFieldUpdateOperationsInput
+  sentAt: DateTimeFieldUpdateOperationsInput
+  isRead: BoolFieldUpdateOperationsInput
+  sender: UserUpdateOneRequiredWithoutMessagesNestedInput
+}
+
+input UserUpdateOneRequiredWithoutMessagesNestedInput {
+  create: UserCreateWithoutMessagesInput
+  connectOrCreate: UserCreateOrConnectWithoutMessagesInput
+  upsert: UserUpsertWithoutMessagesInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutMessagesInput
+}
+
+input UserUpsertWithoutMessagesInput {
+  update: UserUpdateWithoutMessagesInput!
+  create: UserCreateWithoutMessagesInput!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutMessagesInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input MatchUpdateManyWithoutUser2NestedInput {
+  create: [MatchCreateWithoutUser2Input!]
+  connectOrCreate: [MatchCreateOrConnectWithoutUser2Input!]
+  upsert: [MatchUpsertWithWhereUniqueWithoutUser2Input!]
+  createMany: MatchCreateManyUser2InputEnvelope
+  set: [MatchWhereUniqueInput!]
+  disconnect: [MatchWhereUniqueInput!]
+  delete: [MatchWhereUniqueInput!]
+  connect: [MatchWhereUniqueInput!]
+  update: [MatchUpdateWithWhereUniqueWithoutUser2Input!]
+  updateMany: [MatchUpdateManyWithWhereWithoutUser2Input!]
+  deleteMany: [MatchScalarWhereInput!]
+}
+
+input MatchUpsertWithWhereUniqueWithoutUser2Input {
+  where: MatchWhereUniqueInput!
+  update: MatchUpdateWithoutUser2Input!
+  create: MatchCreateWithoutUser2Input!
+}
+
+input MatchUpdateWithoutUser2Input {
+  matchedAt: DateTimeFieldUpdateOperationsInput
+  user1: UserUpdateOneRequiredWithoutMatchesNestedInput
+}
+
+input UserUpdateOneRequiredWithoutMatchesNestedInput {
+  create: UserCreateWithoutMatchesInput
+  connectOrCreate: UserCreateOrConnectWithoutMatchesInput
+  upsert: UserUpsertWithoutMatchesInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutMatchesInput
+}
+
+input UserUpsertWithoutMatchesInput {
+  update: UserUpdateWithoutMatchesInput!
+  create: UserCreateWithoutMatchesInput!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutMatchesInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input BlockUpdateManyWithoutBlockerNestedInput {
+  create: [BlockCreateWithoutBlockerInput!]
+  connectOrCreate: [BlockCreateOrConnectWithoutBlockerInput!]
+  upsert: [BlockUpsertWithWhereUniqueWithoutBlockerInput!]
+  createMany: BlockCreateManyBlockerInputEnvelope
+  set: [BlockWhereUniqueInput!]
+  disconnect: [BlockWhereUniqueInput!]
+  delete: [BlockWhereUniqueInput!]
+  connect: [BlockWhereUniqueInput!]
+  update: [BlockUpdateWithWhereUniqueWithoutBlockerInput!]
+  updateMany: [BlockUpdateManyWithWhereWithoutBlockerInput!]
+  deleteMany: [BlockScalarWhereInput!]
+}
+
+input BlockUpsertWithWhereUniqueWithoutBlockerInput {
+  where: BlockWhereUniqueInput!
+  update: BlockUpdateWithoutBlockerInput!
+  create: BlockCreateWithoutBlockerInput!
+}
+
+input BlockUpdateWithoutBlockerInput {
+  blocked: UserUpdateOneRequiredWithoutBlocks1NestedInput
+}
+
+input UserUpdateOneRequiredWithoutBlocks1NestedInput {
+  create: UserCreateWithoutBlocks1Input
+  connectOrCreate: UserCreateOrConnectWithoutBlocks1Input
+  upsert: UserUpsertWithoutBlocks1Input
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutBlocks1Input
+}
+
+input UserUpsertWithoutBlocks1Input {
+  update: UserUpdateWithoutBlocks1Input!
+  create: UserCreateWithoutBlocks1Input!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutBlocks1Input {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input ReportUpdateManyWithoutReporterNestedInput {
+  create: [ReportCreateWithoutReporterInput!]
+  connectOrCreate: [ReportCreateOrConnectWithoutReporterInput!]
+  upsert: [ReportUpsertWithWhereUniqueWithoutReporterInput!]
+  createMany: ReportCreateManyReporterInputEnvelope
+  set: [ReportWhereUniqueInput!]
+  disconnect: [ReportWhereUniqueInput!]
+  delete: [ReportWhereUniqueInput!]
+  connect: [ReportWhereUniqueInput!]
+  update: [ReportUpdateWithWhereUniqueWithoutReporterInput!]
+  updateMany: [ReportUpdateManyWithWhereWithoutReporterInput!]
+  deleteMany: [ReportScalarWhereInput!]
+}
+
+input ReportUpsertWithWhereUniqueWithoutReporterInput {
+  where: ReportWhereUniqueInput!
+  update: ReportUpdateWithoutReporterInput!
+  create: ReportCreateWithoutReporterInput!
+}
+
+input ReportUpdateWithoutReporterInput {
+  reason: StringFieldUpdateOperationsInput
+  reported: UserUpdateOneRequiredWithoutReports1NestedInput
+}
+
+input UserUpdateOneRequiredWithoutReports1NestedInput {
+  create: UserCreateWithoutReports1Input
+  connectOrCreate: UserCreateOrConnectWithoutReports1Input
+  upsert: UserUpsertWithoutReports1Input
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutReports1Input
+}
+
+input UserUpsertWithoutReports1Input {
+  update: UserUpdateWithoutReports1Input!
+  create: UserCreateWithoutReports1Input!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutReports1Input {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input BlockUpdateManyWithoutBlockedNestedInput {
+  create: [BlockCreateWithoutBlockedInput!]
+  connectOrCreate: [BlockCreateOrConnectWithoutBlockedInput!]
+  upsert: [BlockUpsertWithWhereUniqueWithoutBlockedInput!]
+  createMany: BlockCreateManyBlockedInputEnvelope
+  set: [BlockWhereUniqueInput!]
+  disconnect: [BlockWhereUniqueInput!]
+  delete: [BlockWhereUniqueInput!]
+  connect: [BlockWhereUniqueInput!]
+  update: [BlockUpdateWithWhereUniqueWithoutBlockedInput!]
+  updateMany: [BlockUpdateManyWithWhereWithoutBlockedInput!]
+  deleteMany: [BlockScalarWhereInput!]
+}
+
+input BlockUpsertWithWhereUniqueWithoutBlockedInput {
+  where: BlockWhereUniqueInput!
+  update: BlockUpdateWithoutBlockedInput!
+  create: BlockCreateWithoutBlockedInput!
+}
+
+input BlockUpdateWithoutBlockedInput {
+  blocker: UserUpdateOneRequiredWithoutBlocksNestedInput
+}
+
+input BlockUpdateWithWhereUniqueWithoutBlockedInput {
+  where: BlockWhereUniqueInput!
+  data: BlockUpdateWithoutBlockedInput!
+}
+
+input BlockUpdateManyWithWhereWithoutBlockedInput {
+  where: BlockScalarWhereInput!
+  data: BlockUncheckedUpdateManyWithoutBlockedInput!
+}
+
+input BlockScalarWhereInput {
+  AND: [BlockScalarWhereInput!]
+  OR: [BlockScalarWhereInput!]
+  NOT: [BlockScalarWhereInput!]
+  id: IntFilter
+  blockerId: IntFilter
+  blockedId: IntFilter
+}
+
+input BlockUncheckedUpdateManyWithoutBlockedInput {
+  id: IntFieldUpdateOperationsInput
+  blockerId: IntFieldUpdateOperationsInput
+}
+
+input IntFieldUpdateOperationsInput {
+  set: Int
+  increment: Int
+  decrement: Int
+  multiply: Int
+  divide: Int
+}
+
+input VisitUpdateManyWithoutVisitorNestedInput {
+  create: [VisitCreateWithoutVisitorInput!]
+  connectOrCreate: [VisitCreateOrConnectWithoutVisitorInput!]
+  upsert: [VisitUpsertWithWhereUniqueWithoutVisitorInput!]
+  createMany: VisitCreateManyVisitorInputEnvelope
+  set: [VisitWhereUniqueInput!]
+  disconnect: [VisitWhereUniqueInput!]
+  delete: [VisitWhereUniqueInput!]
+  connect: [VisitWhereUniqueInput!]
+  update: [VisitUpdateWithWhereUniqueWithoutVisitorInput!]
+  updateMany: [VisitUpdateManyWithWhereWithoutVisitorInput!]
+  deleteMany: [VisitScalarWhereInput!]
+}
+
+input VisitUpsertWithWhereUniqueWithoutVisitorInput {
+  where: VisitWhereUniqueInput!
+  update: VisitUpdateWithoutVisitorInput!
+  create: VisitCreateWithoutVisitorInput!
+}
+
+input VisitUpdateWithoutVisitorInput {
+  visitedAt: DateTimeFieldUpdateOperationsInput
+  visited: UserUpdateOneRequiredWithoutVisits1NestedInput
+}
+
+input UserUpdateOneRequiredWithoutVisits1NestedInput {
+  create: UserCreateWithoutVisits1Input
+  connectOrCreate: UserCreateOrConnectWithoutVisits1Input
+  upsert: UserUpsertWithoutVisits1Input
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutVisits1Input
+}
+
+input UserUpsertWithoutVisits1Input {
+  update: UserUpdateWithoutVisits1Input!
+  create: UserCreateWithoutVisits1Input!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutVisits1Input {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input ReportUpdateManyWithoutReportedNestedInput {
+  create: [ReportCreateWithoutReportedInput!]
+  connectOrCreate: [ReportCreateOrConnectWithoutReportedInput!]
+  upsert: [ReportUpsertWithWhereUniqueWithoutReportedInput!]
+  createMany: ReportCreateManyReportedInputEnvelope
+  set: [ReportWhereUniqueInput!]
+  disconnect: [ReportWhereUniqueInput!]
+  delete: [ReportWhereUniqueInput!]
+  connect: [ReportWhereUniqueInput!]
+  update: [ReportUpdateWithWhereUniqueWithoutReportedInput!]
+  updateMany: [ReportUpdateManyWithWhereWithoutReportedInput!]
+  deleteMany: [ReportScalarWhereInput!]
+}
+
+input ReportUpsertWithWhereUniqueWithoutReportedInput {
+  where: ReportWhereUniqueInput!
+  update: ReportUpdateWithoutReportedInput!
+  create: ReportCreateWithoutReportedInput!
+}
+
+input ReportUpdateWithoutReportedInput {
+  reason: StringFieldUpdateOperationsInput
+  reporter: UserUpdateOneRequiredWithoutReportsNestedInput
+}
+
+input UserUpdateOneRequiredWithoutReportsNestedInput {
+  create: UserCreateWithoutReportsInput
+  connectOrCreate: UserCreateOrConnectWithoutReportsInput
+  upsert: UserUpsertWithoutReportsInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutReportsInput
+}
+
+input UserUpsertWithoutReportsInput {
+  update: UserUpdateWithoutReportsInput!
+  create: UserCreateWithoutReportsInput!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutReportsInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input VisitUpdateManyWithoutVisitedNestedInput {
+  create: [VisitCreateWithoutVisitedInput!]
+  connectOrCreate: [VisitCreateOrConnectWithoutVisitedInput!]
+  upsert: [VisitUpsertWithWhereUniqueWithoutVisitedInput!]
+  createMany: VisitCreateManyVisitedInputEnvelope
+  set: [VisitWhereUniqueInput!]
+  disconnect: [VisitWhereUniqueInput!]
+  delete: [VisitWhereUniqueInput!]
+  connect: [VisitWhereUniqueInput!]
+  update: [VisitUpdateWithWhereUniqueWithoutVisitedInput!]
+  updateMany: [VisitUpdateManyWithWhereWithoutVisitedInput!]
+  deleteMany: [VisitScalarWhereInput!]
+}
+
+input VisitUpsertWithWhereUniqueWithoutVisitedInput {
+  where: VisitWhereUniqueInput!
+  update: VisitUpdateWithoutVisitedInput!
+  create: VisitCreateWithoutVisitedInput!
+}
+
+input VisitUpdateWithoutVisitedInput {
+  visitedAt: DateTimeFieldUpdateOperationsInput
+  visitor: UserUpdateOneRequiredWithoutVisitsNestedInput
+}
+
+input UserUpdateOneRequiredWithoutVisitsNestedInput {
+  create: UserCreateWithoutVisitsInput
+  connectOrCreate: UserCreateOrConnectWithoutVisitsInput
+  upsert: UserUpsertWithoutVisitsInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutVisitsInput
+}
+
+input UserUpsertWithoutVisitsInput {
+  update: UserUpdateWithoutVisitsInput!
+  create: UserCreateWithoutVisitsInput!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutVisitsInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input LikeUpdateManyWithoutLikerNestedInput {
+  create: [LikeCreateWithoutLikerInput!]
+  connectOrCreate: [LikeCreateOrConnectWithoutLikerInput!]
+  upsert: [LikeUpsertWithWhereUniqueWithoutLikerInput!]
+  createMany: LikeCreateManyLikerInputEnvelope
+  set: [LikeWhereUniqueInput!]
+  disconnect: [LikeWhereUniqueInput!]
+  delete: [LikeWhereUniqueInput!]
+  connect: [LikeWhereUniqueInput!]
+  update: [LikeUpdateWithWhereUniqueWithoutLikerInput!]
+  updateMany: [LikeUpdateManyWithWhereWithoutLikerInput!]
+  deleteMany: [LikeScalarWhereInput!]
+}
+
+input LikeUpsertWithWhereUniqueWithoutLikerInput {
+  where: LikeWhereUniqueInput!
+  update: LikeUpdateWithoutLikerInput!
+  create: LikeCreateWithoutLikerInput!
+}
+
+input LikeUpdateWithoutLikerInput {
+  liked: UserUpdateOneRequiredWithoutLikes1NestedInput
+}
+
+input UserUpdateOneRequiredWithoutLikes1NestedInput {
+  create: UserCreateWithoutLikes1Input
+  connectOrCreate: UserCreateOrConnectWithoutLikes1Input
+  upsert: UserUpsertWithoutLikes1Input
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutLikes1Input
+}
+
+input UserUpsertWithoutLikes1Input {
+  update: UserUpdateWithoutLikes1Input!
+  create: UserCreateWithoutLikes1Input!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutLikes1Input {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input SettingUpdateManyWithoutUserNestedInput {
+  create: [SettingCreateWithoutUserInput!]
+  connectOrCreate: [SettingCreateOrConnectWithoutUserInput!]
+  upsert: [SettingUpsertWithWhereUniqueWithoutUserInput!]
+  createMany: SettingCreateManyUserInputEnvelope
+  set: [SettingWhereUniqueInput!]
+  disconnect: [SettingWhereUniqueInput!]
+  delete: [SettingWhereUniqueInput!]
+  connect: [SettingWhereUniqueInput!]
+  update: [SettingUpdateWithWhereUniqueWithoutUserInput!]
+  updateMany: [SettingUpdateManyWithWhereWithoutUserInput!]
+  deleteMany: [SettingScalarWhereInput!]
+}
+
+input SettingUpsertWithWhereUniqueWithoutUserInput {
+  where: SettingWhereUniqueInput!
+  update: SettingUpdateWithoutUserInput!
+  create: SettingCreateWithoutUserInput!
+}
+
+input SettingUpdateWithoutUserInput {
+  privacy: EnumPrivacySettingFieldUpdateOperationsInput
+  isNotificationsEnabled: BoolFieldUpdateOperationsInput
+  language: StringFieldUpdateOperationsInput
+  ghostMode: BoolFieldUpdateOperationsInput
+}
+
+input EnumPrivacySettingFieldUpdateOperationsInput {
+  set: PrivacySetting
+}
+
+input SettingUpdateWithWhereUniqueWithoutUserInput {
+  where: SettingWhereUniqueInput!
+  data: SettingUpdateWithoutUserInput!
+}
+
+input SettingUpdateManyWithWhereWithoutUserInput {
+  where: SettingScalarWhereInput!
+  data: SettingUpdateManyMutationInput!
+}
+
+input SettingScalarWhereInput {
+  AND: [SettingScalarWhereInput!]
+  OR: [SettingScalarWhereInput!]
+  NOT: [SettingScalarWhereInput!]
+  id: IntFilter
+  userId: IntFilter
+  privacy: EnumPrivacySettingFilter
+  isNotificationsEnabled: BoolFilter
+  language: StringFilter
+  ghostMode: BoolFilter
+}
+
+input SettingUpdateManyMutationInput {
+  privacy: EnumPrivacySettingFieldUpdateOperationsInput
+  isNotificationsEnabled: BoolFieldUpdateOperationsInput
+  language: StringFieldUpdateOperationsInput
+  ghostMode: BoolFieldUpdateOperationsInput
+}
+
+input MediaUpdateManyWithoutUserNestedInput {
+  create: [MediaCreateWithoutUserInput!]
+  connectOrCreate: [MediaCreateOrConnectWithoutUserInput!]
+  upsert: [MediaUpsertWithWhereUniqueWithoutUserInput!]
+  createMany: MediaCreateManyUserInputEnvelope
+  set: [MediaWhereUniqueInput!]
+  disconnect: [MediaWhereUniqueInput!]
+  delete: [MediaWhereUniqueInput!]
+  connect: [MediaWhereUniqueInput!]
+  update: [MediaUpdateWithWhereUniqueWithoutUserInput!]
+  updateMany: [MediaUpdateManyWithWhereWithoutUserInput!]
+  deleteMany: [MediaScalarWhereInput!]
+}
+
+input MediaUpsertWithWhereUniqueWithoutUserInput {
+  where: MediaWhereUniqueInput!
+  update: MediaUpdateWithoutUserInput!
+  create: MediaCreateWithoutUserInput!
+}
+
+input MediaUpdateWithoutUserInput {
+  type: EnumMediaTypeFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+  uploadedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input EnumMediaTypeFieldUpdateOperationsInput {
+  set: MediaType
+}
+
+input MediaUpdateWithWhereUniqueWithoutUserInput {
+  where: MediaWhereUniqueInput!
+  data: MediaUpdateWithoutUserInput!
+}
+
+input MediaUpdateManyWithWhereWithoutUserInput {
+  where: MediaScalarWhereInput!
+  data: MediaUpdateManyMutationInput!
+}
+
+input MediaScalarWhereInput {
+  AND: [MediaScalarWhereInput!]
+  OR: [MediaScalarWhereInput!]
+  NOT: [MediaScalarWhereInput!]
+  id: IntFilter
+  userId: IntFilter
+  type: EnumMediaTypeFilter
+  url: StringFilter
+  uploadedAt: DateTimeFilter
+}
+
+input MediaUpdateManyMutationInput {
+  type: EnumMediaTypeFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+  uploadedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input SubscriptionUpdateOneWithoutUserNestedInput {
+  create: SubscriptionCreateWithoutUserInput
+  connectOrCreate: SubscriptionCreateOrConnectWithoutUserInput
+  upsert: SubscriptionUpsertWithoutUserInput
+  disconnect: SubscriptionWhereInput
+  delete: SubscriptionWhereInput
+  connect: SubscriptionWhereUniqueInput
+  update: SubscriptionUpdateToOneWithWhereWithoutUserInput
+}
+
+input SubscriptionUpsertWithoutUserInput {
+  update: SubscriptionUpdateWithoutUserInput!
+  create: SubscriptionCreateWithoutUserInput!
+  where: SubscriptionWhereInput
+}
+
+input SubscriptionUpdateWithoutUserInput {
+  type: EnumSubscriptionTypeFieldUpdateOperationsInput
+  startDate: DateTimeFieldUpdateOperationsInput
+  endDate: DateTimeFieldUpdateOperationsInput
+}
+
+input EnumSubscriptionTypeFieldUpdateOperationsInput {
+  set: SubscriptionType
+}
+
+input SubscriptionUpdateToOneWithWhereWithoutUserInput {
+  where: SubscriptionWhereInput
+  data: SubscriptionUpdateWithoutUserInput!
+}
+
+input NotificationUpdateManyWithoutUserNestedInput {
+  create: [NotificationCreateWithoutUserInput!]
+  connectOrCreate: [NotificationCreateOrConnectWithoutUserInput!]
+  upsert: [NotificationUpsertWithWhereUniqueWithoutUserInput!]
+  createMany: NotificationCreateManyUserInputEnvelope
+  set: [NotificationWhereUniqueInput!]
+  disconnect: [NotificationWhereUniqueInput!]
+  delete: [NotificationWhereUniqueInput!]
+  connect: [NotificationWhereUniqueInput!]
+  update: [NotificationUpdateWithWhereUniqueWithoutUserInput!]
+  updateMany: [NotificationUpdateManyWithWhereWithoutUserInput!]
+  deleteMany: [NotificationScalarWhereInput!]
+}
+
+input NotificationUpsertWithWhereUniqueWithoutUserInput {
+  where: NotificationWhereUniqueInput!
+  update: NotificationUpdateWithoutUserInput!
+  create: NotificationCreateWithoutUserInput!
+}
+
+input NotificationUpdateWithoutUserInput {
+  type: EnumNotificationTypeFieldUpdateOperationsInput
+  content: StringFieldUpdateOperationsInput
+  notifiedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input EnumNotificationTypeFieldUpdateOperationsInput {
+  set: NotificationType
+}
+
+input NotificationUpdateWithWhereUniqueWithoutUserInput {
+  where: NotificationWhereUniqueInput!
+  data: NotificationUpdateWithoutUserInput!
+}
+
+input NotificationUpdateManyWithWhereWithoutUserInput {
+  where: NotificationScalarWhereInput!
+  data: NotificationUpdateManyMutationInput!
+}
+
+input NotificationScalarWhereInput {
+  AND: [NotificationScalarWhereInput!]
+  OR: [NotificationScalarWhereInput!]
+  NOT: [NotificationScalarWhereInput!]
+  id: IntFilter
+  userId: IntFilter
+  type: EnumNotificationTypeFilter
+  content: StringFilter
+  notifiedAt: DateTimeFilter
+}
+
+input NotificationUpdateManyMutationInput {
+  type: EnumNotificationTypeFieldUpdateOperationsInput
+  content: StringFieldUpdateOperationsInput
+  notifiedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input InterestUpdateOneWithoutUserNestedInput {
+  create: InterestCreateWithoutUserInput
+  connectOrCreate: InterestCreateOrConnectWithoutUserInput
+  upsert: InterestUpsertWithoutUserInput
+  disconnect: InterestWhereInput
+  delete: InterestWhereInput
+  connect: InterestWhereUniqueInput
+  update: InterestUpdateToOneWithWhereWithoutUserInput
+}
+
+input InterestUpsertWithoutUserInput {
+  update: InterestUpdateWithoutUserInput!
+  create: InterestCreateWithoutUserInput!
+  where: InterestWhereInput
+}
+
+input InterestUpdateWithoutUserInput {
+  interest: StringFieldUpdateOperationsInput
+}
+
+input InterestUpdateToOneWithWhereWithoutUserInput {
+  where: InterestWhereInput
+  data: InterestUpdateWithoutUserInput!
+}
+
+input UserUpdateToOneWithWhereWithoutLikes1Input {
+  where: UserWhereInput
+  data: UserUpdateWithoutLikes1Input!
+}
+
+input LikeUpdateWithWhereUniqueWithoutLikerInput {
+  where: LikeWhereUniqueInput!
+  data: LikeUpdateWithoutLikerInput!
+}
+
+input LikeUpdateManyWithWhereWithoutLikerInput {
+  where: LikeScalarWhereInput!
+  data: LikeUncheckedUpdateManyWithoutLikerInput!
+}
+
+input LikeScalarWhereInput {
+  AND: [LikeScalarWhereInput!]
+  OR: [LikeScalarWhereInput!]
+  NOT: [LikeScalarWhereInput!]
+  id: IntFilter
+  likerId: IntFilter
+  likedId: IntFilter
+}
+
+input LikeUncheckedUpdateManyWithoutLikerInput {
+  id: IntFieldUpdateOperationsInput
+  likedId: IntFieldUpdateOperationsInput
+}
+
+input LikeUpdateManyWithoutLikedNestedInput {
+  create: [LikeCreateWithoutLikedInput!]
+  connectOrCreate: [LikeCreateOrConnectWithoutLikedInput!]
+  upsert: [LikeUpsertWithWhereUniqueWithoutLikedInput!]
+  createMany: LikeCreateManyLikedInputEnvelope
+  set: [LikeWhereUniqueInput!]
+  disconnect: [LikeWhereUniqueInput!]
+  delete: [LikeWhereUniqueInput!]
+  connect: [LikeWhereUniqueInput!]
+  update: [LikeUpdateWithWhereUniqueWithoutLikedInput!]
+  updateMany: [LikeUpdateManyWithWhereWithoutLikedInput!]
+  deleteMany: [LikeScalarWhereInput!]
+}
+
+input LikeUpsertWithWhereUniqueWithoutLikedInput {
+  where: LikeWhereUniqueInput!
+  update: LikeUpdateWithoutLikedInput!
+  create: LikeCreateWithoutLikedInput!
+}
+
+input LikeUpdateWithoutLikedInput {
+  liker: UserUpdateOneRequiredWithoutLikesNestedInput
+}
+
+input UserUpdateOneRequiredWithoutLikesNestedInput {
+  create: UserCreateWithoutLikesInput
+  connectOrCreate: UserCreateOrConnectWithoutLikesInput
+  upsert: UserUpsertWithoutLikesInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutLikesInput
+}
+
+input UserUpsertWithoutLikesInput {
+  update: UserUpdateWithoutLikesInput!
+  create: UserCreateWithoutLikesInput!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutLikesInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input UserUpdateToOneWithWhereWithoutLikesInput {
+  where: UserWhereInput
+  data: UserUpdateWithoutLikesInput!
+}
+
+input LikeUpdateWithWhereUniqueWithoutLikedInput {
+  where: LikeWhereUniqueInput!
+  data: LikeUpdateWithoutLikedInput!
+}
+
+input LikeUpdateManyWithWhereWithoutLikedInput {
+  where: LikeScalarWhereInput!
+  data: LikeUncheckedUpdateManyWithoutLikedInput!
+}
+
+input LikeUncheckedUpdateManyWithoutLikedInput {
+  id: IntFieldUpdateOperationsInput
+  likerId: IntFieldUpdateOperationsInput
+}
+
+input UserUpdateToOneWithWhereWithoutVisitsInput {
+  where: UserWhereInput
+  data: UserUpdateWithoutVisitsInput!
+}
+
+input VisitUpdateWithWhereUniqueWithoutVisitedInput {
+  where: VisitWhereUniqueInput!
+  data: VisitUpdateWithoutVisitedInput!
+}
+
+input VisitUpdateManyWithWhereWithoutVisitedInput {
+  where: VisitScalarWhereInput!
+  data: VisitUpdateManyMutationInput!
+}
+
+input VisitScalarWhereInput {
+  AND: [VisitScalarWhereInput!]
+  OR: [VisitScalarWhereInput!]
+  NOT: [VisitScalarWhereInput!]
+  id: IntFilter
+  visitorId: IntFilter
+  visitedId: IntFilter
+  visitedAt: DateTimeFilter
+}
+
+input VisitUpdateManyMutationInput {
+  visitedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input UserUpdateToOneWithWhereWithoutReportsInput {
+  where: UserWhereInput
+  data: UserUpdateWithoutReportsInput!
+}
+
+input ReportUpdateWithWhereUniqueWithoutReportedInput {
+  where: ReportWhereUniqueInput!
+  data: ReportUpdateWithoutReportedInput!
+}
+
+input ReportUpdateManyWithWhereWithoutReportedInput {
+  where: ReportScalarWhereInput!
+  data: ReportUpdateManyMutationInput!
+}
+
+input ReportScalarWhereInput {
+  AND: [ReportScalarWhereInput!]
+  OR: [ReportScalarWhereInput!]
+  NOT: [ReportScalarWhereInput!]
+  id: IntFilter
+  reporterId: IntFilter
+  reportedId: IntFilter
+  reason: StringFilter
+}
+
+input ReportUpdateManyMutationInput {
+  reason: StringFieldUpdateOperationsInput
+}
+
+input UserUpdateToOneWithWhereWithoutVisits1Input {
+  where: UserWhereInput
+  data: UserUpdateWithoutVisits1Input!
+}
+
+input VisitUpdateWithWhereUniqueWithoutVisitorInput {
+  where: VisitWhereUniqueInput!
+  data: VisitUpdateWithoutVisitorInput!
+}
+
+input VisitUpdateManyWithWhereWithoutVisitorInput {
+  where: VisitScalarWhereInput!
+  data: VisitUpdateManyMutationInput!
+}
+
+input UserUpdateToOneWithWhereWithoutReports1Input {
+  where: UserWhereInput
+  data: UserUpdateWithoutReports1Input!
+}
+
+input ReportUpdateWithWhereUniqueWithoutReporterInput {
+  where: ReportWhereUniqueInput!
+  data: ReportUpdateWithoutReporterInput!
+}
+
+input ReportUpdateManyWithWhereWithoutReporterInput {
+  where: ReportScalarWhereInput!
+  data: ReportUpdateManyMutationInput!
+}
+
+input UserUpdateToOneWithWhereWithoutBlocks1Input {
+  where: UserWhereInput
+  data: UserUpdateWithoutBlocks1Input!
+}
+
+input BlockUpdateWithWhereUniqueWithoutBlockerInput {
+  where: BlockWhereUniqueInput!
+  data: BlockUpdateWithoutBlockerInput!
+}
+
+input BlockUpdateManyWithWhereWithoutBlockerInput {
+  where: BlockScalarWhereInput!
+  data: BlockUncheckedUpdateManyWithoutBlockerInput!
+}
+
+input BlockUncheckedUpdateManyWithoutBlockerInput {
+  id: IntFieldUpdateOperationsInput
+  blockedId: IntFieldUpdateOperationsInput
+}
+
+input UserUpdateToOneWithWhereWithoutMatchesInput {
+  where: UserWhereInput
+  data: UserUpdateWithoutMatchesInput!
+}
+
+input MatchUpdateWithWhereUniqueWithoutUser2Input {
+  where: MatchWhereUniqueInput!
+  data: MatchUpdateWithoutUser2Input!
+}
+
+input MatchUpdateManyWithWhereWithoutUser2Input {
+  where: MatchScalarWhereInput!
+  data: MatchUpdateManyMutationInput!
+}
+
+input MatchScalarWhereInput {
+  AND: [MatchScalarWhereInput!]
+  OR: [MatchScalarWhereInput!]
+  NOT: [MatchScalarWhereInput!]
+  id: IntFilter
+  user1Id: IntFilter
+  user2Id: IntFilter
+  matchedAt: DateTimeFilter
+}
+
+input MatchUpdateManyMutationInput {
+  matchedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input UserUpdateToOneWithWhereWithoutMessagesInput {
+  where: UserWhereInput
+  data: UserUpdateWithoutMessagesInput!
+}
+
+input MessageUpdateWithWhereUniqueWithoutReceiverInput {
+  where: MessageWhereUniqueInput!
+  data: MessageUpdateWithoutReceiverInput!
+}
+
+input MessageUpdateManyWithWhereWithoutReceiverInput {
+  where: MessageScalarWhereInput!
+  data: MessageUpdateManyMutationInput!
+}
+
+input MessageScalarWhereInput {
+  AND: [MessageScalarWhereInput!]
+  OR: [MessageScalarWhereInput!]
+  NOT: [MessageScalarWhereInput!]
+  id: IntFilter
+  senderId: IntFilter
+  receiverId: IntFilter
+  content: StringFilter
+  sentAt: DateTimeFilter
+  isRead: BoolFilter
+}
+
+input MessageUpdateManyMutationInput {
+  content: StringFieldUpdateOperationsInput
+  sentAt: DateTimeFieldUpdateOperationsInput
+  isRead: BoolFieldUpdateOperationsInput
+}
+
+input UserUpdateToOneWithWhereWithoutMatches1Input {
+  where: UserWhereInput
+  data: UserUpdateWithoutMatches1Input!
+}
+
+input MatchUpdateWithWhereUniqueWithoutUser1Input {
+  where: MatchWhereUniqueInput!
+  data: MatchUpdateWithoutUser1Input!
+}
+
+input MatchUpdateManyWithWhereWithoutUser1Input {
+  where: MatchScalarWhereInput!
+  data: MatchUpdateManyMutationInput!
+}
+
+input UserUpdateToOneWithWhereWithoutMessages1Input {
+  where: UserWhereInput
+  data: UserUpdateWithoutMessages1Input!
+}
+
+input MessageUpdateWithWhereUniqueWithoutSenderInput {
+  where: MessageWhereUniqueInput!
+  data: MessageUpdateWithoutSenderInput!
+}
+
+input MessageUpdateManyWithWhereWithoutSenderInput {
+  where: MessageScalarWhereInput!
+  data: MessageUpdateManyMutationInput!
+}
+
+input UserUpdateToOneWithWhereWithoutBlocksInput {
+  where: UserWhereInput
+  data: UserUpdateWithoutBlocksInput!
+}
+
+input LikeCreateInput {
+  liker: UserCreateNestedOneWithoutLikesInput!
+  liked: UserCreateNestedOneWithoutLikes1Input!
+}
+
+input LikeUpdateInput {
+  liker: UserUpdateOneRequiredWithoutLikesNestedInput
+  liked: UserUpdateOneRequiredWithoutLikes1NestedInput
+}
+
+input MatchCreateInput {
+  matchedAt: DateTime
+  user1: UserCreateNestedOneWithoutMatchesInput!
+  user2: UserCreateNestedOneWithoutMatches1Input!
+}
+
+input MatchUpdateInput {
+  matchedAt: DateTimeFieldUpdateOperationsInput
+  user1: UserUpdateOneRequiredWithoutMatchesNestedInput
+  user2: UserUpdateOneRequiredWithoutMatches1NestedInput
+}
+
+input MediaCreateInput {
+  type: MediaType!
+  url: String!
+  uploadedAt: DateTime
+  user: UserCreateNestedOneWithoutMediaInput!
+}
+
+input UserCreateNestedOneWithoutMediaInput {
+  create: UserCreateWithoutMediaInput
+  connectOrCreate: UserCreateOrConnectWithoutMediaInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutMediaInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input UserCreateOrConnectWithoutMediaInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutMediaInput!
+}
+
+input MediaUpdateInput {
+  type: EnumMediaTypeFieldUpdateOperationsInput
+  url: StringFieldUpdateOperationsInput
+  uploadedAt: DateTimeFieldUpdateOperationsInput
+  user: UserUpdateOneRequiredWithoutMediaNestedInput
+}
+
+input UserUpdateOneRequiredWithoutMediaNestedInput {
+  create: UserCreateWithoutMediaInput
+  connectOrCreate: UserCreateOrConnectWithoutMediaInput
+  upsert: UserUpsertWithoutMediaInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutMediaInput
+}
+
+input UserUpsertWithoutMediaInput {
+  update: UserUpdateWithoutMediaInput!
+  create: UserCreateWithoutMediaInput!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutMediaInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input UserUpdateToOneWithWhereWithoutMediaInput {
+  where: UserWhereInput
+  data: UserUpdateWithoutMediaInput!
+}
+
+input MessageCreateInput {
+  content: String!
+  sentAt: DateTime
+  isRead: Boolean
+  sender: UserCreateNestedOneWithoutMessagesInput!
+  receiver: UserCreateNestedOneWithoutMessages1Input!
+}
+
+input MessageUpdateInput {
+  content: StringFieldUpdateOperationsInput
+  sentAt: DateTimeFieldUpdateOperationsInput
+  isRead: BoolFieldUpdateOperationsInput
+  sender: UserUpdateOneRequiredWithoutMessagesNestedInput
+  receiver: UserUpdateOneRequiredWithoutMessages1NestedInput
+}
+
+input NotificationCreateInput {
+  type: NotificationType!
+  content: String!
+  notifiedAt: DateTime
+  user: UserCreateNestedOneWithoutNotificationInput!
+}
+
+input UserCreateNestedOneWithoutNotificationInput {
+  create: UserCreateWithoutNotificationInput
+  connectOrCreate: UserCreateOrConnectWithoutNotificationInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutNotificationInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input UserCreateOrConnectWithoutNotificationInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutNotificationInput!
+}
+
+input NotificationUpdateInput {
+  type: EnumNotificationTypeFieldUpdateOperationsInput
+  content: StringFieldUpdateOperationsInput
+  notifiedAt: DateTimeFieldUpdateOperationsInput
+  user: UserUpdateOneRequiredWithoutNotificationNestedInput
+}
+
+input UserUpdateOneRequiredWithoutNotificationNestedInput {
+  create: UserCreateWithoutNotificationInput
+  connectOrCreate: UserCreateOrConnectWithoutNotificationInput
+  upsert: UserUpsertWithoutNotificationInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutNotificationInput
+}
+
+input UserUpsertWithoutNotificationInput {
+  update: UserUpdateWithoutNotificationInput!
+  create: UserCreateWithoutNotificationInput!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutNotificationInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input UserUpdateToOneWithWhereWithoutNotificationInput {
+  where: UserWhereInput
+  data: UserUpdateWithoutNotificationInput!
+}
+
+input ReportCreateInput {
+  reason: String!
+  reporter: UserCreateNestedOneWithoutReportsInput!
+  reported: UserCreateNestedOneWithoutReports1Input!
+}
+
+input ReportUpdateInput {
+  reason: StringFieldUpdateOperationsInput
+  reporter: UserUpdateOneRequiredWithoutReportsNestedInput
+  reported: UserUpdateOneRequiredWithoutReports1NestedInput
+}
+
+input SettingCreateInput {
+  privacy: PrivacySetting!
+  isNotificationsEnabled: Boolean!
+  language: String!
+  ghostMode: Boolean!
+  user: UserCreateNestedOneWithoutSettingsInput!
+}
+
+input UserCreateNestedOneWithoutSettingsInput {
+  create: UserCreateWithoutSettingsInput
+  connectOrCreate: UserCreateOrConnectWithoutSettingsInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutSettingsInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input UserCreateOrConnectWithoutSettingsInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutSettingsInput!
+}
+
+input SettingUpdateInput {
+  privacy: EnumPrivacySettingFieldUpdateOperationsInput
+  isNotificationsEnabled: BoolFieldUpdateOperationsInput
+  language: StringFieldUpdateOperationsInput
+  ghostMode: BoolFieldUpdateOperationsInput
+  user: UserUpdateOneRequiredWithoutSettingsNestedInput
+}
+
+input UserUpdateOneRequiredWithoutSettingsNestedInput {
+  create: UserCreateWithoutSettingsInput
+  connectOrCreate: UserCreateOrConnectWithoutSettingsInput
+  upsert: UserUpsertWithoutSettingsInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutSettingsInput
+}
+
+input UserUpsertWithoutSettingsInput {
+  update: UserUpdateWithoutSettingsInput!
+  create: UserCreateWithoutSettingsInput!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutSettingsInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input UserUpdateToOneWithWhereWithoutSettingsInput {
+  where: UserWhereInput
+  data: UserUpdateWithoutSettingsInput!
+}
+
+input SubscriptionCreateInput {
+  type: SubscriptionType
+  startDate: DateTime!
+  endDate: DateTime!
+  user: UserCreateNestedOneWithoutSubscriptionInput!
+}
+
+input UserCreateNestedOneWithoutSubscriptionInput {
+  create: UserCreateWithoutSubscriptionInput
+  connectOrCreate: UserCreateOrConnectWithoutSubscriptionInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutSubscriptionInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input UserCreateOrConnectWithoutSubscriptionInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutSubscriptionInput!
+}
+
+input SubscriptionUpdateInput {
+  type: EnumSubscriptionTypeFieldUpdateOperationsInput
+  startDate: DateTimeFieldUpdateOperationsInput
+  endDate: DateTimeFieldUpdateOperationsInput
+  user: UserUpdateOneRequiredWithoutSubscriptionNestedInput
+}
+
+input UserUpdateOneRequiredWithoutSubscriptionNestedInput {
+  create: UserCreateWithoutSubscriptionInput
+  connectOrCreate: UserCreateOrConnectWithoutSubscriptionInput
+  upsert: UserUpsertWithoutSubscriptionInput
+  connect: UserWhereUniqueInput
+  update: UserUpdateToOneWithWhereWithoutSubscriptionInput
+}
+
+input UserUpsertWithoutSubscriptionInput {
+  update: UserUpdateWithoutSubscriptionInput!
+  create: UserCreateWithoutSubscriptionInput!
+  where: UserWhereInput
+}
+
+input UserUpdateWithoutSubscriptionInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input UserUpdateToOneWithWhereWithoutSubscriptionInput {
+  where: UserWhereInput
+  data: UserUpdateWithoutSubscriptionInput!
+}
+
+input UserCreateInput {
+  firstName: String!
+  lastName: String!
+  gender: Gender!
+  birthDate: DateTime!
+  email: String!
+  password: String!
+  salt: String
+  bio: String
+  city: String
+  country: String
+  rating: Int
+  mainPhoto: String
+  isVerified: Boolean
+  createdAt: DateTime
+  lastLogin: DateTime
+  messages: MessageCreateNestedManyWithoutSenderInput
+  messages1: MessageCreateNestedManyWithoutReceiverInput
+  matches: MatchCreateNestedManyWithoutUser1Input
+  matches1: MatchCreateNestedManyWithoutUser2Input
+  blocks: BlockCreateNestedManyWithoutBlockerInput
+  blocks1: BlockCreateNestedManyWithoutBlockedInput
+  reports: ReportCreateNestedManyWithoutReporterInput
+  reports1: ReportCreateNestedManyWithoutReportedInput
+  visits: VisitCreateNestedManyWithoutVisitorInput
+  visits1: VisitCreateNestedManyWithoutVisitedInput
+  likes: LikeCreateNestedManyWithoutLikerInput
+  likes1: LikeCreateNestedManyWithoutLikedInput
+  settings: SettingCreateNestedManyWithoutUserInput
+  media: MediaCreateNestedManyWithoutUserInput
+  subscription: SubscriptionCreateNestedOneWithoutUserInput
+  notification: NotificationCreateNestedManyWithoutUserInput
+  interest: InterestCreateNestedOneWithoutUserInput
+}
+
+input UserUpdateInput {
+  firstName: StringFieldUpdateOperationsInput
+  lastName: StringFieldUpdateOperationsInput
+  gender: EnumGenderFieldUpdateOperationsInput
+  birthDate: DateTimeFieldUpdateOperationsInput
+  email: StringFieldUpdateOperationsInput
+  password: StringFieldUpdateOperationsInput
+  salt: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  city: NullableStringFieldUpdateOperationsInput
+  country: NullableStringFieldUpdateOperationsInput
+  rating: NullableIntFieldUpdateOperationsInput
+  mainPhoto: NullableStringFieldUpdateOperationsInput
+  isVerified: NullableBoolFieldUpdateOperationsInput
+  createdAt: NullableDateTimeFieldUpdateOperationsInput
+  lastLogin: NullableDateTimeFieldUpdateOperationsInput
+  messages: MessageUpdateManyWithoutSenderNestedInput
+  messages1: MessageUpdateManyWithoutReceiverNestedInput
+  matches: MatchUpdateManyWithoutUser1NestedInput
+  matches1: MatchUpdateManyWithoutUser2NestedInput
+  blocks: BlockUpdateManyWithoutBlockerNestedInput
+  blocks1: BlockUpdateManyWithoutBlockedNestedInput
+  reports: ReportUpdateManyWithoutReporterNestedInput
+  reports1: ReportUpdateManyWithoutReportedNestedInput
+  visits: VisitUpdateManyWithoutVisitorNestedInput
+  visits1: VisitUpdateManyWithoutVisitedNestedInput
+  likes: LikeUpdateManyWithoutLikerNestedInput
+  likes1: LikeUpdateManyWithoutLikedNestedInput
+  settings: SettingUpdateManyWithoutUserNestedInput
+  media: MediaUpdateManyWithoutUserNestedInput
+  subscription: SubscriptionUpdateOneWithoutUserNestedInput
+  notification: NotificationUpdateManyWithoutUserNestedInput
+  interest: InterestUpdateOneWithoutUserNestedInput
+}
+
+input VisitCreateInput {
+  visitedAt: DateTime
+  visitor: UserCreateNestedOneWithoutVisitsInput!
+  visited: UserCreateNestedOneWithoutVisits1Input!
+}
+
+input VisitUpdateInput {
+  visitedAt: DateTimeFieldUpdateOperationsInput
+  visitor: UserUpdateOneRequiredWithoutVisitsNestedInput
+  visited: UserUpdateOneRequiredWithoutVisits1NestedInput
+}
