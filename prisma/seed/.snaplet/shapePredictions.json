@@ -1,161 +1,223 @@
 [
   {
-    "schemaName": "mydb",
-    "tableName": "Interest",
+    "schemaName": "public",
+    "tableName": "Account",
     "predictions": [
       {
-        "input": "mydb interest interest",
-        "column": "interest",
-        "shape": "POST_TITLE",
-        "confidence": 0.1869475841522217,
+        "input": "public account account_number",
+        "column": "account_number",
+        "shape": "FINANCE_IBAN",
+        "confidence": 0.9365658760070801,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public account balance",
+        "column": "balance",
+        "shape": "FINANCE_ACCOUNT",
+        "confidence": 0.9676937460899353,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public account bank_name",
+        "column": "bank_name",
+        "shape": "FINANCIAL_INSTITUTION",
+        "confidence": 0.5244247913360596,
         "context": "GENERAL",
         "confidenceContext": 0
       }
     ]
   },
   {
-    "schemaName": "mydb",
-    "tableName": "Media",
+    "schemaName": "public",
+    "tableName": "Client",
     "predictions": [
       {
-        "input": "mydb media url",
-        "column": "url",
-        "shape": "MEDIA_LINK",
-        "confidence": 0.7808746099472046,
+        "input": "public client address",
+        "column": "address",
+        "shape": "FULL_ADDRESS",
+        "confidence": 0.9712990522384644,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public client name",
+        "column": "name",
+        "shape": "COMPANY_NAME",
+        "confidence": 0.8707321882247925,
         "context": "GENERAL",
         "confidenceContext": 0
       }
     ]
   },
   {
-    "schemaName": "mydb",
-    "tableName": "Message",
+    "schemaName": "public",
+    "tableName": "Company",
     "predictions": [
       {
-        "input": "mydb message content",
-        "column": "content",
-        "shape": "POST_BODY",
-        "confidence": 0.7541999220848083,
+        "input": "public company address",
+        "column": "address",
+        "shape": "FULL_ADDRESS",
+        "confidence": 0.9232598543167114,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public company name",
+        "column": "name",
+        "shape": "COMPANY_NAME",
+        "confidence": 0.907230019569397,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public company phone",
+        "column": "phone",
+        "shape": "PHONE_NUMBER",
+        "confidence": 0.9633249044418335,
         "context": "GENERAL",
         "confidenceContext": 0
       }
     ]
   },
   {
-    "schemaName": "mydb",
-    "tableName": "Notification",
+    "schemaName": "public",
+    "tableName": "Product",
     "predictions": [
       {
-        "input": "mydb notification content",
-        "column": "content",
-        "shape": "NOTIFICATIONS",
-        "confidence": 0.9803857803344727,
+        "input": "public product grade",
+        "column": "grade",
+        "shape": "COMMERCE_PRODUCT",
+        "confidence": 0.8858463764190674,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public product manufacturer",
+        "column": "manufacturer",
+        "shape": "VEHICLE_MANUFACTURER",
+        "confidence": 0.9891024827957153,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public product manufacturer_address",
+        "column": "manufacturer_address",
+        "shape": "VEHICLE_MANUFACTURER",
+        "confidence": 0.954312801361084,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public product product_name",
+        "column": "product_name",
+        "shape": "COMMERCE_PRODUCT_NAME",
+        "confidence": 0.7679998874664307,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public product unit_of_measurement",
+        "column": "unit_of_measurement",
+        "shape": "SCIENCE_UNIT_NAME",
+        "confidence": 0.7,
         "context": "GENERAL",
         "confidenceContext": 0
       }
     ]
   },
   {
-    "schemaName": "mydb",
-    "tableName": "Report",
+    "schemaName": "public",
+    "tableName": "Staff",
     "predictions": [
       {
-        "input": "mydb report reason",
-        "column": "reason",
-        "shape": "FINANCE_TRANSACTION_DESCRIPTION",
-        "confidence": 0.9817264676094055,
+        "input": "public staff education",
+        "column": "education",
+        "shape": "EDUCATION_INSTITUTION_NAME",
+        "confidence": 0.7,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public staff name",
+        "column": "name",
+        "shape": "PERSON_FULL_NAME",
+        "confidence": 0.8,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public staff position",
+        "column": "position",
+        "shape": "PERSON_JOB_TITLE",
+        "confidence": 0.7388303279876709,
         "context": "GENERAL",
         "confidenceContext": 0
       }
     ]
   },
   {
-    "schemaName": "mydb",
-    "tableName": "Setting",
+    "schemaName": "public",
+    "tableName": "Supplier",
     "predictions": [
       {
-        "input": "mydb setting language",
-        "column": "language",
-        "shape": "SYSTEM_FILE_TYPE",
-        "confidence": 0.5847648978233337,
+        "input": "public supplier address",
+        "column": "address",
+        "shape": "FULL_ADDRESS",
+        "confidence": 0.9815800786018372,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
+        "input": "public supplier name",
+        "column": "name",
+        "shape": "COMPANY_NAME",
+        "confidence": 0.8,
         "context": "GENERAL",
         "confidenceContext": 0
       }
     ]
   },
   {
-    "schemaName": "mydb",
-    "tableName": "User",
+    "schemaName": "public",
+    "tableName": "Transport",
     "predictions": [
       {
-        "input": "mydb user bio",
-        "column": "bio",
-        "shape": "PERSON_BIO",
-        "confidence": 0.9531440138816833,
+        "input": "public transport owner_name",
+        "column": "owner_name",
+        "shape": "PERSON_FULL_NAME",
+        "confidence": 0.9891007542610168,
         "context": "GENERAL",
         "confidenceContext": 0
       },
       {
-        "input": "mydb user city",
-        "column": "city",
-        "shape": "CITY",
-        "confidence": 0.9882730841636658,
+        "input": "public transport vehicle_brand",
+        "column": "vehicle_brand",
+        "shape": "VEHICLE_IDENTIFICATION_NUMBER",
+        "confidence": 0.702355146408081,
         "context": "GENERAL",
         "confidenceContext": 0
       },
       {
-        "input": "mydb user country",
-        "column": "country",
-        "shape": "COUNTRY",
-        "confidence": 0.9890626072883606,
+        "input": "public transport vehicle_number",
+        "column": "vehicle_number",
+        "shape": "VEHICLE_IDENTIFICATION_NUMBER",
+        "confidence": 0.9706740379333496,
         "context": "GENERAL",
         "confidenceContext": 0
-      },
+      }
+    ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "Warehouse",
+    "predictions": [
       {
-        "input": "mydb user email",
-        "column": "email",
-        "shape": "EMAIL",
-        "confidence": 0.992536187171936,
-        "context": "GENERAL",
-        "confidenceContext": 0
-      },
-      {
-        "input": "mydb user first_name",
-        "column": "firstName",
-        "shape": "PERSON_FIRST_NAME",
-        "confidence": 0.991860568523407,
-        "context": "GENERAL",
-        "confidenceContext": 0
-      },
-      {
-        "input": "mydb user last_name",
-        "column": "lastName",
-        "shape": "PERSON_LAST_NAME",
-        "confidence": 0.9768906831741333,
-        "context": "GENERAL",
-        "confidenceContext": 0
-      },
-      {
-        "input": "mydb user main_photo",
-        "column": "mainPhoto",
-        "shape": "INTERNET_AVATAR",
-        "confidence": 0.7723875045776367,
-        "context": "GENERAL",
-        "confidenceContext": 0
-      },
-      {
-        "input": "mydb user password",
-        "column": "password",
-        "shape": "PASSWORD",
-        "confidence": 0.9955572485923767,
-        "context": "GENERAL",
-        "confidenceContext": 0
-      },
-      {
-        "input": "mydb user salt",
-        "column": "salt",
-        "shape": "HASH",
-        "confidence": 0.2080196589231491,
+        "input": "public warehouse address",
+        "column": "address",
+        "shape": "FULL_ADDRESS",
+        "confidence": 0.9862911105155945,
         "context": "GENERAL",
         "confidenceContext": 0
       }

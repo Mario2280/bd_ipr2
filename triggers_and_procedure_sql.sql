@@ -94,3 +94,4 @@ BEGIN
   ORDER BY distance;
 END//
 DELIMITER ;
+

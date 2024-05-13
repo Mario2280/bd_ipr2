@@ -1,41 +1,42 @@
 /**
- * ! Executing this script will delete all data in your database and seed it with 10 user.
+ * ! Executing this script will delete all data in your database and seed it with 10 company.
  * ! Make sure to adjust the script to your needs.
  * Use any TypeScript runner to run this script, for example: `npx tsx seed.ts`
  * Learn more about the Seed Client by following our guide: https://docs.snaplet.dev/seed/getting-started
  */
-import { createSeedClient } from '@snaplet/seed'
-import { random } from 'lodash';
+import { createSeedClient } from "@snaplet/seed";
 
 const main = async () => {
-  
-	const seed = await createSeedClient({
+  const seed = await createSeedClient({
+    connect: true,
     models: {
-      user: {
+      account: {
         data: {
-          location: () =>
-            `POINT(${random(-90.0, 90.0)} ${random(-90.0, 90.0)})`,
+          supplier_id: null
         },
-      },
-    },
-  })
+      }
+    }
+  });
 
   // Truncate all tables in the database
-  await seed.$resetDatabase();
+  //await seed.$resetDatabase();
 
-  await seed.user((x) => x(100))
-	await seed.message((x) => x(100))
-	await seed.match((x) => x(100))
-	await seed.block((x) => x(100))
-	await seed.subscription((x) => x(100))
-	await seed.report((x) => x(100))
-	await seed.visit((x) => x(100))
-	await seed.like((x) => x(100))
-	await seed.notification((x) => x(100))
-	await seed.setting((x) => x(100))
-	await seed.media((x) => x(100))
-	await seed.interest((x) => x(100))
+  // Seed the database with 10 company
+  await seed.supplier((x) => x(10))
+  //await seed.client((x) => x(10))
+  //await seed.account((x) => x(10));
+  await seed.product((x) => x(10))
+  //await seed.company((x) => x(10))
   
+  //await seed.order((x) => x(10))
+  //await seed.invoice((x) => x(10))
+  //await seed.staff((x) => x(10))
+  
+  //await seed.transport((x) => x(10))
+  //await seed.warehouse((x) => x(10))
+
+  // Type completion not working? You might want to reload your TypeScript Server to pick up the changes
+
   console.log("Database seeded successfully!");
 
   process.exit();

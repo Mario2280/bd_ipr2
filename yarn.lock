@@ -45,10 +45,20 @@
     ora "5.4.1"
     rxjs "7.8.1"
 
-"@apollo/cache-control-types@^1.0.3":
+"@apollo/cache-control-types@^1.0.2", "@apollo/cache-control-types@^1.0.3":
   version "1.0.3"
   resolved "https://registry.npmjs.org/@apollo/cache-control-types/-/cache-control-types-1.0.3.tgz"
   integrity sha512-F17/vCp7QVwom9eG7ToauIKdAxpSoadsJnqIfyryLFSkLSOEqu+eC5Z3N8OXcUVStuOMcNHlyraRsA6rRICu4g==
+
+"@apollo/federation-internals@2.7.7":
+  version "2.7.7"
+  resolved "https://registry.yarnpkg.com/@apollo/federation-internals/-/federation-internals-2.7.7.tgz#95623adf4646dc7ff189cc77925c14445b08de03"
+  integrity sha512-1qC4k1QLseROSFhHqRGbtwX2sUcA+y13EaCGNWEpnkUjJn5+6fjVGiNrWYHJ3chiS+avaEUC+wgGxsUYlCWeNg==
+  dependencies:
+    "@types/uuid" "^9.0.0"
+    chalk "^4.1.0"
+    js-levenshtein "^1.1.6"
+    uuid "^9.0.0"
 
 "@apollo/protobufjs@1.2.7":
   version "1.2.7"
@@ -115,6 +125,14 @@
     node-fetch "^2.6.7"
     uuid "^9.0.0"
     whatwg-mimetype "^3.0.0"
+
+"@apollo/subgraph@^2.7.7":
+  version "2.7.7"
+  resolved "https://registry.yarnpkg.com/@apollo/subgraph/-/subgraph-2.7.7.tgz#167ad9c6b023f3f163ff58d3e503b2ff30260c15"
+  integrity sha512-v7H3KLdM4bP+rs5SMo6hqOoBtwf+ejJCM56iV8++3sc/uDRUWYREX8qTujwJnxuQh4KQ44DduDPz8kAaQXBMDw==
+  dependencies:
+    "@apollo/cache-control-types" "^1.0.2"
+    "@apollo/federation-internals" "2.7.7"
 
 "@apollo/usage-reporting-protobuf@^4.1.0", "@apollo/usage-reporting-protobuf@^4.1.1":
   version "4.1.1"
@@ -1198,6 +1216,41 @@
     consola "^2.15.0"
     node-fetch "^2.6.1"
 
+"@paljs/display@6.0.7":
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/@paljs/display/-/display-6.0.7.tgz#a882cbfb3e66b0febd86be41360a0fc2be65ead6"
+  integrity sha512-OiKEba3GQv+yDISZcXfhHsT+p4kz64cJiEFADtwoAivwuCFXcgyZUth76WR/u/oTyTljjIm+ju7kvD1+on8ATg==
+  dependencies:
+    chalk "4.1.2"
+    debug "^4.3.4"
+    ora "5.4.1"
+    readline "^1.3.0"
+
+"@paljs/plugins@^6.0.7":
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/@paljs/plugins/-/plugins-6.0.7.tgz#49a42aa915e04ddf7395d27dafb5f01eea2680c5"
+  integrity sha512-8mQmSfto3qt8q9BwpoDw0hYj4IOmvKNy0FxWQQTujYEFLtasHLQVrQsO9R2HFFR0NZbQCiANyy4ctR6uBW/C4w==
+  dependencies:
+    "@paljs/types" "6.0.7"
+    "@paljs/utils" "6.0.7"
+    graphql-parse-resolve-info "^4.13.0"
+    graphql-tag "^2.12.6"
+    prettier "^2.8.4"
+
+"@paljs/types@6.0.7":
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/@paljs/types/-/types-6.0.7.tgz#d0d4688063d2145438c666d96e44dd00e1d0843d"
+  integrity sha512-4u0aa4BI31MHKoMMcjb+wKC7OPCHDxbf/MFtptXnnWoHAKJPtY2b9hl9qv/dmQlqibWhYJQtO5KnzwfunkHx9g==
+
+"@paljs/utils@6.0.7":
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/@paljs/utils/-/utils-6.0.7.tgz#d5e12bd96fe6d816231165ee8ad68fc017286257"
+  integrity sha512-GdUiJPh7KwwmTz7FhISfgKLLlTj8dpn+fLfBXh1xpVkhRvLp7TfHnJOqAb6yj/iFWnKF9zyevDlrPuUadgT43g==
+  dependencies:
+    "@paljs/display" "6.0.7"
+    "@paljs/types" "6.0.7"
+    "@prisma/internals" "^5.2.0"
+
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
   resolved "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz"
@@ -1271,19 +1324,19 @@
     "@prisma/engines-version" "5.14.0-6.264f24ce0b2f544ff968ff76bfaa999de1161361"
     "@prisma/get-platform" "5.14.0-dev.34"
 
+"@prisma/generator-helper@5.13.0", "@prisma/generator-helper@^5.7.0":
+  version "5.13.0"
+  resolved "https://registry.npmjs.org/@prisma/generator-helper/-/generator-helper-5.13.0.tgz"
+  integrity sha512-i+53beJ0dxkDrkHdsXxmeMf+eVhyhOIpL0SdBga8vwe0qHPrAIJ/lpuT/Hj0y5awTmq40qiUEmhXwCEuM/Z17w==
+  dependencies:
+    "@prisma/debug" "5.13.0"
+
 "@prisma/generator-helper@5.14.0-dev.34":
   version "5.14.0-dev.34"
   resolved "https://registry.npmjs.org/@prisma/generator-helper/-/generator-helper-5.14.0-dev.34.tgz"
   integrity sha512-AsY7piYVHtaGf/TjSoK2j7pZmG+xX/Mqv/VQMNJmfJDEGAnt1fXg6e6veSGLm/SqxA3JJhVCaX3XUHYDeXnsOg==
   dependencies:
     "@prisma/debug" "5.14.0-dev.34"
-
-"@prisma/generator-helper@^5.7.0":
-  version "5.13.0"
-  resolved "https://registry.npmjs.org/@prisma/generator-helper/-/generator-helper-5.13.0.tgz"
-  integrity sha512-i+53beJ0dxkDrkHdsXxmeMf+eVhyhOIpL0SdBga8vwe0qHPrAIJ/lpuT/Hj0y5awTmq40qiUEmhXwCEuM/Z17w==
-  dependencies:
-    "@prisma/debug" "5.13.0"
 
 "@prisma/get-platform@5.13.0":
   version "5.13.0"
@@ -1314,10 +1367,37 @@
     arg "5.0.2"
     prompts "2.4.2"
 
+"@prisma/internals@^5.2.0":
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/@prisma/internals/-/internals-5.13.0.tgz#15ba677eec8789d3d36b6eebfa424eeee6b6b028"
+  integrity sha512-OPMzS+IBPzCLT4s+IfGUbOhGFY51CFbokIFMZuoSeLKWE8UvDlitiXZ3OlVqDPUc0AlH++ysQHzDISHbZD+ZUg==
+  dependencies:
+    "@prisma/debug" "5.13.0"
+    "@prisma/engines" "5.13.0"
+    "@prisma/fetch-engine" "5.13.0"
+    "@prisma/generator-helper" "5.13.0"
+    "@prisma/get-platform" "5.13.0"
+    "@prisma/prisma-schema-wasm" "5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b"
+    "@prisma/schema-files-loader" "5.13.0"
+    arg "5.0.2"
+    prompts "2.4.2"
+
+"@prisma/prisma-schema-wasm@5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b":
+  version "5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b"
+  resolved "https://registry.yarnpkg.com/@prisma/prisma-schema-wasm/-/prisma-schema-wasm-5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b.tgz#a78ac66393dfb0683eebb78bae325a2ec398ab88"
+  integrity sha512-+IhHvuE1wKlyOpJgwAhGop1oqEt+1eixrCeikBIshRhdX6LwjmtRxVxVMlP5nS1yyughmpfkysIW4jZTa+Zjuw==
+
 "@prisma/prisma-schema-wasm@5.14.0-6.264f24ce0b2f544ff968ff76bfaa999de1161361":
   version "5.14.0-6.264f24ce0b2f544ff968ff76bfaa999de1161361"
   resolved "https://registry.npmjs.org/@prisma/prisma-schema-wasm/-/prisma-schema-wasm-5.14.0-6.264f24ce0b2f544ff968ff76bfaa999de1161361.tgz"
   integrity sha512-lMNW0WEI+eP5gPn+blBj2yK2znvQlWQbbcOdbqR6PmOOMZRPXbfoC1LgxFn0QrZalJ1csJSFPjmQiYcrv9/39w==
+
+"@prisma/schema-files-loader@5.13.0":
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/@prisma/schema-files-loader/-/schema-files-loader-5.13.0.tgz#6fb9ddda90d32d9469d8896789c806071238b082"
+  integrity sha512-6sVMoqobkWKsmzb98LfLiIt/aFRucWfkzSUBsqk7sc+h99xjynJt6aKtM2SSkyndFdWpRU0OiCHfQ9UlYUEJIw==
+  dependencies:
+    fs-extra "11.1.1"
 
 "@prisma/schema-files-loader@5.14.0-dev.34":
   version "5.14.0-dev.34"
@@ -1790,6 +1870,11 @@
   version "1.19.25"
   resolved "https://registry.npmjs.org/@types/urijs/-/urijs-1.19.25.tgz"
   integrity sha512-XOfUup9r3Y06nFAZh3WvO0rBU4OtlfPB/vgxpjg+NRdGU6CN6djdc6OEiH+PcqHCY6eFLo9Ista73uarf4gnBg==
+
+"@types/uuid@^9.0.0":
+  version "9.0.8"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-9.0.8.tgz#7545ba4fc3c003d6c756f651f3bf163d8f0f29ba"
+  integrity sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==
 
 "@types/validator@^13.11.8":
   version "13.11.9"
@@ -3835,7 +3920,15 @@ graphql-fields@^2.0.3:
   resolved "https://registry.npmjs.org/graphql-fields/-/graphql-fields-2.0.3.tgz"
   integrity sha512-x3VE5lUcR4XCOxPIqaO4CE+bTK8u6gVouOdpQX9+EKHr+scqtK5Pp/l8nIGqIpN1TUlkKE6jDCCycm/WtLRAwA==
 
-graphql-tag@2.12.6:
+graphql-parse-resolve-info@^4.13.0:
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/graphql-parse-resolve-info/-/graphql-parse-resolve-info-4.13.0.tgz#03627032e25917bd6f9ed89e768568c61200e6ff"
+  integrity sha512-VVJ1DdHYcR7hwOGQKNH+QTzuNgsLA8l/y436HtP9YHoX6nmwXRWq3xWthU3autMysXdm0fQUbhTZCx0W9ICozw==
+  dependencies:
+    debug "^4.1.1"
+    tslib "^2.0.1"
+
+graphql-tag@2.12.6, graphql-tag@^2.12.6:
   version "2.12.6"
   resolved "https://registry.npmjs.org/graphql-tag/-/graphql-tag-2.12.6.tgz"
   integrity sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==
@@ -4589,6 +4682,11 @@ js-base64@^3.7.7:
   version "3.7.7"
   resolved "https://registry.npmjs.org/js-base64/-/js-base64-3.7.7.tgz"
   integrity sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==
+
+js-levenshtein@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/js-levenshtein/-/js-levenshtein-1.1.6.tgz#c6cee58eb3550372df8deb85fad5ce66ce01d59d"
+  integrity sha512-X2BB11YZtrRqY4EnQcLX5Rh373zbK4alC1FW7D7MBhL2gtcC17cTnr6DmfHZeS0s2rTHjUTMMHfG7gO8SSdw+g==
 
 js-tokens@^4.0.0:
   version "4.0.0"
@@ -5461,6 +5559,11 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
+prettier@^2.8.4:
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
+  integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
+
 prettier@^3.0.0:
   version "3.2.5"
   resolved "https://registry.npmjs.org/prettier/-/prettier-3.2.5.tgz"
@@ -5474,6 +5577,11 @@ pretty-format@^29.0.0, pretty-format@^29.7.0:
     "@jest/schemas" "^29.6.3"
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
+
+prisma-graphql-type-decimal@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/prisma-graphql-type-decimal/-/prisma-graphql-type-decimal-3.0.0.tgz#f3fa524b9e7aeab4fa0f969829bdddf199eff9fe"
+  integrity sha512-jrALv8ShVZoBBNyIOBCxwRoLM/DAOSD/OBKTWeJa9UigQXUTZniNXvLd4fLXwm+3v00A7cOZ1fFh3b74Ndgxhw==
 
 prisma-nestjs-graphql@^20.0.2:
   version "20.0.2"
@@ -5675,6 +5783,11 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+readline@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/readline/-/readline-1.3.0.tgz#c580d77ef2cfc8752b132498060dc9793a7ac01c"
+  integrity sha512-k2d6ACCkiNYz222Fs/iNze30rRJ1iIicW7JuX/7/cozvih6YCkFZH+J6mAFDVgv0dRBaAyr4jDqC95R2y4IADg==
 
 rechoir@^0.6.2:
   version "0.6.2"
@@ -6425,7 +6538,7 @@ tsconfig-paths@4.2.0, tsconfig-paths@^4.1.2, tsconfig-paths@^4.2.0:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@2.6.2, tslib@^2.1.0, tslib@^2.4.0, tslib@^2.6.2:
+tslib@2.6.2, tslib@^2.0.1, tslib@^2.1.0, tslib@^2.4.0, tslib@^2.6.2:
   version "2.6.2"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.2.tgz"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==

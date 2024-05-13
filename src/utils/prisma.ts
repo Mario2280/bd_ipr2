@@ -1,7 +1,7 @@
 // @src/utils/prisma.ts
 
 import { GraphQLResolveInfo } from 'graphql'
-import graphqlFields from 'graphql-fields'
+import * as graphqlFields from 'graphql-fields'
 
 export const prismaSelect = (info: GraphQLResolveInfo) => {
   const parsedFields = graphqlFields(info)

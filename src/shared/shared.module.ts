@@ -1,46 +1,43 @@
-import { Module } from "@nestjs/common";
-import { LikeService } from "./services/like.service";
-import { PrismaService } from "../prisma/prisma.service";
-import { UserService } from "./services/user.service";
-import { BlockService } from './services/block.service';
-import { MatchService } from './services/match.service';
-import { MediaService } from './services/media.service';
-import { MessageService } from './services/message.service';
-import { VisitService } from './services/visit.service';
-import { SubscriptionService } from './services/subscription.service';
-import { NotificationService } from './services/notification.service';
-import { SettingService } from './services/setting.service';
-import { ReportService } from './services/report.service';
+import { Module } from '@nestjs/common'
+import { PrismaService } from '../prisma/prisma.service'
+import { AccountService } from './services/account.service'
+import { ClientService } from './services/client.service'
+import { CompanyService } from './services/company.service'
+import { InvoiceService } from './services/invoice.service'
+import { OrderService } from './services/order.service'
+import { ProductService } from './services/product.service'
+import { StaffService } from './services/straff.service'
+import { SupplierService } from './services/supplier.service'
+import { TransportService } from './services/transport.service'
+import { WarehouseService } from './services/warehouse.service'
 
 @Module({
   imports: [],
   providers: [
     PrismaService,
-    BlockService,
-    LikeService,
-    MatchService,
-    MediaService,
-    MessageService,
-    NotificationService,
-    ReportService,
-    SettingService,
-    SubscriptionService,
-    UserService,
-    VisitService,
+    AccountService,
+    ClientService,
+    CompanyService,
+    InvoiceService,
+    OrderService,
+    ProductService,
+    StaffService,
+    SupplierService,
+    TransportService,
+    WarehouseService,
   ],
   exports: [
     PrismaService,
-    BlockService,
-    LikeService,
-    MatchService,
-    MediaService,
-    MessageService,
-    NotificationService,
-    ReportService,
-    SettingService,
-    SubscriptionService,
-    UserService,
-    VisitService,
+    AccountService,
+    ClientService,
+    CompanyService,
+    InvoiceService,
+    OrderService,
+    ProductService,
+    StaffService,
+    SupplierService,
+    TransportService,
+    WarehouseService,
   ],
 })
 export class SharedModule {}

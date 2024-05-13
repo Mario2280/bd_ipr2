@@ -1,36 +1,30 @@
-/*
-https://docs.nestjs.com/modules
-*/
-
 import { Module } from '@nestjs/common'
 import { SharedModule } from '../shared/shared.module'
-import { BlockResolver } from './resolvers/block.resolver'
-import { LikeResolver } from './resolvers/like.resolver'
-import { MatchResolver } from './resolvers/match.resolver'
-import { MediaResolver } from './resolvers/media.resolver'
-import { MessageResolver } from './resolvers/message.resolver'
-import { NotificationResolver } from './resolvers/notification.resolver'
-import { ReportResolver } from './resolvers/report.resolver'
-import { SettingResolver } from './resolvers/setting.resolver'
-import { SubscriptionResolver } from './resolvers/subscription.resolver'
-import { UserResolver } from './resolvers/user.resolver'
-import { VisitResolver } from './resolvers/visit.resolver'
+import { SupplierResolver } from './resolvers/supplier.resolver'
+import { AccountResolver } from './resolvers/account.resolver'
+import { ProductResolver } from './resolvers/product.resolver'
+import { ClientResolver } from './resolvers/client.resolver'
+import { CompanyResolver } from './resolvers/company.resolver'
+import { OrderResolver } from './resolvers/order.resolver'
+import { InvoiceResolver } from './resolvers/invoice.resolver'
+import { WarehouseResolver } from './resolvers/warehouse.resolver'
+import { StaffResolver } from './resolvers/staff.resolver'
+import { TransportResolver } from './resolvers/transport.resolver'
 
 @Module({
   imports: [SharedModule],
   controllers: [],
   providers: [
-    BlockResolver,
-    LikeResolver,
-    MatchResolver,
-    MediaResolver,
-    MessageResolver,
-    NotificationResolver,
-    ReportResolver,
-    SettingResolver,
-    SubscriptionResolver,
-    UserResolver,
-    VisitResolver,
+    SupplierResolver,
+    AccountResolver,
+    ProductResolver,
+    ClientResolver,
+    CompanyResolver,
+    OrderResolver,
+    InvoiceResolver,
+    WarehouseResolver,
+    StaffResolver,
+    TransportResolver
   ],
 })
 export class GraphqlApiModule {}
